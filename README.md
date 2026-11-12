@@ -1,10 +1,10 @@
-# JuegosTeoría · Antes de contar
+# Escaperoom · Antes de contar
 
 Un escape room de estadística por Sevilla. Ejemplo docente abierto del **tema 1** en un contexto ficticio de turismo, adaptado del proyecto original en R Shiny.
 
 ## Jugar
 
-Sitio previsto: **https://teoriadejuego.github.io/juegosteoria/**
+Sitio público: **https://teoriadejuego.github.io/escaperoom/**
 
 Abre `index.html` directamente en un navegador moderno, o ejecuta `python -m http.server 8000` en esta carpeta y visita `http://localhost:8000`. No requiere R, cuentas ni servicios externos para ejecutar el juego.
 
