@@ -1,0 +1,249 @@
+window.SEVILLA_CHAPTERS = [
+  {
+    "place": "El Salvador",
+    "title": "Una carta sin destinatario",
+    "subtitle": "Elegir la pregunta y la fuente",
+    "image": "01_salvador.png",
+    "time": "09:10",
+    "intro": "Inés te espera entre el rumor de la plaza y el olor del café. El cuaderno de Brújula Sur ha aparecido cerrado. Dentro está la ruta de bienvenida de un grupo de viajeros. La primera página solo dice: «Antes de contar, aprende a preguntar».",
+    "next_text": "La carta recuperada lleva el sello del Ayuntamiento. Inés te espera en la plaza de San Francisco.",
+    "questions": [
+      {
+        "object": "La carta",
+        "title": "Un encargo preciso",
+        "story": "La agencia quiere mejorar la bienvenida de quienes contratan su paseo del Salvador durante octubre de 2026.",
+        "prompt": "¿Qué pregunta permite iniciar un estudio bien delimitado?",
+        "options": ["¿Les gusta Sevilla a los turistas?", "¿Cómo valoran la bienvenida los participantes del paseo del Salvador durante octubre de 2026?", "¿Es Sevilla la ciudad más bonita?"],
+        "answer": 2,
+        "hint": "Busca una población, un periodo y una característica observable.",
+        "explanation": "La pregunta sobre la bienvenida concreta a quién se estudia, cuándo y qué se quiere observar."
+      },
+      {
+        "object": "La grabadora",
+        "title": "Escuchar a los viajeros",
+        "story": "Inés propone entrevistar a los participantes a la salida del paseo, con una encuesta diseñada para este encargo.",
+        "prompt": "Para este estudio, esa encuesta es una fuente…",
+        "options": ["Primaria: se recoge expresamente para el estudio.", "Secundaria: toda encuesta lo es.", "Secundaria: porque los viajeros ya conocían la ciudad."],
+        "answer": 1,
+        "hint": "La distinción depende de para qué se recogieron los datos.",
+        "explanation": "La encuesta se diseña y recoge para responder a la pregunta de la agencia: es primaria."
+      },
+      {
+        "object": "El recorte",
+        "title": "Un informe en el bolsillo",
+        "story": "En el cuaderno hay un informe de otra entidad sobre visitantes de Andalucía del año anterior.",
+        "prompt": "¿Cómo debe utilizarlo la agencia?",
+        "options": ["Como sustituto exacto de su encuesta actual.", "Debe descartarlo siempre por ser secundario.", "Como fuente secundaria, comprobando periodo, población y definiciones."],
+        "answer": 3,
+        "hint": "Una fuente publicada puede ayudar, pero debe encajar con la pregunta.",
+        "explanation": "Es una fuente secundaria útil como contexto; no describe necesariamente a los participantes actuales."
+      }
+    ]
+  },
+  {
+    "place": "Ayuntamiento",
+    "title": "Los nombres que faltan",
+    "subtitle": "Población, muestra y unidad",
+    "image": "02_ayuntamiento.png",
+    "time": "09:35",
+    "intro": "Una funcionaria te entrega una caja de fichas. «El grupo no está perdido; lo que se ha perdido es a quién representa cada ficha». La agencia organizó salidas para 240 personas adultas esa mañana y seleccionó al azar a 24 para entrevistarlas. El estudio se refiere solo a esas 240 personas.",
+    "next_text": "Entre las fichas aparece el dibujo de un campanario. La siguiente página está junto a la Giralda.",
+    "questions": [
+      {
+        "object": "El padrón",
+        "title": "El conjunto del encargo",
+        "story": "El estudio quiere describir a las 240 personas adultas que participaron esa mañana.",
+        "prompt": "¿Cuál es la población?",
+        "options": ["Las 24 personas entrevistadas.", "Las 240 personas adultas participantes de esa mañana.", "Todas las personas que visitan Sevilla en un año."],
+        "answer": 2,
+        "hint": "La población es el conjunto al que se refiere la pregunta, no solo quienes responden.",
+        "explanation": "La población son las 240 personas definidas por el encargo."
+      },
+      {
+        "object": "Las fichas",
+        "title": "Solo una parte",
+        "story": "De las 240 personas, se entrevista a las 24 seleccionadas.",
+        "prompt": "¿Cuál es la muestra?",
+        "options": ["Las 24 personas entrevistadas.", "Las 240 personas participantes.", "Las preguntas del cuestionario."],
+        "answer": 1,
+        "hint": "La muestra está formada por las unidades observadas.",
+        "explanation": "Las 24 personas entrevistadas constituyen la muestra; las preguntas son variables, no unidades."
+      },
+      {
+        "object": "La credencial",
+        "title": "Una ficha, un caso",
+        "story": "Cada ficha contiene respuestas de una persona: procedencia, noches y valoración.",
+        "prompt": "¿Cuál es la unidad estadística?",
+        "options": ["Cada pregunta.", "Cada grupo de turistas.", "Cada persona participante."],
+        "answer": 3,
+        "hint": "Piensa de quién se recoge una fila de información.",
+        "explanation": "Cada persona es una unidad; las características observadas se registran en su ficha."
+      }
+    ]
+  },
+  {
+    "place": "La Giralda",
+    "title": "El idioma de las fichas",
+    "subtitle": "Categorías, recuentos y medidas",
+    "image": "03_giralda.png",
+    "time": "10:00",
+    "intro": "Al pie de la Giralda encuentras tres tarjetas mezcladas. Un código de país, un número de noches y un gasto no cuentan la misma clase de historia. Clasifícalas para devolver cada dato a su lugar.",
+    "next_text": "Las tarjetas ordenadas forman un arco. La siguiente cerradura está en un patio del Real Alcázar.",
+    "questions": [
+      {
+        "object": "El pasaporte",
+        "title": "Los números que son nombres",
+        "story": "La agencia codifica el país de residencia: 1 = España, 2 = Francia, 3 = Italia.",
+        "prompt": "El país de residencia, aunque use esos códigos, es…",
+        "options": ["Una variable cuantitativa discreta.", "Una característica cualitativa nominal.", "Una característica cualitativa ordinal."],
+        "answer": 2,
+        "hint": "Un código numérico no convierte una categoría en una cantidad.",
+        "explanation": "Los países son categorías sin orden estadístico. Los números solo sirven como etiquetas."
+      },
+      {
+        "object": "La reserva",
+        "title": "Contar noches",
+        "story": "Una reserva indica el número de noches completas contratadas: 1, 2, 3…",
+        "prompt": "El número de noches es una variable…",
+        "options": ["Cuantitativa discreta.", "Cuantitativa continua.", "Cualitativa nominal."],
+        "answer": 1,
+        "hint": "¿El dato surge de contar unidades o de medir una magnitud?",
+        "explanation": "Las noches completas se cuentan; la variable es cuantitativa discreta."
+      },
+      {
+        "object": "El recibo",
+        "title": "Medir el gasto",
+        "story": "La agencia registra el gasto de cada persona en euros, redondeado a céntimos. Se adopta el modelo habitual de magnitud continua.",
+        "prompt": "¿Cómo se clasifica el gasto bajo ese modelo?",
+        "options": ["Cualitativa ordinal.", "Cuantitativa discreta porque contiene cifras.", "Cuantitativa continua."],
+        "answer": 3,
+        "hint": "La precisión del registro no cambia el modelo de magnitud indicado.",
+        "explanation": "El gasto se trata como magnitud continua, aunque el registro tenga precisión limitada."
+      }
+    ]
+  },
+  {
+    "place": "Real Alcázar",
+    "title": "La medida de las cosas",
+    "subtitle": "Escalas y comparaciones legítimas",
+    "image": "04_alcazar.png",
+    "time": "10:30",
+    "intro": "El agua del patio refleja tres pequeñas cerraduras. Cada una admite una comparación distinta. Inés ha dejado una advertencia: «Que puedas escribir una operación no significa que tenga sentido».",
+    "next_text": "Tras el último reflejo aparece una hoja de archivo. Continúa al Archivo de Indias.",
+    "questions": [
+      {
+        "object": "El abanico",
+        "title": "Cinco formas de opinar",
+        "story": "La satisfacción se registra como muy mala, mala, normal, buena o muy buena, codificada de 1 a 5.",
+        "prompt": "¿Qué escala tiene?",
+        "options": ["Intervalo: cada salto mide exactamente lo mismo.", "Ordinal: las categorías tienen orden, sin garantizar distancias iguales.", "Razón: 4 representa el doble de satisfacción que 2."],
+        "answer": 2,
+        "hint": "Ordenar no significa poder medir la distancia entre opiniones.",
+        "explanation": "La escala es ordinal. Los códigos conservan el orden, no garantizan diferencias iguales."
+      },
+      {
+        "object": "El termómetro",
+        "title": "El cero del patio",
+        "story": "A primera hora había 10 °C; ahora el termómetro marca 20 °C.",
+        "prompt": "¿Qué interpretación es correcta?",
+        "options": ["Es una escala de intervalo: subió 10 °C, pero no se puede decir que haya el doble de temperatura.", "Es de razón: ahora hace el doble de temperatura.", "Es nominal: solo etiqueta el tiempo."],
+        "answer": 1,
+        "hint": "El cero Celsius es convencional.",
+        "explanation": "En Celsius las diferencias tienen sentido, pero el cero no expresa ausencia de temperatura."
+      },
+      {
+        "object": "La bolsa",
+        "title": "El valor de un cero",
+        "story": "Dos viajeros gastaron 20 € y 40 €. Un gasto de 0 € expresa que no hubo desembolso.",
+        "prompt": "¿Qué escala permite afirmar que el segundo gastó el doble?",
+        "options": ["Nominal.", "Ordinal.", "Razón."],
+        "answer": 3,
+        "hint": "Busca un cero natural y cocientes interpretables.",
+        "explanation": "El gasto tiene escala de razón: 40 € es el doble de 20 €, y cero significa ausencia de gasto."
+      }
+    ]
+  },
+  {
+    "place": "Archivo de Indias",
+    "title": "Lo que una cifra puede decir",
+    "subtitle": "Parámetro, estadístico y alcance",
+    "image": "05_archivo_indias.png",
+    "time": "11:00",
+    "intro": "Un archivero ha encontrado dos sobres: «todos» y «una parte». La agencia conoce el gasto medio de las 24 personas entrevistadas, pero todavía no el de las 240 participantes. Debes devolver cada afirmación a su sobre.",
+    "next_text": "Un sello dorado señala el río. La última página del libro te espera en la Torre del Oro.",
+    "questions": [
+      {
+        "object": "El sobre pequeño",
+        "title": "Una cifra de la muestra",
+        "story": "El gasto medio calculado con las 24 entrevistas es de 42 €. No necesitas calcularlo.",
+        "prompt": "Esos 42 € son…",
+        "options": ["Un parámetro de las 240 personas.", "Un estadístico de la muestra.", "Una unidad estadística."],
+        "answer": 2,
+        "hint": "Importa de qué conjunto procede la cifra.",
+        "explanation": "La media calculada con una muestra es un estadístico."
+      },
+      {
+        "object": "El sobre grande",
+        "title": "La cifra que buscamos",
+        "story": "El gasto medio de las 240 personas participantes es desconocido.",
+        "prompt": "Esa media poblacional sería…",
+        "options": ["Un parámetro.", "Un estadístico de las 24 entrevistas.", "Una variable cualitativa."],
+        "answer": 1,
+        "hint": "Una característica numérica de toda la población tiene un nombre propio.",
+        "explanation": "La media de toda la población es un parámetro, aunque no se conozca su valor."
+      },
+      {
+        "object": "La lupa",
+        "title": "Del dato a la conclusión",
+        "story": "Inés quiere usar los 42 € observados para estimar la media de las 240 personas.",
+        "prompt": "¿Qué está proponiendo?",
+        "options": ["Solo describir las 24 entrevistas, sin ir más allá.", "Afirmar con certeza que todas gastaron 42 €.", "Inferir sobre la población: valorar el muestreo y reconocer la incertidumbre."],
+        "answer": 3,
+        "hint": "Pasar de la muestra a la población exige más que resumir las respuestas.",
+        "explanation": "Es una intención inferencial. En este tema identificamos su alcance, sin calcular estimadores ni intervalos."
+      }
+    ]
+  },
+  {
+    "place": "Torre del Oro",
+    "title": "Las páginas del tiempo",
+    "subtitle": "Transversal, temporal y panel",
+    "image": "06_torre_oro.png",
+    "time": "11:25",
+    "intro": "El cuaderno está casi completo. En la orilla aparecen tres registros de alojamientos: una fotografía de muchos casos, una historia a lo largo del tiempo y un seguimiento de los mismos hoteles. Elige la estructura de cada uno para abrir el libro.",
+    "next_text": "Las seis cerraduras se abren. Has recuperado el primer libro: Antes de contar.",
+    "questions": [
+      {
+        "object": "La postal",
+        "title": "Una fotografía de octubre",
+        "story": "Se pregunta una sola vez a 80 huéspedes distintos por su estancia durante octubre de 2026.",
+        "prompt": "¿Qué estructura tienen los datos?",
+        "options": ["Serie temporal.", "Corte transversal.", "Panel."],
+        "answer": 2,
+        "hint": "Varias unidades observadas una vez en un mismo periodo.",
+        "explanation": "Es un corte transversal: se comparan personas observadas en un periodo común."
+      },
+      {
+        "object": "El calendario",
+        "title": "Un hotel, doce meses",
+        "story": "Un hotel registra su porcentaje de ocupación cada mes durante un año.",
+        "prompt": "¿Qué estructura tiene este registro?",
+        "options": ["Serie temporal.", "Corte transversal.", "Panel de doce hoteles."],
+        "answer": 1,
+        "hint": "Se sigue una magnitud a lo largo de fechas sucesivas.",
+        "explanation": "Es una serie temporal de la ocupación de un hotel."
+      },
+      {
+        "object": "El cuaderno azul",
+        "title": "Volver a los mismos",
+        "story": "Se registra mensualmente la ocupación de los mismos ocho hoteles durante todo un año.",
+        "prompt": "¿Qué estructura permite seguir a esas mismas unidades?",
+        "options": ["Corte transversal.", "Una única observación sin dimensión temporal.", "Panel."],
+        "answer": 3,
+        "hint": "Se combinan varias unidades y varias fechas, repitiendo las mismas unidades.",
+        "explanation": "Es un panel: los mismos hoteles se observan repetidamente a lo largo del tiempo."
+      }
+    ]
+  }
+]
+;
