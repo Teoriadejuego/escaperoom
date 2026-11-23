@@ -1,10 +1,6 @@
 'use strict';
 const tipo = document.querySelector('#tipo'), menus = document.querySelector('#menus'), campos = document.querySelector('#campos'), estado = document.querySelector('#estado');
-const subjects = [
-  { id: 'turismo', nombre: 'Estadística de Turismo', global: 'BANCOS', archivo: 'bancos.js' },
-  { id: 'economia', nombre: 'Estadística · Grado en Economía', global: 'ECONOMIA', archivo: 'economia.js' },
-  { id: 'finanzas', nombre: 'Estadística I · Finanzas y Contabilidad', global: 'FINANZAS', archivo: 'finanzas.js' }
-];
+const subjects = window.ASIGNATURAS;
 let subject = subjects[0];
 let active, pool, inputs;
 function selector(label, names, onChange) {
@@ -33,6 +29,7 @@ function mostrar(){
   if(tipo.value==='b'){
     selector('Asignatura', subjects.map(s => s.nombre), si => {
       subject = subjects[si];
+      if (subject.provisional) estado.textContent = 'Banco compartido de FICO. Los cambios que publiques en finanzas.js afectan a todas las asignaturas que lo usan.';
       const banks = window[subject.global];
       selector('Bloque',banks.map(b=>b.nombre),bi=>{
       const parts=banks[bi].apartados;

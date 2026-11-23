@@ -4,11 +4,7 @@
   const stories = [original, ...window.HISTORIAS_EXTRA];
   let chapters = original.paradas;
   let story = original;
-  const subjects = [
-    { id: 'turismo', nombre: 'Estadística de Turismo', global: 'BANCOS', archivo: 'bancos.js' },
-    { id: 'economia', nombre: 'Estadística · Grado en Economía', global: 'ECONOMIA', archivo: 'economia.js' },
-    { id: 'finanzas', nombre: 'Estadística I · Finanzas y Contabilidad', global: 'FINANZAS', archivo: 'finanzas.js' }
-  ];
+  const subjects = window.ASIGNATURAS;
   const requestedSubject = new URLSearchParams(window.location.search).get('asignatura');
   let subject = subjects.find(item => item.id === requestedSubject) || subjects[0];
   let bank;
@@ -36,7 +32,7 @@
         <div class="cover-content"><h1>Sevilla<br><em>en clave.</em></h1>
         <p class="cover-description">Elige qué quieres practicar. Una historia al azar te llevará por seis escenarios de Sevilla.</p>
         <form id="setup"><label>Asignatura<select id="asignatura">${subjects.map(s => `<option value="${s.id}">${esc(s.nombre)}</option>`).join('')}</select></label>
-        <label>Bloque<select id="bloque"></select></label>
+        <small id="origen-banco" hidden>Banco provisional de Estadística I de Finanzas y Contabilidad.</small><label>Bloque<select id="bloque"></select></label>
         <label>Dificultad<select id="dificultad"><option value="facil">Fácil</option><option value="dificil">Difícil</option></select></label>
         <button class="primary-button start-button" type="submit">Abrir la aventura ↗</button></form>
         </div></main>`;
@@ -45,6 +41,7 @@
       subjectSelect.value = subject.id;
       function refreshBlocks() {
         subject = subjects.find(item => item.id === subjectSelect.value);
+        screen.querySelector("#origen-banco").hidden = !subject.provisional;
         blockSelect.replaceChildren(...window[subject.global].map(b => new Option(b.nombre, b.id)));
       }
       subjectSelect.addEventListener('change', refreshBlocks);
