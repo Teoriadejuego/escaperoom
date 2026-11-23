@@ -1,35 +1,21 @@
-# Escaperoom · Antes de contar
+# Sevilla en clave
 
-Un escape room de estadística por Sevilla. Ejemplo docente abierto del **tema 1** en un contexto ficticio de turismo, adaptado del proyecto original en R Shiny.
+[Jugar al escape room de Estadística de Turismo](https://teoriadejuego.github.io/escaperoom/)
 
-## Jugar
+Elige bloque y dificultad. En cada partida se sortea una historia y una pregunta por cada uno de los 18 apartados del bloque. Los tres objetos de cada parada revelan una combinación. Si te equivocas al responder o al abrir la cerradura, vuelves una parada y puedes consultar las pistas. Después de la sexta cerradura aparece la palabra de la historia.
 
-Sitio público: **https://teoriadejuego.github.io/escaperoom/**
+La asignatura sigue el programa de Estadística de Turismo del curso 2026–27. El bloque 1 cubre conceptos, frecuencias, localización y dispersión. El bloque 2 trabaja distribuciones bidimensionales, correlación y regresión. El bloque 3 se dedica a números índices de valor, precios y cantidades. Los casos turísticos emplean datos didácticos.
 
-Abre `index.html` directamente en un navegador moderno, o ejecuta `python -m http.server 8000` en esta carpeta y visita `http://localhost:8000`. No requiere R, cuentas ni servicios externos para ejecutar el juego.
+La primera pregunta permite añadir el correo universitario al cuaderno descargable. La partida funciona en el navegador. Para entregar el cuaderno, el estudiante debe descargarlo y presentarlo por el canal indicado por su docente. La palabra final identifica la historia completada. El correo escrito por el jugador carece de verificación de identidad.
 
-## Recorrido
+## Actualizar contenidos
 
-El Salvador → Ayuntamiento → Giralda → Real Alcázar → Archivo de Indias → Torre del Oro.
+1. Descarga el repositorio y descomprímelo. Abre **editar.html** en tu navegador. También puedes [abrir el editor en línea](https://teoriadejuego.github.io/escaperoom/editar.html).
+2. Para editar una pregunta, selecciona bloque, apartado, dificultad y variante. Escribe tres respuestas diferentes, marca la correcta del 1 al 3 y añade una pista y una explicación. Para ampliar el banco, pulsa **Añadir una variante de esta pregunta**.
+3. Para cambiar una historia, elige su nombre y la escena. Puedes modificar los textos, objetos, transición y palabra final. Para sustituir un dibujo, copia la nueva imagen dentro de **assets** e indica su nombre o su ruta dentro de esa carpeta.
+4. Pulsa **Guardar cambios en esta sesión** después de cada edición. Al terminar con un tipo de contenido, pulsa **Descargar archivo actualizado** y reemplaza el archivo de igual nombre dentro de **data**. Conserva una copia anterior si quieres deshacer una edición.
+5. Abre **index.html** localmente para probar el resultado. Para publicarlo, sube los archivos de datos e imágenes modificados a la rama **main** del repositorio que sirve GitHub Pages.
 
-Cada escenario incluye tres objetos con problemas conceptuales. Sus respuestas correctas revelan un código de tres cifras. Introduce el código en la cerradura para avanzar. Las alternativas se barajan y los códigos cambian en cada partida. Un error de respuesta o de combinación devuelve al escenario anterior e invalida sus pistas y las posteriores. No hay cronómetro ni límite de intentos; las ayudas están disponibles antes de responder.
+Cada banco contiene 18 apartados ordenados. Los tres primeros corresponden a los objetos de la primera parada y así sucesivamente. Cada apartado admite cualquier número positivo de variantes por dificultad. Las imágenes y los nombres de los objetos pertenecen a las historias. Las soluciones y las ayudas pertenecen a los bancos.
 
-Al completar las seis cerraduras aparece la palabra narrativa **AZAHAR** y puedes descargar el cuaderno de la sesión. Recargar la página comienza otra partida; el cuaderno descargado no restaura el progreso.
-
-## Alcance docente
-
-Se trabajan pregunta y fuentes, población/muestra/unidad, tipos de variables, escalas, parámetro/estadístico y estructuras de datos. Se conservan los 18 casos del ejemplo original; esta demo **no implementa todavía** el formato del concurso de tres pruebas con diez alternativas.
-
-Es una demostración pública, no una prueba de evaluación cerrada. Las respuestas y validaciones se ejecutan en el navegador y son inspeccionables. La palabra final y el cuaderno no acreditan identidad ni aprendizaje autónomo. No se solicitan correos ni se envían resultados al profesorado. La partida permanece en memoria de la pestaña. GitHub, como proveedor de alojamiento, puede registrar información técnica de acceso conforme a su política de privacidad.
-
-## Archivos
-
-- `index.html`: portada y contenedor accesible.
-- `assets/chapters.js`: contenidos originales adaptados de `R/content.R`.
-- `assets/app.js`: juego, cerraduras, retrocesos y descarga del cuaderno.
-- `assets/style.css` y `assets/web.css`: diseño y adaptación móvil.
-- `assets/*.png`: ilustraciones artísticas generadas para este proyecto, con posibles licencias arquitectónicas.
-
-## Publicación
-
-GitHub Pages publica la rama `main`, carpeta raíz. `.nojekyll` mantiene los archivos estáticos sin procesamiento. La app original en R Shiny permanece en el proyecto local y no se modifica con esta adaptación.
+El archivo **PROMPT_PROYECTO.md** contiene el encargo reutilizable para coordinar cambios con agentes.
