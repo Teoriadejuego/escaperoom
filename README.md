@@ -31,3 +31,7 @@ La primera pregunta permite añadir el correo universitario al cuaderno descarga
 Cada banco contiene 18 apartados ordenados. Los tres primeros corresponden a los objetos de la primera parada y así sucesivamente. Cada apartado admite cualquier número positivo de variantes por dificultad. Las imágenes y los nombres de los objetos pertenecen a las historias. Las soluciones y las ayudas pertenecen a los bancos.
 
 El archivo **PROMPT_PROYECTO.md** contiene el encargo reutilizable para coordinar cambios con agentes.
+
+## Comprobar un código de finalización
+
+Abre el [validador docente](https://teoriadejuego.github.io/escaperoom/validar.html) y pega el código. Tras la sexta cerradura el juego genera un código por partida que también aparece en el cuaderno final. Tras @ van el número aleatorio de cuatro cifras, su cociente entero entre siete con cuatro posiciones, la dificultad (0 fácil, 1 difícil), los minutos completos con dos posiciones y dos letras mayúsculas. El tiempo empieza al abrir la aventura e incluye los reintentos. 99 representa 99 minutos o más. El control es local y comprueba coherencia. La aleatoriedad reduce las coincidencias, pero no garantiza unicidad global ni autoría.
