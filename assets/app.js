@@ -5,6 +5,21 @@
   let chapters = original.paradas;
   let story = original;
   const subjects = window.ASIGNATURAS;
+  const pendingBanks = new Map();
+  function loadBank(course) {
+    if (window[course.global]) return Promise.resolve(window[course.global]);
+    if (!pendingBanks.has(course.global)) {
+      const request = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'data/' + course.archivo;
+        script.onload = () => window[course.global] ? resolve(window[course.global]) : reject();
+        script.onerror = reject;
+        document.head.append(script);
+      }).finally(() => pendingBanks.delete(course.global));
+      pendingBanks.set(course.global, request);
+    }
+    return pendingBanks.get(course.global);
+  }
   const requestedSubject = new URLSearchParams(window.location.search).get('asignatura');
   let subject = subjects.find(item => item.id === requestedSubject) || subjects[0];
   let bank;
@@ -34,16 +49,33 @@
         <form id="setup"><label>Asignatura<select id="asignatura">${subjects.map(s => `<option value="${s.id}">${esc(s.nombre)}</option>`).join('')}</select></label>
         <small id="origen-banco" hidden>Banco provisional de Estadística I de Finanzas y Contabilidad.</small><label>Bloque<select id="bloque"></select></label>
         <label>Dificultad<select id="dificultad"><option value="facil">Fácil</option><option value="dificil">Difícil</option></select></label>
-        <button class="primary-button start-button" type="submit">Abrir la aventura ↗</button></form>
+        <button class="primary-button start-button" type="submit" disabled>Abrir la aventura ↗</button>
+        <div id="bank-error" hidden role="status">No se han podido cargar las preguntas. <button type="button">Reintentar</button></div></form>
         </div></main>`;
       const subjectSelect = screen.querySelector('#asignatura');
       const blockSelect = screen.querySelector('#bloque');
       subjectSelect.value = subject.id;
-      function refreshBlocks() {
-        subject = subjects.find(item => item.id === subjectSelect.value);
-        screen.querySelector("#origen-banco").hidden = !subject.provisional;
-        blockSelect.replaceChildren(...window[subject.global].map(b => new Option(b.nombre, b.id)));
+      const startButton = screen.querySelector('[type=submit]');
+      const error = screen.querySelector('#bank-error');
+      async function refreshBlocks() {
+        const selected = subjects.find(item => item.id === subjectSelect.value);
+        subject = selected;
+        screen.querySelector("#origen-banco").hidden = !selected.provisional;
+        startButton.disabled = blockSelect.disabled = true;
+        error.hidden = true;
+        blockSelect.replaceChildren(new Option('Cargando preguntas…', ''));
+        try {
+          const blocks = await loadBank(selected);
+          if (selected !== subject || !blockSelect.isConnected) return;
+          blockSelect.replaceChildren(...blocks.map(b => new Option(b.nombre, b.id)));
+          startButton.disabled = blockSelect.disabled = false;
+        } catch {
+          if (selected !== subject || !blockSelect.isConnected) return;
+          blockSelect.replaceChildren(new Option('Preguntas no disponibles', ''));
+          error.hidden = false;
+        }
       }
+      error.querySelector('button').addEventListener('click', refreshBlocks);
       subjectSelect.addEventListener('change', refreshBlocks);
       refreshBlocks();
       screen.querySelector('#setup').addEventListener('submit', startGame);
@@ -57,7 +89,7 @@
   }
   function startGame(event) {
     event.preventDefault();
-    if (state.phase !== 'cover') return;
+    if (state.phase !== 'cover' || screen.querySelector('#bloque').disabled) return;
     bank = window[subject.global].find(b => String(b.id) === screen.querySelector('#bloque').value);
     difficulty = screen.querySelector('#dificultad').value;
     story = pick(stories);

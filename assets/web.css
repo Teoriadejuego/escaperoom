@@ -1,7 +1,7 @@
 button{font-family:inherit;cursor:pointer}a{color:inherit}p{line-height:1.7}svg{flex-shrink:0}
 .skip-link{position:fixed;top:-100px;left:20px;z-index:100;background:#fff;padding:12px}.skip-link:focus{top:10px}
 .demo-banner{padding:9px 5%;font-size:9px;letter-spacing:1.5px;background:#e8e3d7;color:#4d5e4c}.demo-banner span{letter-spacing:.5px}
-.cover{height:calc(100vh - 165px)}.cover-meta{line-height:1.6}.cover-art{background-image:url('01_salvador.png')}
+.cover{height:calc(100vh - 165px)}.cover-meta{line-height:1.6}.cover-art{background-image:url('01_salvador.webp')}
 .app-footer button{border:0;padding:0;background:transparent;color:inherit;text-decoration:underline;font-size:inherit}
 .notebook-download{width:100%;cursor:pointer}.notebook-heading svg{width:24px}.hotspot-icon{flex-shrink:0}
 dialog{padding:0;width:min(650px,calc(100vw - 28px));max-height:calc(100dvh - 36px);border:1px solid #d4cbb5;background:#faf7ed;border-radius:9px;color:var(--ink);box-shadow:0 24px 90px #142c2966;overflow:auto}
