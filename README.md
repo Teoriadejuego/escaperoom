@@ -2,7 +2,7 @@
 
 [Jugar al escape room de Estadística de Turismo](https://teoriadejuego.github.io/escaperoom/)
 
-Elige bloque y dificultad. En cada partida se sortea una historia y una pregunta por cada uno de los 18 apartados del bloque. Los tres objetos de cada parada revelan una combinación. Si te equivocas al responder o al abrir la cerradura, vuelves una parada y puedes consultar las pistas. Después de la sexta cerradura aparece la palabra de la historia.
+Elige bloque y dificultad. En cada partida se sortea una historia y una pregunta por cada uno de los 18 apartados del bloque. Los tres objetos de cada parada revelan una combinación. Si te equivocas al responder o al abrir la cerradura, repites las tres pistas de la parada actual y puedes consultar las pistas. Después de la sexta cerradura aparece la palabra de la historia.
 
 La asignatura sigue el programa de Estadística de Turismo del curso 2026–27. El bloque 1 cubre conceptos, frecuencias, localización y dispersión. El bloque 2 trabaja distribuciones bidimensionales, correlación y regresión. El bloque 3 se dedica a números índices de valor, precios y cantidades. Los casos turísticos emplean datos didácticos.
 

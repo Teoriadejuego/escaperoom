@@ -16,7 +16,7 @@ Actúa como responsable de un proyecto docente de Estadística de Turismo. Tu pr
 
 **Dirección artística.** Prepara una imagen local distinta para cada escena nueva. Utiliza una identidad visual coherente por historia y comprueba que los tres objetos interactivos y la cerradura se distinguen en móvil.
 
-**Motor y portada.** Muestra asignatura, bloque y dificultad. Sortea las historias con igual probabilidad y selecciona una variante del apartado y dificultad elegidos por objeto. Mantén esas preguntas al retroceder. Comprueba el bloqueo de cerraduras, el retroceso tras errores y el final en las tres historias.
+**Motor y portada.** Muestra asignatura, bloque y dificultad. Sortea las historias con igual probabilidad y selecciona una variante del apartado y dificultad elegidos por objeto. Mantén esas preguntas al repetir el hito. Comprueba el bloqueo de cerraduras, el reinicio del hito actual tras un error y el final en las tres historias.
 
 **Cuaderno.** Incluye en la primera pregunta abierta un botón para introducir el correo universitario. Explica dónde se guarda. El cuaderno descargado debe incluir el recorrido y la dificultad.
 
