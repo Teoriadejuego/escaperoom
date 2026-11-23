@@ -22,7 +22,7 @@ window.Estudio = (() => {
     if (acierto) exposure.aciertos++;
     else exposure.reintentos++;
   }
-  function comprobante(container) {
+  function comprobante(container,codigo) {
     if (!exposure) return;
     if (!exposure.id) {
       exposure.id=crypto.randomUUID();
@@ -33,32 +33,36 @@ window.Estudio = (() => {
     section.innerHTML=`<h2>Consentimiento informado</h2>
       <p>Estudiamos cómo aprenden estadística los estudiantes. Al enviar el correo, autorizas el uso de tus datos de práctica y de las notas de tus dos primeros parciales con un ID seudónimo. Participar es voluntario y tu decisión no afecta a tu nota.</p>
       <details><summary>Datos y privacidad</summary><p>El equipo que recibe el correo verá tu dirección para vincular tus notas. El archivo de análisis usará tu ID. Para solicitar la retirada antes de la anonimización, indica ese ID al responsable.</p><p class="contacto"></p></details>
-      <p class="estado"></p><button type="button" class="preparar"></button>
+      <p class="estado"></p><textarea rows="11" readonly aria-label="Correo para copiar" style="box-sizing:border-box;width:100%;font:inherit"></textarea><button type="button" class="preparar">Copiar correo</button><p role="status"></p>
       <button type="button" class="omitir">Terminar sin enviar</button>`;
     const consent='Autorizo voluntariamente el uso seudonimizado de mis datos de práctica y de las notas de mis dos primeros parciales para estudiar cómo aprenden estadística los estudiantes.';
     const {inicio,...usage}=exposure;
     const clase=new URLSearchParams(location.search).get('clase');
     const registro={...usage,clase:/^C[0-9]{3}$/.test(clase || '')?clase:null,condicion:location.pathname.endsWith('control.html')?'CO':'TR',apartados:18,ayudas:0,version:enabled?cfg.version:'ensayo-final-1'};
-    const body=consent+'\n\n'+JSON.stringify(registro,null,2);
+    const subject=(enabled?'Práctica de estadística':'Ejemplo de práctica de estadística')+' · '+codigo;
+    const body=['Asunto: '+subject,'','Hola,','', 'He terminado la práctica de estadística.',
+      'Código final: '+codigo,'ID de sesión: '+exposure.id,'',consent,'','Datos de la práctica:',JSON.stringify(registro,null,2)].join('\n');
     const info=section.querySelector('.contacto');
-    const button=section.querySelector('.preparar');
     if (enabled) {
       info.textContent=[cfg.responsable,cfg.contacto,cfg.baseJuridica,cfg.conservacion,cfg.derechos,cfg.contactoDPD].join(' · ')+'. ';
       const link=document.createElement('a');
       link.href=cfg.hojaAprobada;link.textContent='Hoja informativa del estudio';info.append(link);
-      button.textContent='Preparar correo de consentimiento';
-      button.onclick=()=>{location.href='mailto:'+encodeURIComponent(cfg.contacto)+'?subject='+encodeURIComponent('Consentimiento · '+exposure.id)+'&body='+encodeURIComponent(body);};
-      section.querySelector('.estado').textContent='Revisa el borrador y pulsa Enviar en tu correo si deseas participar.';
-    } else {
-      info.textContent='Los datos de esta demostración permanecen en la pestaña.';
-      section.querySelector('.estado').textContent='Demostración. Puedes ver el correo de ejemplo.';
-      button.textContent='Ver correo de ejemplo';
-      button.onclick=()=>{
-        let preview=section.querySelector('pre');
-        if (!preview) { preview=document.createElement('pre');preview.style.whiteSpace='pre-wrap';preview.style.overflowWrap='anywhere';section.append(preview); }
-        preview.textContent=body;
-      };
-    }
+    } else info.textContent='Demostración con datos de esta partida.';
+    section.querySelector('.estado').textContent=enabled
+      ? 'Si quieres participar, copia el texto, pégalo en un correo a '+cfg.contacto+' y envíalo.'
+      : 'Demostración. Puedes copiar este ejemplo y pegarlo en un correo de prueba.';
+    const area=section.querySelector('textarea');
+    area.value=body;
+    section.querySelector('.preparar').onclick=async()=>{
+      const status=section.querySelector('[role=status]');
+      try {
+        await navigator.clipboard.writeText(body);
+        status.textContent='Correo copiado. Ya puedes pegarlo en tu correo.';
+      } catch {
+        area.focus();area.select();
+        status.textContent='Texto seleccionado. Usa la opción Copiar de tu dispositivo.';
+      }
+    };
     section.querySelector('.omitir').onclick=()=>{section.replaceChildren(document.createTextNode('Práctica finalizada sin enviar datos.'));};
     container.append(section);
   }
