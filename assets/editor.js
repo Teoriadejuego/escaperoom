@@ -1,8 +1,15 @@
 'use strict';
 const tipo = document.querySelector('#tipo'), menus = document.querySelector('#menus'), campos = document.querySelector('#campos'), estado = document.querySelector('#estado');
+const subjects = [
+  { id: 'turismo', nombre: 'Estadística de Turismo', global: 'BANCOS', archivo: 'bancos.js' },
+  { id: 'economia', nombre: 'Estadística · Grado en Economía', global: 'ECONOMIA', archivo: 'economia.js' },
+  { id: 'finanzas', nombre: 'Estadística I · Finanzas y Contabilidad', global: 'FINANZAS', archivo: 'finanzas.js' }
+];
+let subject = subjects[0];
 let active, pool, inputs;
 function selector(label, names, onChange) {
   const wrap = document.createElement('label'), select = document.createElement('select');
+  select.setAttribute('aria-label', label);
   wrap.textContent = label;
   names.forEach((name, i) => select.add(new Option(name, i)));
   wrap.append(select); menus.append(wrap);
@@ -24,13 +31,17 @@ function mostrar(){
   menus.replaceChildren(); estado.textContent='';
   document.querySelector('#duplicar').hidden=tipo.value!=='b';
   if(tipo.value==='b'){
-    selector('Bloque',BANCOS.map(b=>b.nombre),bi=>{
-      const parts=BANCOS[bi].apartados;
+    selector('Asignatura', subjects.map(s => s.nombre), si => {
+      subject = subjects[si];
+      const banks = window[subject.global];
+      selector('Bloque',banks.map(b=>b.nombre),bi=>{
+      const parts=banks[bi].apartados;
       selector('Apartado',parts.map((p,i)=>(i+1)+'. '+p.nombre),pi=>{
         selector('Dificultad',['Fácil','Difícil'],di=>{
           pool=parts[pi][di?'dificil':'facil'];
           selector('Pregunta',pool.map((q,i)=>(i+1)+'. '+q.prompt),qi=>editar(pool[qi],[['story','Situación'],['prompt','Pregunta'],['options','Tres opciones, una por línea'],['answer','Número de la opción correcta'],['hint','Pista'],['explanation','Solución explicada']]));
         });
+      });
       });
     });
   } else {
@@ -58,8 +69,8 @@ document.querySelector('#duplicar').onclick=()=>{
   estado.textContent='Variante añadida. Edita su contenido y guarda los cambios.';
 };
 document.querySelector('#descarga').onclick=()=>{
-  const questions=tipo.value==='b',name=questions?'BANCOS':tipo.value==='o'?'HISTORIA_ORIGINAL':'HISTORIAS_EXTRA', content=window[name];
+  const questions=tipo.value==='b',name=questions?subject.global:tipo.value==='o'?'HISTORIA_ORIGINAL':'HISTORIAS_EXTRA', content=window[name];
   const url=URL.createObjectURL(new Blob(['window.'+name+' = '+JSON.stringify(content,null,2)+';\n'],{type:'text/javascript;charset=utf-8'}));
-  const a=document.createElement('a');a.href=url;a.download=questions?'bancos.js':tipo.value==='o'?'original.js':'historias.js';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  const a=document.createElement('a');a.href=url;a.download=questions?subject.archivo:tipo.value==='o'?'original.js':'historias.js';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 tipo.onchange=mostrar;mostrar();

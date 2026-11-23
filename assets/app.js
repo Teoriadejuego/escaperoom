@@ -4,6 +4,13 @@
   const stories = [original, ...window.HISTORIAS_EXTRA];
   let chapters = original.paradas;
   let story = original;
+  const subjects = [
+    { id: 'turismo', nombre: 'Estadística de Turismo', global: 'BANCOS', archivo: 'bancos.js' },
+    { id: 'economia', nombre: 'Estadística · Grado en Economía', global: 'ECONOMIA', archivo: 'economia.js' },
+    { id: 'finanzas', nombre: 'Estadística I · Finanzas y Contabilidad', global: 'FINANZAS', archivo: 'finanzas.js' }
+  ];
+  const requestedSubject = new URLSearchParams(window.location.search).get('asignatura');
+  let subject = subjects.find(item => item.id === requestedSubject) || subjects[0];
   let bank;
   let difficulty;
   const pick = items => items[Math.floor(Math.random() * items.length)];
@@ -28,11 +35,20 @@
       screen.innerHTML = `<main class="cover"><div class="cover-art" role="img" aria-label="Plaza del Salvador de Sevilla"></div>
         <div class="cover-content"><h1>Sevilla<br><em>en clave.</em></h1>
         <p class="cover-description">Elige qué quieres practicar. Una historia al azar te llevará por seis escenarios de Sevilla.</p>
-        <form id="setup"><label>Asignatura<select id="asignatura"><option>Estadística de Turismo</option></select></label>
-        <label>Bloque<select id="bloque">${window.BANCOS.map(b => `<option value="${esc(b.id)}">${esc(b.nombre)}</option>`).join('')}</select></label>
+        <form id="setup"><label>Asignatura<select id="asignatura">${subjects.map(s => `<option value="${s.id}">${esc(s.nombre)}</option>`).join('')}</select></label>
+        <label>Bloque<select id="bloque"></select></label>
         <label>Dificultad<select id="dificultad"><option value="facil">Fácil</option><option value="dificil">Difícil</option></select></label>
         <button class="primary-button start-button" type="submit">Abrir la aventura ↗</button></form>
         </div></main>`;
+      const subjectSelect = screen.querySelector('#asignatura');
+      const blockSelect = screen.querySelector('#bloque');
+      subjectSelect.value = subject.id;
+      function refreshBlocks() {
+        subject = subjects.find(item => item.id === subjectSelect.value);
+        blockSelect.replaceChildren(...window[subject.global].map(b => new Option(b.nombre, b.id)));
+      }
+      subjectSelect.addEventListener('change', refreshBlocks);
+      refreshBlocks();
       screen.querySelector('#setup').addEventListener('submit', startGame);
     }else if(state.phase==='end'){
       screen.innerHTML=`<main class="ending" style="background-image:linear-gradient(90deg,#f5f1e8ef,#f5f1e8cf),url('assets/${esc(chapters.at(-1).image)}')"><div class="end-card"><div class="end-seal">${icon('key')}</div><p class="eyebrow">${esc(story.nombre)}</p><h1>Ya sabes<br><em>dónde mirar.</em></h1><p>Has recuperado los dieciocho hallazgos de ${esc(bank.nombre)} en dificultad ${difficultyName().toLowerCase()}. Guarda tu cuaderno con el recorrido y la palabra final.</p><div class="end-stats"><div><strong>6 / 6</strong><span>cerraduras abiertas</span></div><div><strong>${state.mistakes}</strong><span>reintentos</span></div><div><strong>${state.hints}</strong><span>ayudas consultadas</span></div></div><p class="eyebrow">LA PALABRA DEL CUADERNO</p><div class="final-word">${esc(story.palabra)}</div><p class="end-note">Una palabra para recordar el viaje. Este ejemplo abierto no emite certificados de identidad ni calificaciones.</p>${btn('report','Guardar mi cuaderno','primary-button')}${btn('restart','Volver a explorar')}</div></main>`;
@@ -45,7 +61,7 @@
   function startGame(event) {
     event.preventDefault();
     if (state.phase !== 'cover') return;
-    bank = window.BANCOS.find(b => String(b.id) === screen.querySelector('#bloque').value);
+    bank = window[subject.global].find(b => String(b.id) === screen.querySelector('#bloque').value);
     difficulty = screen.querySelector('#dificultad').value;
     story = pick(stories);
     chapters = story.paradas.map((stop, i) => ({
@@ -58,7 +74,7 @@
     state = fresh();
     state.phase = 'play';
     const banner = document.querySelector('.demo-banner');
-    banner.textContent = [story.nombre, bank.nombre, difficultyName()].join(' · ');
+    banner.textContent = [subject.nombre, story.nombre, bank.nombre, difficultyName()].join(' · ');
     banner.hidden = false;
     log('inicio', banner.textContent);
     render(true);
@@ -91,7 +107,7 @@
     render(true);
   }
   function report(){
-    const text=['ESTADÍSTICA DE TURISMO', story.nombre, bank.nombre, difficultyName(), 'Correo: '+(state.email || 'Sin indicar'),'Estado: '+(state.phase==='end'?'Recorrido completado · '+story.palabra:state.phase==='cover'?'Sin comenzar':'Hito '+(state.current+1)+' de 6'),'Reintentos: '+state.mistakes,'Ayudas: '+state.hints,'','Registro local de esta sesión:',...state.log.map(e=>`${e.time} | ${e.place} | ${e.action} | ${e.detail}`),'','Demostración: este cuaderno no acredita identidad, aprendizaje autónomo ni una calificación. No se envía a ningún profesor.'].join('\n');
+    const text=[subject.nombre, story.nombre, bank.nombre, difficultyName(), 'Correo: '+(state.email || 'Sin indicar'),'Estado: '+(state.phase==='end'?'Recorrido completado · '+story.palabra:state.phase==='cover'?'Sin comenzar':'Hito '+(state.current+1)+' de 6'),'Reintentos: '+state.mistakes,'Ayudas: '+state.hints,'','Registro local de esta sesión:',...state.log.map(e=>`${e.time} | ${e.place} | ${e.action} | ${e.detail}`),'','Demostración: este cuaderno no acredita identidad, aprendizaje autónomo ni una calificación. No se envía a ningún profesor.'].join('\n');
     const url=URL.createObjectURL(new Blob(['\ufeff'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='Mi_cuaderno_Sevilla.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   const actions={
@@ -119,7 +135,7 @@
     },
     close,
     help(){modal('Sigue las pistas de Sevilla','<ol><li>Pulsa los tres objetos del escenario y resuelve sus casos.</li><li>Tres hallazgos revelan un código en el cuaderno.</li><li>Pulsa la cerradura e introduce el código para avanzar.</li><li>Si fallas una respuesta o una combinación, repites las tres pistas del hito actual. Conservas las cerraduras ya abiertas.</li></ol><p>Puedes pedir ayuda. No hay cronómetro ni vidas limitadas.</p><p class="modal-note">La partida vive en esta pestaña: recargar o cerrar pierde el progreso. Los códigos cambian en cada expedición. Puedes añadir tu correo universitario al cuaderno desde la primera pregunta.</p>',btn('close','Entendido','primary-button'));},
-    about(){modal('Sobre esta actividad','<p>Escape room de Estadística de Turismo. El juego sortea la historia y un problema por apartado del bloque y la dificultad elegidos. Las preguntas se conservan al reintentar. Una nueva partida repite el sorteo.</p><p>El correo opcional y el progreso permanecen en esta pestaña. Puedes descargar tu cuaderno al terminar.</p>',btn('close','Volver','primary-button'));},
+    about(){modal('Sobre esta actividad','<p>Escape room de estadística aplicada. El juego sortea la historia y un problema por apartado del bloque y la dificultad elegidos. Las preguntas se conservan al reintentar. Una nueva partida repite el sorteo.</p><p>El correo opcional y el progreso permanecen en esta pestaña. Puedes descargar tu cuaderno al terminar.</p>',btn('close','Volver','primary-button'));},
     hint(){if(!active||active.stage!==state.current)return;const q=chapters[state.current].questions[active.j];if(!active.hinted){state.hints++;log('pista',q.title);active.hinted=true;}dialog.querySelector('.hint-box').textContent=q.hint;},
     submit(){if(!active||active.stage!==state.current||state.phase!=='play')return;const chosen=dialog.querySelector('input[name="answer"]:checked');if(!chosen){dialog.querySelector('.input-error').textContent='Elige una respuesta antes de guardar.';return;}const q=chapters[state.current].questions[active.j];if(Number(chosen.value)!==q.answer){retryStage('La pista que debes revisar: '+q.hint);return;}state.solved[state.current][active.j]=true;log('acierto',q.title);const ready=state.solved[state.current].every(Boolean);close();notice={type:'success',title:ready?'Has encontrado el código':'Un hallazgo para tu cuaderno',text:q.explanation+' '+(ready?'El código ya está en tu cuaderno. Pulsa la cerradura e introdúcelo.':'Investiga los otros objetos para completar el código.')};render();screen.focus({preventScroll:true});},
     lock(){if(state.phase!=='play')return;const ready=state.solved[state.current].every(Boolean);modal('La cerradura del cuaderno',`<p class="eyebrow">${esc(chapters[state.current].place)}</p><p>${ready?'Consulta los tres dígitos de tu cuaderno e introdúcelos para abrir el siguiente camino.':'Aún faltan hallazgos. Investiga los tres objetos de este escenario para recuperar el código.'}</p>${ready?'<label class="field-label" for="lock_code">Código de tres dígitos</label><input id="lock_code" inputmode="numeric" maxlength="3" autocomplete="off" placeholder="···"><p class="input-error" role="alert"></p>':''}<p class="modal-note">Una combinación incorrecta reinicia las tres pistas de este hito.</p>`,btn('close','Volver')+(ready?btn('unlock','Abrir cerradura','primary-button'):''));},
