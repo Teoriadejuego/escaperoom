@@ -1,6 +1,8 @@
 'use strict';
 (() => {
   const el = id => document.getElementById(id);
+  Personajes.montar(document.querySelector(".personajes"));
+  let personaje;
   const courses = window.ASIGNATURAS;
   const selector = el('asignatura');
   const content = el('contenido');
@@ -45,10 +47,11 @@
       const pool = section[difficulty];
       return pool[Math.floor(Math.random()*pool.length)];
     });
+    personaje = new FormData(el("setup")).get("personaje");
     start = performance.now(); position = correct = 0;
     el('setup').hidden = true;
     el('sesion').hidden = false;
-    el('datos').textContent = [course.nombre, block.nombre, difficulty === 'facil' ? 'Fácil':'Difícil'].join(' · ');
+    el('datos').textContent = [Personajes.buscar(personaje).nombre, course.nombre, block.nombre, difficulty === 'facil' ? 'Fácil':'Difícil'].join(' · ');
     showQuestion();
   };
   function showQuestion() {
@@ -81,7 +84,7 @@
     heading.focus();
   }
   function finish() {
-    const code=CodigosDePartida.crear(difficulty,performance.now()-start,'CO',0,0);
+    const code=CodigosDePartida.crear(difficulty,performance.now()-start,'CO',0,0,personaje);
     const grade=(10*correct/questions.length).toLocaleString('es-ES',{maximumFractionDigits:2});
     const heading=node('h2','Cuestionario finalizado'); heading.tabIndex=-1;
     const label=node('label','Código de finalización'), input=document.createElement('input');

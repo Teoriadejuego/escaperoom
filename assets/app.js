@@ -34,9 +34,10 @@
         <form id="setup"><label>Asignatura<select id="asignatura">${subjects.map(s => `<option value="${s.id}">${esc(s.nombre)}</option>`).join('')}</select></label>
         <small id="origen-banco" hidden>Banco provisional de Estadística I de Finanzas y Contabilidad.</small><label>Bloque<select id="bloque"></select></label>
         <label>Dificultad<select id="dificultad"><option value="facil">Fácil</option><option value="dificil">Difícil</option></select></label>
-        <button class="primary-button start-button" type="submit" disabled>Abrir la aventura ↗</button>
+        <fieldset class="personajes"><legend>Elige tu personaje</legend></fieldset><button class="primary-button start-button" type="submit" disabled>Abrir la aventura ↗</button>
         <div id="bank-error" hidden role="status">No se han podido cargar las preguntas. <button type="button">Reintentar</button></div></form>
         </div></main>`;
+      Personajes.montar(screen.querySelector(".personajes"));
       const subjectSelect = screen.querySelector('#asignatura');
       const blockSelect = screen.querySelector('#bloque');
       subjectSelect.value = subject.id;
@@ -86,10 +87,11 @@
       })
     }));
     state = fresh();
+    state.personaje = screen.querySelector("input[name=personaje]:checked").value;
     state.phase = 'play';
     state.inicio = performance.now();
     const banner = document.querySelector('.demo-banner');
-    banner.textContent = [subject.nombre, story.nombre, bank.nombre, difficultyName()].join(' · ');
+    banner.textContent = [Personajes.buscar(state.personaje).nombre, subject.nombre, story.nombre, bank.nombre, difficultyName()].join(' · ');
     banner.hidden = false;
     log('inicio', banner.textContent);
     render(true);
@@ -122,7 +124,7 @@
     render(true);
   }
   function report(){
-    const text=[subject.nombre,...(state.codigo?['Código de finalización: '+state.codigo]:[]), story.nombre, bank.nombre, difficultyName(), 'Correo: '+(state.email || 'Sin indicar'),'Estado: '+(state.phase==='end'?'Recorrido completado · '+story.palabra:state.phase==='cover'?'Sin comenzar':'Hito '+(state.current+1)+' de 6'),'Reintentos: '+state.mistakes,'Ayudas: '+state.hints,'','Registro local de esta sesión:',...state.log.map(e=>`${e.time} | ${e.place} | ${e.action} | ${e.detail}`),'','Demostración: este cuaderno no acredita identidad, aprendizaje autónomo ni una calificación. No se envía a ningún profesor.'].join('\n');
+    const text=[subject.nombre,'Personaje: '+Personajes.buscar(state.personaje).nombre,...(state.codigo?['Código de finalización: '+state.codigo]:[]), story.nombre, bank.nombre, difficultyName(), 'Correo: '+(state.email || 'Sin indicar'),'Estado: '+(state.phase==='end'?'Recorrido completado · '+story.palabra:state.phase==='cover'?'Sin comenzar':'Hito '+(state.current+1)+' de 6'),'Reintentos: '+state.mistakes,'Ayudas: '+state.hints,'','Registro local de esta sesión:',...state.log.map(e=>`${e.time} | ${e.place} | ${e.action} | ${e.detail}`),'','Demostración: este cuaderno no acredita identidad, aprendizaje autónomo ni una calificación. No se envía a ningún profesor.'].join('\n');
     const url=URL.createObjectURL(new Blob(['\ufeff'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='Mi_cuaderno_Sevilla.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   const actions={
@@ -166,7 +168,7 @@
     hint(){if(!active||active.stage!==state.current)return;const q=chapters[state.current].questions[active.j];if(!active.hinted){state.hints++;log('pista',q.title);active.hinted=true;}dialog.querySelector('.hint-box').textContent=q.hint;},
     submit(){if(!active||active.stage!==state.current||state.phase!=='play')return;const chosen=dialog.querySelector('input[name="answer"]:checked');if(!chosen){dialog.querySelector('.input-error').textContent='Elige una respuesta antes de guardar.';return;}const q=chapters[state.current].questions[active.j];if(Number(chosen.value)!==q.answer){retryStage('La pista que debes revisar: '+q.hint);return;}state.solved[state.current][active.j]=true;log('acierto',q.title);const ready=state.solved[state.current].every(Boolean);close();notice={type:'success',title:ready?'Has encontrado el código':'Un hallazgo para tu cuaderno',text:q.explanation+' '+(ready?'El código ya está en tu cuaderno. Pulsa la cerradura e introdúcelo.':'Investiga los otros objetos para completar el código.')};render();screen.focus({preventScroll:true});},
     lock(){if(state.phase!=='play')return;const ready=state.solved[state.current].every(Boolean);modal('La cerradura del cuaderno',`<p class="eyebrow">${esc(chapters[state.current].place)}</p><p>${ready?'Consulta los tres dígitos de tu cuaderno e introdúcelos para abrir el siguiente camino.':'Aún faltan hallazgos. Investiga los tres objetos de este escenario para recuperar el código.'}</p>${ready?'<label class="field-label" for="lock_code">Código de tres dígitos</label><input id="lock_code" inputmode="numeric" maxlength="3" autocomplete="off" placeholder="···"><p class="input-error" role="alert"></p>':''}<p class="modal-note">Una combinación incorrecta reinicia las tres pistas de este hito.</p>`,btn('close','Volver')+(ready?btn('unlock','Abrir cerradura','primary-button'):''));},
-    unlock(){if(state.phase!=='play'||!state.solved[state.current].every(Boolean))return;const code=dialog.querySelector('#lock_code')?.value.trim();if(!code){dialog.querySelector('.input-error').textContent='Introduce los tres dígitos del cuaderno.';return;}if(code!==state.codes[state.current]){retryStage('La combinación no coincide con el código recuperado.');return;}log('cerradura abierta');const old=state.current;close();if(old===chapters.length-1){state.codigo=CodigosDePartida.crear(difficulty, performance.now()-state.inicio, 'TR', state.mistakes, state.hints);state.phase='end';notice=null;}else{state.current++;notice={type:'success',title:'Un nuevo camino',text:chapters[old].next_text};}render(true);},
+    unlock(){if(state.phase!=='play'||!state.solved[state.current].every(Boolean))return;const code=dialog.querySelector('#lock_code')?.value.trim();if(!code){dialog.querySelector('.input-error').textContent='Introduce los tres dígitos del cuaderno.';return;}if(code!==state.codes[state.current]){retryStage('La combinación no coincide con el código recuperado.');return;}log('cerradura abierta');const old=state.current;close();if(old===chapters.length-1){state.codigo=CodigosDePartida.crear(difficulty, performance.now()-state.inicio, 'TR', state.mistakes, state.hints, state.personaje);state.phase='end';notice=null;}else{state.current++;notice={type:'success',title:'Un nuevo camino',text:chapters[old].next_text};}render(true);},
     report,
     restart(){modal('¿Comenzar otra expedición?','<p>Se borrará el progreso de esta sesión y cambiarán los códigos. Puedes descargar tu cuaderno antes.</p>',btn('close','Seguir aquí')+btn('confirm-restart','Empezar de nuevo','primary-button'));},
     'confirm-restart'(){close();state=fresh();notice=null;render(true);}

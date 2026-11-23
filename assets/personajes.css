@@ -1,0 +1,11 @@
+.personajes{border:0;margin:.35rem 0;padding:0;min-width:0}
+.personajes legend{font-weight:650;padding:0;margin-bottom:.45rem}
+.retrato-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.45rem}
+.retrato-grid label,#setup .retrato-grid label{position:relative;display:grid;justify-items:center;align-content:start;gap:2px;padding:.35rem;margin:0;border:1px solid #a9b4ac;border-radius:6px;background:#fffdf8;color:#18392f;cursor:pointer;text-align:center}
+.retrato-grid input{position:absolute;top:3px;left:3px;width:1rem;height:1rem;margin:0;accent-color:#225447}
+.retrato{display:block;width:min(100%,5rem);aspect-ratio:1;background-image:url('personajes.webp');background-size:300% 200%;border-radius:50%}
+.retrato-grid small{font-size:.72rem;line-height:1.15}
+.retrato-grid label:has(input:checked){outline:2px solid #225447;background:#e8f0e9}
+.retrato-grid label:focus-within{outline:3px solid #345daa;outline-offset:1px}
+.control .retrato{width:3.2rem}
+.control .retrato-grid label{background:white;color:#243e59}
