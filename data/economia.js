@@ -2987,5 +2987,1001 @@ window.ECONOMIA = [
         ]
       }
     ]
+  },
+  {
+    "id": "eco-prob",
+    "nombre": "Probabilidad · Tema 10",
+    "apartados": [
+      {
+        "nombre": "Sucesos y unión",
+        "facil": [
+          {
+            "story": "Una muestra aleatoria de operaciones permite estimar riesgos.",
+            "prompt": "P(retraso) = 0,4, P(reclamación) = 0,2 y P(ambos) = 0,1. ¿Cuál es P(retraso o reclamación)?",
+            "options": [
+              "0,5",
+              "0,6",
+              "0,08"
+            ],
+            "answer": 1,
+            "hint": "Suma las probabilidades marginales y resta la intersección.",
+            "explanation": "Suma las probabilidades marginales y resta la intersección. Resultado: 0,5."
+          },
+          {
+            "story": "Una muestra aleatoria de operaciones permite estimar riesgos.",
+            "prompt": "P(retraso) = 0,4, P(reclamación) = 0,3 y P(ambos) = 0,1. ¿Cuál es P(retraso o reclamación)?",
+            "options": [
+              "0,7",
+              "0,12",
+              "0,6"
+            ],
+            "answer": 3,
+            "hint": "Suma las probabilidades marginales y resta la intersección.",
+            "explanation": "Suma las probabilidades marginales y resta la intersección. Resultado: 0,6."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Una muestra aleatoria de operaciones permite estimar riesgos.",
+            "prompt": "P(retraso) = 0,4, P(reclamación) = 0,2 y P(ambos) = 0,1. ¿Cuál es la probabilidad de exactamente uno de los dos problemas?",
+            "options": [
+              "0,5",
+              "0,6",
+              "0,4"
+            ],
+            "answer": 3,
+            "hint": "Resta la intersección de la unión para excluir los casos con ambos problemas.",
+            "explanation": "Resta la intersección de la unión para excluir los casos con ambos problemas. Resultado: 0,4."
+          },
+          {
+            "story": "Una muestra aleatoria de operaciones permite estimar riesgos.",
+            "prompt": "P(retraso) = 0,4, P(reclamación) = 0,3 y P(ambos) = 0,1. ¿Cuál es la probabilidad de exactamente uno de los dos problemas?",
+            "options": [
+              "0,6",
+              "0,5",
+              "0,7"
+            ],
+            "answer": 2,
+            "hint": "Resta la intersección de la unión para excluir los casos con ambos problemas.",
+            "explanation": "Resta la intersección de la unión para excluir los casos con ambos problemas. Resultado: 0,5."
+          }
+        ]
+      },
+      {
+        "nombre": "Un solo suceso",
+        "facil": [
+          {
+            "story": "De 100 comercios, 34 venden por internet, 31 exportan y 12 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "30 %",
+              "41 %",
+              "34 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "P(A) = 34/100. Resultado: 34 %."
+          },
+          {
+            "story": "De 100 comercios, 38 venden por internet, 34 exportan y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "45 %",
+              "41 %",
+              "38 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "P(A) = 38/100. Resultado: 38 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 comercios, 34 venden por internet, 31 exportan y 12 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de que se cumpla exactamente una de las dos condiciones? Redondea a dos decimales si es necesario.",
+            "options": [
+              "28 %",
+              "41 %",
+              "44 %"
+            ],
+            "answer": 2,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "Solo A y solo B son disjuntos. Sus recuentos suman (34−12)+(31−12). Resultado: 41 %."
+          },
+          {
+            "story": "De 100 comercios, 38 venden por internet, 34 exportan y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de que se cumpla exactamente una de las dos condiciones? Redondea a dos decimales si es necesario.",
+            "options": [
+              "53 %",
+              "33 %",
+              "46 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "Solo A y solo B son disjuntos. Sus recuentos suman (38−13)+(34−13). Resultado: 46 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Complemento",
+        "facil": [
+          {
+            "story": "Una auditoría selecciona expedientes al azar.",
+            "prompt": "El 20 % de expedientes contiene un error. Las dos selecciones se hacen con reposición e independencia. ¿Cuál es la probabilidad de que un expediente carezca de errores?",
+            "options": [
+              "0,2",
+              "0,64",
+              "0,8"
+            ],
+            "answer": 3,
+            "hint": "Toma el complemento de la probabilidad de error.",
+            "explanation": "Toma el complemento de la probabilidad de error. Resultado: 0,8."
+          },
+          {
+            "story": "Una auditoría selecciona expedientes al azar.",
+            "prompt": "El 30 % de expedientes contiene un error. Las dos selecciones se hacen con reposición e independencia. ¿Cuál es la probabilidad de que un expediente carezca de errores?",
+            "options": [
+              "0,3",
+              "0,7",
+              "0,49"
+            ],
+            "answer": 2,
+            "hint": "Toma el complemento de la probabilidad de error.",
+            "explanation": "Toma el complemento de la probabilidad de error. Resultado: 0,7."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Una auditoría selecciona expedientes al azar.",
+            "prompt": "El 20 % de expedientes contiene un error. Las dos selecciones se hacen con reposición e independencia. ¿Cuál es la probabilidad de hallar al menos un expediente con error en las dos selecciones?",
+            "options": [
+              "0,04",
+              "0,36",
+              "0,64"
+            ],
+            "answer": 2,
+            "hint": "Resta de uno la probabilidad de que ambos estén libres de errores.",
+            "explanation": "Resta de uno la probabilidad de que ambos estén libres de errores. Resultado: 0,36."
+          },
+          {
+            "story": "Una auditoría selecciona expedientes al azar.",
+            "prompt": "El 30 % de expedientes contiene un error. Las dos selecciones se hacen con reposición e independencia. ¿Cuál es la probabilidad de hallar al menos un expediente con error en las dos selecciones?",
+            "options": [
+              "0,51",
+              "0,09",
+              "0,49"
+            ],
+            "answer": 1,
+            "hint": "Resta de uno la probabilidad de que ambos estén libres de errores.",
+            "explanation": "Resta de uno la probabilidad de que ambos estén libres de errores. Resultado: 0,51."
+          }
+        ]
+      },
+      {
+        "nombre": "Fuera de ambos grupos",
+        "facil": [
+          {
+            "story": "De 100 comercios, 36 venden por internet, 31 exportan y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de no cumplir B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "69 %",
+              "76 %",
+              "72 %"
+            ],
+            "answer": 1,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "Quedan 100−31 fuera de B. Resultado: 69 %."
+          },
+          {
+            "story": "De 100 comercios, 40 venden por internet, 34 exportan y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de no cumplir B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "62 %",
+              "66 %",
+              "73 %"
+            ],
+            "answer": 2,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "Quedan 100−34 fuera de B. Resultado: 66 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 comercios, 36 venden por internet, 31 exportan y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de quedar fuera de ambos grupos? Redondea a dos decimales si es necesario.",
+            "options": [
+              "42 %",
+              "46 %",
+              "37 %"
+            ],
+            "answer": 2,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "La unión reúne 36+31−13 elementos. Toma su complemento. Resultado: 46 %."
+          },
+          {
+            "story": "De 100 comercios, 40 venden por internet, 34 exportan y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de quedar fuera de ambos grupos? Redondea a dos decimales si es necesario.",
+            "options": [
+              "47 %",
+              "36 %",
+              "40 %"
+            ],
+            "answer": 3,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "La unión reúne 40+34−14 elementos. Toma su complemento. Resultado: 40 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Probabilidad condicionada",
+        "facil": [
+          {
+            "story": "Una cartera incluye empresas de diferentes tamaños.",
+            "prompt": "De 100 créditos, 40 pertenecen a pymes y 8 son simultáneamente de pymes y morosos. ¿Qué probabilidad tiene un crédito al azar de reunir las dos condiciones?",
+            "options": [
+              "0,2",
+              "0,08",
+              "0,4"
+            ],
+            "answer": 2,
+            "hint": "Divide el recuento conjunto por el total.",
+            "explanation": "Divide el recuento conjunto por el total. Resultado: 0,08."
+          },
+          {
+            "story": "Una cartera incluye empresas de diferentes tamaños.",
+            "prompt": "De 100 créditos, 40 pertenecen a pymes y 12 son simultáneamente de pymes y morosos. ¿Qué probabilidad tiene un crédito al azar de reunir las dos condiciones?",
+            "options": [
+              "0,12",
+              "0,3",
+              "0,4"
+            ],
+            "answer": 1,
+            "hint": "Divide el recuento conjunto por el total.",
+            "explanation": "Divide el recuento conjunto por el total. Resultado: 0,12."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Una cartera incluye empresas de diferentes tamaños.",
+            "prompt": "De 100 créditos, 40 pertenecen a pymes y 8 son simultáneamente de pymes y morosos. Sabiendo que pertenece a una pyme, ¿qué probabilidad tiene de estar en mora?",
+            "options": [
+              "0,2",
+              "0,08",
+              "0,4"
+            ],
+            "answer": 1,
+            "hint": "El denominador pasa a ser el total de créditos a pymes.",
+            "explanation": "El denominador pasa a ser el total de créditos a pymes. Resultado: 0,2."
+          },
+          {
+            "story": "Una cartera incluye empresas de diferentes tamaños.",
+            "prompt": "De 100 créditos, 40 pertenecen a pymes y 12 son simultáneamente de pymes y morosos. Sabiendo que pertenece a una pyme, ¿qué probabilidad tiene de estar en mora?",
+            "options": [
+              "0,12",
+              "0,4",
+              "0,3"
+            ],
+            "answer": 3,
+            "hint": "El denominador pasa a ser el total de créditos a pymes.",
+            "explanation": "El denominador pasa a ser el total de créditos a pymes. Resultado: 0,3."
+          }
+        ]
+      },
+      {
+        "nombre": "Probabilidad inversa",
+        "facil": [
+          {
+            "story": "De 100 comercios, 38 venden por internet, 31 exportan y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "52,16 %",
+              "64,16 %",
+              "45,16 %"
+            ],
+            "answer": 3,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 31 elementos, de los cuales 14 cumplen A. Resultado: 45,16 %."
+          },
+          {
+            "story": "De 100 comercios, 42 venden por internet, 34 exportan y 15 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "51,12 %",
+              "63,12 %",
+              "44,12 %"
+            ],
+            "answer": 3,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 34 elementos, de los cuales 15 cumplen A. Resultado: 44,12 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 comercios, 38 venden por internet, 31 exportan y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes no cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "53,78 %",
+              "34,78 %",
+              "37,78 %"
+            ],
+            "answer": 2,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 69 elementos, de los cuales 24 cumplen A. Resultado: 34,78 %."
+          },
+          {
+            "story": "De 100 comercios, 42 venden por internet, 34 exportan y 15 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes no cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "43,91 %",
+              "40,91 %",
+              "27,91 %"
+            ],
+            "answer": 2,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 66 elementos, de los cuales 27 cumplen A. Resultado: 40,91 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Producto de probabilidades",
+        "facil": [
+          {
+            "story": "Un proveedor pasa dos controles sucesivos.",
+            "prompt": "P(superar el primer control) = 0,8 y P(superar el segundo dado que superó el primero) = 0,6. Entre quienes superan el primero, ¿qué probabilidad hay de fallar el segundo?",
+            "options": [
+              "0,4",
+              "0,6",
+              "0,2"
+            ],
+            "answer": 1,
+            "hint": "Toma el complemento de la probabilidad condicionada.",
+            "explanation": "Toma el complemento de la probabilidad condicionada. Resultado: 0,4."
+          },
+          {
+            "story": "Un proveedor pasa dos controles sucesivos.",
+            "prompt": "P(superar el primer control) = 0,8 y P(superar el segundo dado que superó el primero) = 0,7. Entre quienes superan el primero, ¿qué probabilidad hay de fallar el segundo?",
+            "options": [
+              "0,7",
+              "0,2",
+              "0,3"
+            ],
+            "answer": 3,
+            "hint": "Toma el complemento de la probabilidad condicionada.",
+            "explanation": "Toma el complemento de la probabilidad condicionada. Resultado: 0,3."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Un proveedor pasa dos controles sucesivos.",
+            "prompt": "P(superar el primer control) = 0,8 y P(superar el segundo dado que superó el primero) = 0,6. ¿Qué probabilidad tiene un proveedor de superar ambos controles?",
+            "options": [
+              "0,32",
+              "0,6",
+              "0,48"
+            ],
+            "answer": 3,
+            "hint": "Multiplica la probabilidad del primer éxito por la del segundo condicionada al primero.",
+            "explanation": "Multiplica la probabilidad del primer éxito por la del segundo condicionada al primero. Resultado: 0,48."
+          },
+          {
+            "story": "Un proveedor pasa dos controles sucesivos.",
+            "prompt": "P(superar el primer control) = 0,8 y P(superar el segundo dado que superó el primero) = 0,7. ¿Qué probabilidad tiene un proveedor de superar ambos controles?",
+            "options": [
+              "0,24",
+              "0,56",
+              "0,7"
+            ],
+            "answer": 2,
+            "hint": "Multiplica la probabilidad del primer éxito por la del segundo condicionada al primero.",
+            "explanation": "Multiplica la probabilidad del primer éxito por la del segundo condicionada al primero. Resultado: 0,56."
+          }
+        ]
+      },
+      {
+        "nombre": "Intersección mediante condicionamiento",
+        "facil": [
+          {
+            "story": "En una muestra de comercios, el 40 % venden por internet. Entre quienes cumplen esta condición, el 31 % exportan.",
+            "prompt": "¿Qué porcentaje cumple la primera condición? Redondea a dos decimales si es necesario.",
+            "options": [
+              "59 %",
+              "40 %",
+              "47 %"
+            ],
+            "answer": 2,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "El porcentaje marginal de la primera condición es 40 %. Resultado: 40 %."
+          },
+          {
+            "story": "En una muestra de comercios, el 44 % venden por internet. Entre quienes cumplen esta condición, el 34 % exportan.",
+            "prompt": "¿Qué porcentaje cumple la primera condición? Redondea a dos decimales si es necesario.",
+            "options": [
+              "31 %",
+              "35 %",
+              "44 %"
+            ],
+            "answer": 3,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "El porcentaje marginal de la primera condición es 44 %. Resultado: 44 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "En una muestra de comercios, el 40 % venden por internet. Entre quienes cumplen esta condición, el 31 % exportan.",
+            "prompt": "¿Qué porcentaje del total cumple la primera condición pero no la segunda? Redondea a dos decimales si es necesario.",
+            "options": [
+              "30,6 %",
+              "27,6 %",
+              "23,6 %"
+            ],
+            "answer": 2,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "Multiplica 40/100 por (1−31/100). Resultado: 27,6 %."
+          },
+          {
+            "story": "En una muestra de comercios, el 44 % venden por internet. Entre quienes cumplen esta condición, el 34 % exportan.",
+            "prompt": "¿Qué porcentaje del total cumple la primera condición pero no la segunda? Redondea a dos decimales si es necesario.",
+            "options": [
+              "29,04 %",
+              "36,04 %",
+              "20,04 %"
+            ],
+            "answer": 1,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "Multiplica 44/100 por (1−34/100). Resultado: 29,04 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Independencia de incidencias",
+        "facil": [
+          {
+            "story": "Dos máquinas sufren averías independientes.",
+            "prompt": "P(avería de A) = 0,2 y P(avería de B) = 0,4. ¿Qué probabilidad tiene una avería simultánea?",
+            "options": [
+              "0,6",
+              "0,32",
+              "0,08"
+            ],
+            "answer": 3,
+            "hint": "Por independencia multiplica las probabilidades.",
+            "explanation": "Por independencia multiplica las probabilidades. Resultado: 0,08."
+          },
+          {
+            "story": "Dos máquinas sufren averías independientes.",
+            "prompt": "P(avería de A) = 0,3 y P(avería de B) = 0,4. ¿Qué probabilidad tiene una avería simultánea?",
+            "options": [
+              "0,7",
+              "0,12",
+              "0,28"
+            ],
+            "answer": 2,
+            "hint": "Por independencia multiplica las probabilidades.",
+            "explanation": "Por independencia multiplica las probabilidades. Resultado: 0,12."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Dos máquinas sufren averías independientes.",
+            "prompt": "P(avería de A) = 0,2 y P(avería de B) = 0,4. ¿Cuál es la probabilidad de que se averíe exactamente una máquina?",
+            "options": [
+              "0,6",
+              "0,44",
+              "0,08"
+            ],
+            "answer": 2,
+            "hint": "Suma los dos casos disjuntos en que falla una máquina y funciona la otra.",
+            "explanation": "Suma los dos casos disjuntos en que falla una máquina y funciona la otra. Resultado: 0,44."
+          },
+          {
+            "story": "Dos máquinas sufren averías independientes.",
+            "prompt": "P(avería de A) = 0,3 y P(avería de B) = 0,4. ¿Cuál es la probabilidad de que se averíe exactamente una máquina?",
+            "options": [
+              "0,46",
+              "0,7",
+              "0,12"
+            ],
+            "answer": 1,
+            "hint": "Suma los dos casos disjuntos en que falla una máquina y funciona la otra.",
+            "explanation": "Suma los dos casos disjuntos en que falla una máquina y funciona la otra. Resultado: 0,46."
+          }
+        ]
+      },
+      {
+        "nombre": "Diferencia entre sucesos",
+        "facil": [
+          {
+            "story": "De 100 comercios, 42 venden por internet, 31 exportan y 16 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple A pero no B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "29 %",
+              "26 %",
+              "13 %"
+            ],
+            "answer": 2,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Del total que cumple A resta la intersección: 42−16. Resultado: 26 %."
+          },
+          {
+            "story": "De 100 comercios, 46 venden por internet, 34 exportan y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple A pero no B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "25 %",
+              "16 %",
+              "29 %"
+            ],
+            "answer": 3,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Del total que cumple A resta la intersección: 46−17. Resultado: 29 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 comercios, 42 venden por internet, 31 exportan y 16 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen al menos una condición, ¿qué porcentaje cumple solo B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "26,32 %",
+              "33,32 %",
+              "22,32 %"
+            ],
+            "answer": 1,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Hay 15 casos solo B y 57 en la unión. Divide el primer recuento entre el segundo. Resultado: 26,32 %."
+          },
+          {
+            "story": "De 100 comercios, 46 venden por internet, 34 exportan y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen al menos una condición, ¿qué porcentaje cumple solo B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "33,98 %",
+              "29,98 %",
+              "26,98 %"
+            ],
+            "answer": 3,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Hay 17 casos solo B y 63 en la unión. Divide el primer recuento entre el segundo. Resultado: 26,98 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Extracción sin reposición",
+        "facil": [
+          {
+            "story": "Se audita un lote cerrado de facturas.",
+            "prompt": "Hay 20 facturas y 4 son incorrectas. Se extraen dos al azar sin reposición. ¿Qué probabilidad hay de que la primera sea incorrecta?",
+            "options": [
+              "0,2105",
+              "0,2",
+              "0,1579"
+            ],
+            "answer": 2,
+            "hint": "Compara las facturas incorrectas con el total inicial.",
+            "explanation": "Compara las facturas incorrectas con el total inicial. Resultado: 0,2."
+          },
+          {
+            "story": "Se audita un lote cerrado de facturas.",
+            "prompt": "Hay 20 facturas y 5 son incorrectas. Se extraen dos al azar sin reposición. ¿Qué probabilidad hay de que la primera sea incorrecta?",
+            "options": [
+              "0,25",
+              "0,2632",
+              "0,2105"
+            ],
+            "answer": 1,
+            "hint": "Compara las facturas incorrectas con el total inicial.",
+            "explanation": "Compara las facturas incorrectas con el total inicial. Resultado: 0,25."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Se audita un lote cerrado de facturas.",
+            "prompt": "Hay 20 facturas y 4 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas?",
+            "options": [
+              "0,0316",
+              "0,04",
+              "0,1579"
+            ],
+            "answer": 1,
+            "hint": "Tras un primer error quedan una factura incorrecta menos y diecinueve facturas en total.",
+            "explanation": "Tras un primer error quedan una factura incorrecta menos y diecinueve facturas en total. Resultado: 0,0316."
+          },
+          {
+            "story": "Se audita un lote cerrado de facturas.",
+            "prompt": "Hay 20 facturas y 5 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas?",
+            "options": [
+              "0,0625",
+              "0,2105",
+              "0,0526"
+            ],
+            "answer": 3,
+            "hint": "Tras un primer error quedan una factura incorrecta menos y diecinueve facturas en total.",
+            "explanation": "Tras un primer error quedan una factura incorrecta menos y diecinueve facturas en total. Resultado: 0,0526."
+          }
+        ]
+      },
+      {
+        "nombre": "Efecto de seleccionar un subgrupo",
+        "facil": [
+          {
+            "story": "De 100 comercios, 44 venden por internet, 31 exportan y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple simultáneamente A y B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "20 %",
+              "24 %",
+              "17 %"
+            ],
+            "answer": 3,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "La intersección contiene 17 de 100. Resultado: 17 %."
+          },
+          {
+            "story": "De 100 comercios, 48 venden por internet, 34 exportan y 18 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple simultáneamente A y B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "25 %",
+              "21 %",
+              "18 %"
+            ],
+            "answer": 3,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "La intersección contiene 18 de 100. Resultado: 18 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 comercios, 44 venden por internet, 31 exportan y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Si se elige exclusivamente entre quienes cumplen A, ¿cuál es la probabilidad de que no se cumpla B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "61,36 %",
+              "64,36 %",
+              "80,36 %"
+            ],
+            "answer": 1,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "De 44 elementos con A, 27 quedan fuera de B. Resultado: 61,36 %."
+          },
+          {
+            "story": "De 100 comercios, 48 venden por internet, 34 exportan y 18 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Si se elige exclusivamente entre quienes cumplen A, ¿cuál es la probabilidad de que no se cumpla B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "58,5 %",
+              "69,5 %",
+              "62,5 %"
+            ],
+            "answer": 3,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "De 48 elementos con A, 30 quedan fuera de B. Resultado: 62,5 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Probabilidad total",
+        "facil": [
+          {
+            "story": "Dos proveedores sirven piezas a una cadena.",
+            "prompt": "A aporta el 40 % y B el 60 %. En A falla el 10 % y en B el 5 %. ¿Cuál es la probabilidad de recibir una pieza de A defectuosa?",
+            "options": [
+              "0,04",
+              "0,1",
+              "0,5"
+            ],
+            "answer": 1,
+            "hint": "Multiplica el peso de A por su tasa de fallo.",
+            "explanation": "Multiplica el peso de A por su tasa de fallo. Resultado: 0,04."
+          },
+          {
+            "story": "Dos proveedores sirven piezas a una cadena.",
+            "prompt": "A aporta el 40 % y B el 60 %. En A falla el 15 % y en B el 5 %. ¿Cuál es la probabilidad de recibir una pieza de A defectuosa?",
+            "options": [
+              "0,15",
+              "0,55",
+              "0,06"
+            ],
+            "answer": 3,
+            "hint": "Multiplica el peso de A por su tasa de fallo.",
+            "explanation": "Multiplica el peso de A por su tasa de fallo. Resultado: 0,06."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Dos proveedores sirven piezas a una cadena.",
+            "prompt": "A aporta el 40 % y B el 60 %. En A falla el 10 % y en B el 5 %. ¿Qué probabilidad de defecto tiene una pieza elegida de la mezcla?",
+            "options": [
+              "0,15",
+              "0,075",
+              "0,07"
+            ],
+            "answer": 3,
+            "hint": "Suma las probabilidades conjuntas de defecto con cada origen.",
+            "explanation": "Suma las probabilidades conjuntas de defecto con cada origen. Resultado: 0,07."
+          },
+          {
+            "story": "Dos proveedores sirven piezas a una cadena.",
+            "prompt": "A aporta el 40 % y B el 60 %. En A falla el 15 % y en B el 5 %. ¿Qué probabilidad de defecto tiene una pieza elegida de la mezcla?",
+            "options": [
+              "0,2",
+              "0,09",
+              "0,1"
+            ],
+            "answer": 2,
+            "hint": "Suma las probabilidades conjuntas de defecto con cada origen.",
+            "explanation": "Suma las probabilidades conjuntas de defecto con cada origen. Resultado: 0,09."
+          }
+        ]
+      },
+      {
+        "nombre": "Dos extracciones independientes",
+        "facil": [
+          {
+            "story": "Se extraen al azar dos registros de comercios con reposición e independientemente. En cada extracción la probabilidad de incidencia es 46 %.",
+            "prompt": "¿Qué probabilidad hay de que ambos registros presenten incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "17,16 %",
+              "28,16 %",
+              "21,16 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Multiplica (46/100) por sí mismo. Resultado: 21,16 %."
+          },
+          {
+            "story": "Se extraen al azar dos registros de comercios con reposición e independientemente. En cada extracción la probabilidad de incidencia es 50 %.",
+            "prompt": "¿Qué probabilidad hay de que ambos registros presenten incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "21 %",
+              "25 %",
+              "28 %"
+            ],
+            "answer": 2,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Multiplica (50/100) por sí mismo. Resultado: 25 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Se extraen al azar dos registros de comercios con reposición e independientemente. En cada extracción la probabilidad de incidencia es 46 %.",
+            "prompt": "¿Qué probabilidad hay de que exactamente uno presente incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "49,68 %",
+              "52,68 %",
+              "36,68 %"
+            ],
+            "answer": 1,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Suma los dos órdenes posibles: 2 × (46/100) × (1−46/100). Resultado: 49,68 %."
+          },
+          {
+            "story": "Se extraen al azar dos registros de comercios con reposición e independientemente. En cada extracción la probabilidad de incidencia es 50 %.",
+            "prompt": "¿Qué probabilidad hay de que exactamente uno presente incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "50 %",
+              "57 %",
+              "41 %"
+            ],
+            "answer": 1,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Suma los dos órdenes posibles: 2 × (50/100) × (1−50/100). Resultado: 50 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Teorema de Bayes",
+        "facil": [
+          {
+            "story": "Un filtro automático revisa solicitudes de crédito.",
+            "prompt": "El 10 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. ¿Cuál es la probabilidad conjunta de irregularidad y alerta?",
+            "options": [
+              "0,8",
+              "0,1",
+              "0,08"
+            ],
+            "answer": 3,
+            "hint": "Aplica la sensibilidad a la proporción de solicitudes irregulares.",
+            "explanation": "Aplica la sensibilidad a la proporción de solicitudes irregulares. Resultado: 0,08."
+          },
+          {
+            "story": "Un filtro automático revisa solicitudes de crédito.",
+            "prompt": "El 15 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. ¿Cuál es la probabilidad conjunta de irregularidad y alerta?",
+            "options": [
+              "0,8",
+              "0,12",
+              "0,15"
+            ],
+            "answer": 2,
+            "hint": "Aplica la sensibilidad a la proporción de solicitudes irregulares.",
+            "explanation": "Aplica la sensibilidad a la proporción de solicitudes irregulares. Resultado: 0,12."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Un filtro automático revisa solicitudes de crédito.",
+            "prompt": "El 10 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad?",
+            "options": [
+              "0,8",
+              "0,4706",
+              "0,1"
+            ],
+            "answer": 2,
+            "hint": "Divide la probabilidad conjunta de irregularidad y alerta por la suma de alertas verdaderas y falsas.",
+            "explanation": "Divide la probabilidad conjunta de irregularidad y alerta por la suma de alertas verdaderas y falsas. Resultado: 0,4706."
+          },
+          {
+            "story": "Un filtro automático revisa solicitudes de crédito.",
+            "prompt": "El 15 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad?",
+            "options": [
+              "0,5854",
+              "0,8",
+              "0,15"
+            ],
+            "answer": 1,
+            "hint": "Divide la probabilidad conjunta de irregularidad y alerta por la suma de alertas verdaderas y falsas.",
+            "explanation": "Divide la probabilidad conjunta de irregularidad y alerta por la suma de alertas verdaderas y falsas. Resultado: 0,5854."
+          }
+        ]
+      },
+      {
+        "nombre": "Muestreo con y sin reposición",
+        "facil": [
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de comercios, 6 contienen incidencias.",
+            "prompt": "Si el primero tenía incidencia, ¿qué probabilidad hay de que el segundo también la tenga? Redondea a dos decimales si es necesario.",
+            "options": [
+              "30,00 %",
+              "31,58 %",
+              "26,32 %"
+            ],
+            "answer": 3,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Quedan 5 con incidencia entre 19. Resultado: 26,32 %."
+          },
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de comercios, 8 contienen incidencias.",
+            "prompt": "Si el primero tenía incidencia, ¿qué probabilidad hay de que el segundo también la tenga? Redondea a dos decimales si es necesario.",
+            "options": [
+              "40,00 %",
+              "42,11 %",
+              "36,84 %"
+            ],
+            "answer": 3,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Quedan 7 con incidencia entre 19. Resultado: 36,84 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de comercios, 6 contienen incidencias.",
+            "prompt": "Antes de extraerlos, ¿qué probabilidad hay de que al menos uno tenga incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "51,00 %",
+              "52,11 %",
+              "30,00 %"
+            ],
+            "answer": 2,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Resta de 1 la probabilidad de dos expedientes limpios: (14/20) × (13/19). Resultado: 52,11 %."
+          },
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de comercios, 8 contienen incidencias.",
+            "prompt": "Antes de extraerlos, ¿qué probabilidad hay de que al menos uno tenga incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "64,00 %",
+              "65,26 %",
+              "40,00 %"
+            ],
+            "answer": 2,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Resta de 1 la probabilidad de dos expedientes limpios: (12/20) × (11/19). Resultado: 65,26 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Revisión de probabilidades",
+        "facil": [
+          {
+            "story": "Un banco usa una prueba para detectar billetes falsos.",
+            "prompt": "De 1000 billetes hay 20 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. ¿Cuántos billetes activa la prueba en total?",
+            "options": [
+              "20",
+              "30",
+              "10"
+            ],
+            "answer": 2,
+            "hint": "Suma verdaderos y falsos positivos.",
+            "explanation": "Suma verdaderos y falsos positivos. Resultado: 30."
+          },
+          {
+            "story": "Un banco usa una prueba para detectar billetes falsos.",
+            "prompt": "De 1000 billetes hay 30 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. ¿Cuántos billetes activa la prueba en total?",
+            "options": [
+              "40",
+              "30",
+              "10"
+            ],
+            "answer": 1,
+            "hint": "Suma verdaderos y falsos positivos.",
+            "explanation": "Suma verdaderos y falsos positivos. Resultado: 40."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Un banco usa una prueba para detectar billetes falsos.",
+            "prompt": "De 1000 billetes hay 20 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. Dado que el billete ha activado la prueba, ¿qué probabilidad hay de que sea auténtico?",
+            "options": [
+              "0,3333",
+              "0,01",
+              "0,6667"
+            ],
+            "answer": 1,
+            "hint": "Entre las alertas, divide las diez de billetes auténticos por el total señalado.",
+            "explanation": "Entre las alertas, divide las diez de billetes auténticos por el total señalado. Resultado: 0,3333."
+          },
+          {
+            "story": "Un banco usa una prueba para detectar billetes falsos.",
+            "prompt": "De 1000 billetes hay 30 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. Dado que el billete ha activado la prueba, ¿qué probabilidad hay de que sea auténtico?",
+            "options": [
+              "0,01",
+              "0,75",
+              "0,25"
+            ],
+            "answer": 3,
+            "hint": "Entre las alertas, divide las diez de billetes auténticos por el total señalado.",
+            "explanation": "Entre las alertas, divide las diez de billetes auténticos por el total señalado. Resultado: 0,25."
+          }
+        ]
+      },
+      {
+        "nombre": "Comprobación posterior de una alerta",
+        "facil": [
+          {
+            "story": "En 1000 registros de comercios, 50 tienen retrasos en las entregas. Un sistema señala 46 de los casos reales y también señala 31 registros sin ese problema.",
+            "prompt": "Entre los registros con el problema, ¿qué porcentaje detecta el sistema? Redondea a dos decimales si es necesario.",
+            "options": [
+              "92 %",
+              "83 %",
+              "79 %"
+            ],
+            "answer": 1,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 50 registros. De ellos, 46 cumplen la condición solicitada. Resultado: 92 %."
+          },
+          {
+            "story": "En 1000 registros de comercios, 54 tienen retrasos en las entregas. Un sistema señala 50 de los casos reales y también señala 34 registros sin ese problema.",
+            "prompt": "Entre los registros con el problema, ¿qué porcentaje detecta el sistema? Redondea a dos decimales si es necesario.",
+            "options": [
+              "92,59 %",
+              "79,59 %",
+              "88,59 %"
+            ],
+            "answer": 1,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 54 registros. De ellos, 50 cumplen la condición solicitada. Resultado: 92,59 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "En 1000 registros de comercios, 50 tienen retrasos en las entregas. Un sistema señala 46 de los casos reales y también señala 31 registros sin ese problema.",
+            "prompt": "Entre los registros señalados, ¿qué porcentaje corresponde a falsas alarmas? Redondea a dos decimales si es necesario.",
+            "options": [
+              "40,26 %",
+              "59,26 %",
+              "43,26 %"
+            ],
+            "answer": 1,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 77 registros. De ellos, 31 cumplen la condición solicitada. Resultado: 40,26 %."
+          },
+          {
+            "story": "En 1000 registros de comercios, 54 tienen retrasos en las entregas. Un sistema señala 50 de los casos reales y también señala 34 registros sin ese problema.",
+            "prompt": "Entre los registros señalados, ¿qué porcentaje corresponde a falsas alarmas? Redondea a dos decimales si es necesario.",
+            "options": [
+              "47,48 %",
+              "40,48 %",
+              "27,48 %"
+            ],
+            "answer": 2,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 84 registros. De ellos, 34 cumplen la condición solicitada. Resultado: 40,48 %."
+          }
+        ]
+      }
+    ]
   }
 ];

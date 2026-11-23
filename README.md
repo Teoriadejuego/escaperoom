@@ -8,15 +8,16 @@ La versión de Turismo sigue el programa de Estadística de Turismo del curso 20
 
 ## Economía y Finanzas y Contabilidad
 
-Puedes compartir el [acceso para Economía](https://teoriadejuego.github.io/escaperoom/?asignatura=economia) o el [acceso para Finanzas y Contabilidad](https://teoriadejuego.github.io/escaperoom/?asignatura=finanzas) con tu clase. Cada asignatura tiene preguntas propias. Sus diez temas se agrupan en tres recorridos de seis hitos.
+Puedes compartir el [acceso para Economía](https://teoriadejuego.github.io/escaperoom/?asignatura=economia) o el [acceso para Finanzas y Contabilidad](https://teoriadejuego.github.io/escaperoom/?asignatura=finanzas) con tu clase. Cada asignatura tiene preguntas propias y ofrece un recorrido exclusivo de probabilidad además de los tres recorridos de repaso.
 
 | Recorrido | Temas | Contenido |
 |---|---|---|
 | Descripción de una característica | 1 a 5 | Conceptos, distribuciones de frecuencias, localización, dispersión, forma y desigualdad |
 | Análisis de dos características | 6 a 8 | Distribuciones conjuntas, correlación y regresión |
 | Índices y probabilidad | 9 y 10 | Comparaciones de precios, cantidades y valor, sucesos y probabilidad condicionada |
+| Probabilidad | 10 | Seis hitos dedicados a sucesos, condicionamiento, independencia, muestreo, probabilidad total y Bayes |
 
-Para Economía se consultó el programa de Estadística 1560001 del curso 2026–27 y los materiales revisados de los grupos 1 y 4. Para Finanzas se tomó el programa local de Estadística I 1610015 y el proyecto docente del grupo 3 de 2025–26. El proyecto local del doble grado en Finanzas y Contabilidad y Relaciones Laborales y Recursos Humanos (2200022) recoge la misma relación de diez temas. Los tres recorridos son una agrupación para la actividad.
+Para Economía se consultó el programa de Estadística 1560001 del curso 2026–27 y los materiales revisados de los grupos 1 y 4. Para Finanzas se tomó el programa local de Estadística I 1610015 y el proyecto docente del grupo 3 de 2025–26. El proyecto local del doble grado en Finanzas y Contabilidad y Relaciones Laborales y Recursos Humanos (2200022) recoge la misma relación de diez temas. Los recorridos son una agrupación para la actividad.
 
 La primera pregunta permite añadir el correo universitario al cuaderno descargable. La partida funciona en el navegador. Para entregar el cuaderno, el estudiante debe descargarlo y presentarlo por el canal indicado por su docente. La palabra final identifica la historia completada. El correo escrito por el jugador carece de verificación de identidad.
 

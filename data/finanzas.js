@@ -2987,5 +2987,1001 @@ window.FINANZAS = [
         ]
       }
     ]
+  },
+  {
+    "id": "fin-prob",
+    "nombre": "Probabilidad · Tema 10",
+    "apartados": [
+      {
+        "nombre": "Probabilidad simple",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Se elige al azar una factura entre 100, con 20 vencidas. ¿Qué probabilidad porcentual hay de que esté vencida?",
+            "options": [
+              "24",
+              "28",
+              "20"
+            ],
+            "answer": 3,
+            "hint": "Cuenta los casos favorables entre los posibles.",
+            "explanation": "Cuenta los casos favorables entre los posibles. El resultado es 20."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Se elige al azar una factura entre 100, con 30 vencidas. ¿Qué probabilidad porcentual hay de que esté vencida?",
+            "options": [
+              "30",
+              "34",
+              "38"
+            ],
+            "answer": 1,
+            "hint": "Cuenta los casos favorables entre los posibles.",
+            "explanation": "Cuenta los casos favorables entre los posibles. El resultado es 30."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Se retiran 5 facturas vencidas de un lote de 100 que contenía 20 vencidas. ¿Qué probabilidad porcentual tiene una elección uniforme de estar vencida ahora? Redondea a tres decimales.",
+            "options": [
+              "15,789",
+              "19,789",
+              "23,789"
+            ],
+            "answer": 1,
+            "hint": "Actualiza el numerador y el denominador.",
+            "explanation": "Actualiza el numerador y el denominador. El resultado es 15,789."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Se retiran 5 facturas vencidas de un lote de 100 que contenía 30 vencidas. ¿Qué probabilidad porcentual tiene una elección uniforme de estar vencida ahora? Redondea a tres decimales.",
+            "options": [
+              "30,316",
+              "26,316",
+              "34,316"
+            ],
+            "answer": 2,
+            "hint": "Actualiza el numerador y el denominador.",
+            "explanation": "Actualiza el numerador y el denominador. El resultado es 26,316."
+          }
+        ]
+      },
+      {
+        "nombre": "Un solo suceso",
+        "facil": [
+          {
+            "story": "De 100 facturas, 37 tienen aval, 31 se han pagado al vencimiento y 12 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "28 %",
+              "40 %",
+              "37 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "P(A) = 37/100. Resultado: 37 %."
+          },
+          {
+            "story": "De 100 facturas, 41 tienen aval, 34 se han pagado al vencimiento y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "41 %",
+              "37 %",
+              "28 %"
+            ],
+            "answer": 1,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "P(A) = 41/100. Resultado: 41 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 facturas, 37 tienen aval, 31 se han pagado al vencimiento y 12 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de que se cumpla exactamente una de las dos condiciones? Redondea a dos decimales si es necesario.",
+            "options": [
+              "47 %",
+              "31 %",
+              "44 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "Solo A y solo B son disjuntos. Sus recuentos suman (37−12)+(31−12). Resultado: 44 %."
+          },
+          {
+            "story": "De 100 facturas, 41 tienen aval, 34 se han pagado al vencimiento y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de que se cumpla exactamente una de las dos condiciones? Redondea a dos decimales si es necesario.",
+            "options": [
+              "68 %",
+              "45 %",
+              "49 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue el total del grupo favorable.",
+            "explanation": "Solo A y solo B son disjuntos. Sus recuentos suman (41−13)+(34−13). Resultado: 49 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Complemento",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "La probabilidad de impago es 20 %. ¿Cuál es la probabilidad porcentual de pago?",
+            "options": [
+              "80",
+              "76",
+              "72"
+            ],
+            "answer": 1,
+            "hint": "La suma del suceso y su complementario es cien por cien.",
+            "explanation": "La suma del suceso y su complementario es cien por cien. El resultado es 80."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "La probabilidad de impago es 30 %. ¿Cuál es la probabilidad porcentual de pago?",
+            "options": [
+              "66",
+              "70",
+              "62"
+            ],
+            "answer": 2,
+            "hint": "La suma del suceso y su complementario es cien por cien.",
+            "explanation": "La suma del suceso y su complementario es cien por cien. El resultado es 70."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Dos facturas independientes tienen probabilidad de impago 20 % cada una. ¿Cuál es la probabilidad porcentual de que se paguen ambas?",
+            "options": [
+              "60",
+              "64",
+              "56"
+            ],
+            "answer": 2,
+            "hint": "Obtén la probabilidad de pago y multiplica para dos facturas independientes.",
+            "explanation": "Obtén la probabilidad de pago y multiplica para dos facturas independientes. El resultado es 64."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Dos facturas independientes tienen probabilidad de impago 30 % cada una. ¿Cuál es la probabilidad porcentual de que se paguen ambas?",
+            "options": [
+              "45",
+              "41",
+              "49"
+            ],
+            "answer": 3,
+            "hint": "Obtén la probabilidad de pago y multiplica para dos facturas independientes.",
+            "explanation": "Obtén la probabilidad de pago y multiplica para dos facturas independientes. El resultado es 49."
+          }
+        ]
+      },
+      {
+        "nombre": "Fuera de ambos grupos",
+        "facil": [
+          {
+            "story": "De 100 facturas, 39 tienen aval, 31 se han pagado al vencimiento y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de no cumplir B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "69 %",
+              "56 %",
+              "60 %"
+            ],
+            "answer": 1,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "Quedan 100−31 fuera de B. Resultado: 69 %."
+          },
+          {
+            "story": "De 100 facturas, 43 tienen aval, 34 se han pagado al vencimiento y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Cuál es la probabilidad de no cumplir B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "53 %",
+              "66 %",
+              "73 %"
+            ],
+            "answer": 2,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "Quedan 100−34 fuera de B. Resultado: 66 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 facturas, 39 tienen aval, 31 se han pagado al vencimiento y 13 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de quedar fuera de ambos grupos? Redondea a dos decimales si es necesario.",
+            "options": [
+              "34 %",
+              "43 %",
+              "62 %"
+            ],
+            "answer": 2,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "La unión reúne 39+31−13 elementos. Toma su complemento. Resultado: 43 %."
+          },
+          {
+            "story": "De 100 facturas, 43 tienen aval, 34 se han pagado al vencimiento y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué probabilidad hay de quedar fuera de ambos grupos? Redondea a dos decimales si es necesario.",
+            "options": [
+              "44 %",
+              "33 %",
+              "37 %"
+            ],
+            "answer": 3,
+            "hint": "Cuenta los casos de la unión una sola vez.",
+            "explanation": "La unión reúne 43+34−14 elementos. Toma su complemento. Resultado: 37 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Unión",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Dos vías de pago excluyentes representan 20 % y 30 %. ¿Qué porcentaje usa una u otra?",
+            "options": [
+              "46",
+              "50",
+              "54"
+            ],
+            "answer": 2,
+            "hint": "Suma las cuotas de dos sucesos incompatibles.",
+            "explanation": "Suma las cuotas de dos sucesos incompatibles. El resultado es 50."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Dos vías de pago excluyentes representan 30 % y 30 %. ¿Qué porcentaje usa una u otra?",
+            "options": [
+              "56",
+              "64",
+              "60"
+            ],
+            "answer": 3,
+            "hint": "Suma las cuotas de dos sucesos incompatibles.",
+            "explanation": "Suma las cuotas de dos sucesos incompatibles. El resultado es 60."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Un 20 % contrata factoring, un 30 % renting y un 5 % ambos. ¿Qué porcentaje contrata exactamente uno?",
+            "options": [
+              "36",
+              "44",
+              "40"
+            ],
+            "answer": 3,
+            "hint": "Las dos intersecciones incluidas en la suma deben retirarse para contar exactamente uno.",
+            "explanation": "Las dos intersecciones incluidas en la suma deben retirarse para contar exactamente uno. El resultado es 40."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Un 30 % contrata factoring, un 30 % renting y un 5 % ambos. ¿Qué porcentaje contrata exactamente uno?",
+            "options": [
+              "50",
+              "46",
+              "54"
+            ],
+            "answer": 1,
+            "hint": "Las dos intersecciones incluidas en la suma deben retirarse para contar exactamente uno.",
+            "explanation": "Las dos intersecciones incluidas en la suma deben retirarse para contar exactamente uno. El resultado es 50."
+          }
+        ]
+      },
+      {
+        "nombre": "Probabilidad inversa",
+        "facil": [
+          {
+            "story": "De 100 facturas, 41 tienen aval, 31 se han pagado al vencimiento y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "64,16 %",
+              "36,16 %",
+              "45,16 %"
+            ],
+            "answer": 3,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 31 elementos, de los cuales 14 cumplen A. Resultado: 45,16 %."
+          },
+          {
+            "story": "De 100 facturas, 45 tienen aval, 34 se han pagado al vencimiento y 15 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "44,12 %",
+              "31,12 %",
+              "47,12 %"
+            ],
+            "answer": 1,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 34 elementos, de los cuales 15 cumplen A. Resultado: 44,12 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 facturas, 41 tienen aval, 31 se han pagado al vencimiento y 14 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes no cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "42,13 %",
+              "46,13 %",
+              "39,13 %"
+            ],
+            "answer": 3,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 69 elementos, de los cuales 27 cumplen A. Resultado: 39,13 %."
+          },
+          {
+            "story": "De 100 facturas, 45 tienen aval, 34 se han pagado al vencimiento y 15 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes no cumplen B, ¿qué porcentaje cumple A? Redondea a dos decimales si es necesario.",
+            "options": [
+              "45,45 %",
+              "41,45 %",
+              "48,45 %"
+            ],
+            "answer": 1,
+            "hint": "El denominador depende de qué información conoces.",
+            "explanation": "En el grupo condicionado hay 66 elementos, de los cuales 30 cumplen A. Resultado: 45,45 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Condicionada",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Entre 50 créditos empresariales hay 20 con aval. ¿Cuál es la probabilidad porcentual de aval dado que el crédito es empresarial?",
+            "options": [
+              "44",
+              "48",
+              "40"
+            ],
+            "answer": 3,
+            "hint": "Trabaja dentro de los 50 créditos empresariales.",
+            "explanation": "Trabaja dentro de los 50 créditos empresariales. El resultado es 40."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Entre 50 créditos empresariales hay 30 con aval. ¿Cuál es la probabilidad porcentual de aval dado que el crédito es empresarial?",
+            "options": [
+              "60",
+              "64",
+              "68"
+            ],
+            "answer": 1,
+            "hint": "Trabaja dentro de los 50 créditos empresariales.",
+            "explanation": "Trabaja dentro de los 50 créditos empresariales. El resultado es 60."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "En una cartera, el 50 % son créditos empresariales y 20 % del total son empresariales con aval. ¿Qué porcentaje de los empresariales carece de aval?",
+            "options": [
+              "60",
+              "64",
+              "68"
+            ],
+            "answer": 1,
+            "hint": "Divide la probabilidad conjunta entre la empresarial y toma el complemento.",
+            "explanation": "Divide la probabilidad conjunta entre la empresarial y toma el complemento. El resultado es 60."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "En una cartera, el 50 % son créditos empresariales y 30 % del total son empresariales con aval. ¿Qué porcentaje de los empresariales carece de aval?",
+            "options": [
+              "44",
+              "40",
+              "48"
+            ],
+            "answer": 2,
+            "hint": "Divide la probabilidad conjunta entre la empresarial y toma el complemento.",
+            "explanation": "Divide la probabilidad conjunta entre la empresarial y toma el complemento. El resultado es 40."
+          }
+        ]
+      },
+      {
+        "nombre": "Intersección mediante condicionamiento",
+        "facil": [
+          {
+            "story": "En una muestra de facturas, el 43 % tienen aval. Entre quienes cumplen esta condición, el 31 % se han pagado al vencimiento.",
+            "prompt": "¿Qué porcentaje cumple la primera condición? Redondea a dos decimales si es necesario.",
+            "options": [
+              "34 %",
+              "46 %",
+              "43 %"
+            ],
+            "answer": 3,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "El porcentaje marginal de la primera condición es 43 %. Resultado: 43 %."
+          },
+          {
+            "story": "En una muestra de facturas, el 47 % tienen aval. Entre quienes cumplen esta condición, el 34 % se han pagado al vencimiento.",
+            "prompt": "¿Qué porcentaje cumple la primera condición? Redondea a dos decimales si es necesario.",
+            "options": [
+              "47 %",
+              "66 %",
+              "34 %"
+            ],
+            "answer": 1,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "El porcentaje marginal de la primera condición es 47 %. Resultado: 47 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "En una muestra de facturas, el 43 % tienen aval. Entre quienes cumplen esta condición, el 31 % se han pagado al vencimiento.",
+            "prompt": "¿Qué porcentaje del total cumple la primera condición pero no la segunda? Redondea a dos decimales si es necesario.",
+            "options": [
+              "29,67 %",
+              "25,67 %",
+              "16,67 %"
+            ],
+            "answer": 1,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "Multiplica 43/100 por (1−31/100). Resultado: 29,67 %."
+          },
+          {
+            "story": "En una muestra de facturas, el 47 % tienen aval. Entre quienes cumplen esta condición, el 34 % se han pagado al vencimiento.",
+            "prompt": "¿Qué porcentaje del total cumple la primera condición pero no la segunda? Redondea a dos decimales si es necesario.",
+            "options": [
+              "50,02 %",
+              "31,02 %",
+              "38,02 %"
+            ],
+            "answer": 2,
+            "hint": "Dibuja las dos ramas del primer suceso.",
+            "explanation": "Multiplica 47/100 por (1−34/100). Resultado: 31,02 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Independencia",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Dos pagos independientes fallan con probabilidades 20 % y 10 %. ¿Qué probabilidad porcentual hay de dos fallos?",
+            "options": [
+              "2",
+              "1",
+              "0"
+            ],
+            "answer": 1,
+            "hint": "Multiplica las probabilidades como proporciones.",
+            "explanation": "Multiplica las probabilidades como proporciones. El resultado es 2."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Dos pagos independientes fallan con probabilidades 30 % y 10 %. ¿Qué probabilidad porcentual hay de dos fallos?",
+            "options": [
+              "2",
+              "3",
+              "1"
+            ],
+            "answer": 2,
+            "hint": "Multiplica las probabilidades como proporciones.",
+            "explanation": "Multiplica las probabilidades como proporciones. El resultado es 3."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Dos pagos independientes fallan con probabilidades 20 % y 10 %. ¿Qué probabilidad porcentual hay de exactamente un fallo?",
+            "options": [
+              "22",
+              "26",
+              "18"
+            ],
+            "answer": 2,
+            "hint": "Suma los dos órdenes posibles de fallo y éxito.",
+            "explanation": "Suma los dos órdenes posibles de fallo y éxito. El resultado es 26."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Dos pagos independientes fallan con probabilidades 30 % y 10 %. ¿Qué probabilidad porcentual hay de exactamente un fallo?",
+            "options": [
+              "30",
+              "26",
+              "34"
+            ],
+            "answer": 3,
+            "hint": "Suma los dos órdenes posibles de fallo y éxito.",
+            "explanation": "Suma los dos órdenes posibles de fallo y éxito. El resultado es 34."
+          }
+        ]
+      },
+      {
+        "nombre": "Diferencia entre sucesos",
+        "facil": [
+          {
+            "story": "De 100 facturas, 45 tienen aval, 31 se han pagado al vencimiento y 16 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple A pero no B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "29 %",
+              "25 %",
+              "48 %"
+            ],
+            "answer": 1,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Del total que cumple A resta la intersección: 45−16. Resultado: 29 %."
+          },
+          {
+            "story": "De 100 facturas, 49 tienen aval, 34 se han pagado al vencimiento y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple A pero no B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "28 %",
+              "39 %",
+              "32 %"
+            ],
+            "answer": 3,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Del total que cumple A resta la intersección: 49−17. Resultado: 32 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 facturas, 45 tienen aval, 31 se han pagado al vencimiento y 16 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen al menos una condición, ¿qué porcentaje cumple solo B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "28 %",
+              "25 %",
+              "32 %"
+            ],
+            "answer": 2,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Hay 15 casos solo B y 60 en la unión. Divide el primer recuento entre el segundo. Resultado: 25 %."
+          },
+          {
+            "story": "De 100 facturas, 49 tienen aval, 34 se han pagado al vencimiento y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Entre quienes cumplen al menos una condición, ¿qué porcentaje cumple solo B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "25,76 %",
+              "12,76 %",
+              "32,76 %"
+            ],
+            "answer": 1,
+            "hint": "Representa los dos grupos con un diagrama.",
+            "explanation": "Hay 17 casos solo B y 66 en la unión. Divide el primer recuento entre el segundo. Resultado: 25,76 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Probabilidad total",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Dos sucursales emiten la mitad de los créditos cada una. Sus tasas de mora son 20 % y 10 %. ¿Cuál es la mora global porcentual?",
+            "options": [
+              "11",
+              "15",
+              "19"
+            ],
+            "answer": 2,
+            "hint": "Pondera cada tasa por su cuota de emisión.",
+            "explanation": "Pondera cada tasa por su cuota de emisión. El resultado es 15."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Dos sucursales emiten la mitad de los créditos cada una. Sus tasas de mora son 30 % y 10 %. ¿Cuál es la mora global porcentual?",
+            "options": [
+              "16",
+              "24",
+              "20"
+            ],
+            "answer": 3,
+            "hint": "Pondera cada tasa por su cuota de emisión.",
+            "explanation": "Pondera cada tasa por su cuota de emisión. El resultado es 20."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "La sucursal A emite el 25 % de los créditos y tiene mora 20 %. La mora global es 15 %. ¿Cuál es el porcentaje de mora de B? Redondea a tres decimales.",
+            "options": [
+              "9,333",
+              "17,333",
+              "13,333"
+            ],
+            "answer": 3,
+            "hint": "Despeja la tasa de B en la media ponderada.",
+            "explanation": "Despeja la tasa de B en la media ponderada. El resultado es 13,333."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "La sucursal A emite el 25 % de los créditos y tiene mora 30 %. La mora global es 15 %. ¿Cuál es el porcentaje de mora de B?",
+            "options": [
+              "10",
+              "6",
+              "14"
+            ],
+            "answer": 1,
+            "hint": "Despeja la tasa de B en la media ponderada.",
+            "explanation": "Despeja la tasa de B en la media ponderada. El resultado es 10."
+          }
+        ]
+      },
+      {
+        "nombre": "Efecto de seleccionar un subgrupo",
+        "facil": [
+          {
+            "story": "De 100 facturas, 47 tienen aval, 31 se han pagado al vencimiento y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple simultáneamente A y B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "17 %",
+              "20 %",
+              "4 %"
+            ],
+            "answer": 1,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "La intersección contiene 17 de 100. Resultado: 17 %."
+          },
+          {
+            "story": "De 100 facturas, 51 tienen aval, 34 se han pagado al vencimiento y 18 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "¿Qué porcentaje cumple simultáneamente A y B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "18 %",
+              "37 %",
+              "5 %"
+            ],
+            "answer": 1,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "La intersección contiene 18 de 100. Resultado: 18 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "De 100 facturas, 47 tienen aval, 31 se han pagado al vencimiento y 17 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Si se elige exclusivamente entre quienes cumplen A, ¿cuál es la probabilidad de que no se cumpla B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "66,83 %",
+              "63,83 %",
+              "54,83 %"
+            ],
+            "answer": 2,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "De 47 elementos con A, 30 quedan fuera de B. Resultado: 63,83 %."
+          },
+          {
+            "story": "De 100 facturas, 51 tienen aval, 34 se han pagado al vencimiento y 18 cumplen ambas condiciones. Se selecciona un elemento al azar. Llamamos A a la primera condición y B a la segunda.",
+            "prompt": "Si se elige exclusivamente entre quienes cumplen A, ¿cuál es la probabilidad de que no se cumpla B? Redondea a dos decimales si es necesario.",
+            "options": [
+              "60,71 %",
+              "64,71 %",
+              "71,71 %"
+            ],
+            "answer": 2,
+            "hint": "Empieza identificando qué registros pueden elegirse.",
+            "explanation": "De 51 elementos con A, 33 quedan fuera de B. Resultado: 64,71 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Bayes",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "A emite el 50 % de créditos y tiene 20 % de impago. ¿Qué porcentaje del total corresponde a créditos de A impagados?",
+            "options": [
+              "14",
+              "18",
+              "10"
+            ],
+            "answer": 3,
+            "hint": "Multiplica cuota de A por impago condicionado a A.",
+            "explanation": "Multiplica cuota de A por impago condicionado a A. El resultado es 10."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "A emite el 50 % de créditos y tiene 30 % de impago. ¿Qué porcentaje del total corresponde a créditos de A impagados?",
+            "options": [
+              "15",
+              "19",
+              "23"
+            ],
+            "answer": 1,
+            "hint": "Multiplica cuota de A por impago condicionado a A.",
+            "explanation": "Multiplica cuota de A por impago condicionado a A. El resultado es 15."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "A y B emiten el mismo número de créditos y tienen tasas de impago 20 % y 10 %. Dado un impago, ¿qué probabilidad porcentual hay de que proceda de A? Redondea a tres decimales.",
+            "options": [
+              "66,667",
+              "70,667",
+              "74,667"
+            ],
+            "answer": 1,
+            "hint": "Divide la contribución de A al impago por el impago total.",
+            "explanation": "Divide la contribución de A al impago por el impago total. El resultado es 66,667."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "A y B emiten el mismo número de créditos y tienen tasas de impago 30 % y 10 %. Dado un impago, ¿qué probabilidad porcentual hay de que proceda de A?",
+            "options": [
+              "79",
+              "75",
+              "83"
+            ],
+            "answer": 2,
+            "hint": "Divide la contribución de A al impago por el impago total.",
+            "explanation": "Divide la contribución de A al impago por el impago total. El resultado es 75."
+          }
+        ]
+      },
+      {
+        "nombre": "Dos extracciones independientes",
+        "facil": [
+          {
+            "story": "Se extraen al azar dos registros de facturas con reposición e independientemente. En cada extracción la probabilidad de incidencia es 49 %.",
+            "prompt": "¿Qué probabilidad hay de que ambos registros presenten incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "24,01 %",
+              "15,01 %",
+              "20,01 %"
+            ],
+            "answer": 1,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Multiplica (49/100) por sí mismo. Resultado: 24,01 %."
+          },
+          {
+            "story": "Se extraen al azar dos registros de facturas con reposición e independientemente. En cada extracción la probabilidad de incidencia es 53 %.",
+            "prompt": "¿Qué probabilidad hay de que ambos registros presenten incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "19,09 %",
+              "35,09 %",
+              "28,09 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Multiplica (53/100) por sí mismo. Resultado: 28,09 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Se extraen al azar dos registros de facturas con reposición e independientemente. En cada extracción la probabilidad de incidencia es 49 %.",
+            "prompt": "¿Qué probabilidad hay de que exactamente uno presente incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "56,98 %",
+              "68,98 %",
+              "49,98 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Suma los dos órdenes posibles: 2 × (49/100) × (1−49/100). Resultado: 49,98 %."
+          },
+          {
+            "story": "Se extraen al azar dos registros de facturas con reposición e independientemente. En cada extracción la probabilidad de incidencia es 53 %.",
+            "prompt": "¿Qué probabilidad hay de que exactamente uno presente incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "56,82 %",
+              "45,82 %",
+              "49,82 %"
+            ],
+            "answer": 3,
+            "hint": "Distingue los posibles órdenes del resultado.",
+            "explanation": "Suma los dos órdenes posibles: 2 × (53/100) × (1−53/100). Resultado: 49,82 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Sin reposición",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Hay 50 recibos y 20 de ellos vencidos. Se retira uno vencido. ¿Cuántos vencidos permanecen?",
+            "options": [
+              "19",
+              "15",
+              "11"
+            ],
+            "answer": 1,
+            "hint": "Actualiza el recuento favorable.",
+            "explanation": "Actualiza el recuento favorable. El resultado es 19."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Hay 50 recibos y 30 de ellos vencidos. Se retira uno vencido. ¿Cuántos vencidos permanecen?",
+            "options": [
+              "25",
+              "29",
+              "21"
+            ],
+            "answer": 2,
+            "hint": "Actualiza el recuento favorable.",
+            "explanation": "Actualiza el recuento favorable. El resultado es 29."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "De 50 recibos, 20 están vencidos. Se extraen dos al azar sin reemplazo. ¿Qué probabilidad porcentual hay de que ambos estén vencidos? Redondea a tres decimales.",
+            "options": [
+              "11,51",
+              "15,51",
+              "7,51"
+            ],
+            "answer": 2,
+            "hint": "Tras retirar un vencido cambian ambos recuentos.",
+            "explanation": "Tras retirar un vencido cambian ambos recuentos. El resultado es 15,51."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "De 50 recibos, 30 están vencidos. Se extraen dos al azar sin reemplazo. ¿Qué probabilidad porcentual hay de que ambos estén vencidos? Redondea a tres decimales.",
+            "options": [
+              "31,51",
+              "27,51",
+              "35,51"
+            ],
+            "answer": 3,
+            "hint": "Tras retirar un vencido cambian ambos recuentos.",
+            "explanation": "Tras retirar un vencido cambian ambos recuentos. El resultado es 35,51."
+          }
+        ]
+      },
+      {
+        "nombre": "Muestreo con y sin reposición",
+        "facil": [
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de facturas, 9 contienen incidencias.",
+            "prompt": "Si el primero tenía incidencia, ¿qué probabilidad hay de que el segundo también la tenga? Redondea a dos decimales si es necesario.",
+            "options": [
+              "45,00 %",
+              "42,11 %",
+              "47,37 %"
+            ],
+            "answer": 2,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Quedan 8 con incidencia entre 19. Resultado: 42,11 %."
+          },
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de facturas, 11 contienen incidencias.",
+            "prompt": "Si el primero tenía incidencia, ¿qué probabilidad hay de que el segundo también la tenga? Redondea a dos decimales si es necesario.",
+            "options": [
+              "55,00 %",
+              "52,63 %",
+              "57,89 %"
+            ],
+            "answer": 2,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Quedan 10 con incidencia entre 19. Resultado: 52,63 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de facturas, 9 contienen incidencias.",
+            "prompt": "Antes de extraerlos, ¿qué probabilidad hay de que al menos uno tenga incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "71,05 %",
+              "69,75 %",
+              "45,00 %"
+            ],
+            "answer": 1,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Resta de 1 la probabilidad de dos expedientes limpios: (11/20) × (10/19). Resultado: 71,05 %."
+          },
+          {
+            "story": "Una auditoría selecciona sin reposición dos expedientes, con igual probabilidad para cada pareja. De 20 expedientes de facturas, 11 contienen incidencias.",
+            "prompt": "Antes de extraerlos, ¿qué probabilidad hay de que al menos uno tenga incidencia? Redondea a dos decimales si es necesario.",
+            "options": [
+              "79,75 %",
+              "55,00 %",
+              "81,05 %"
+            ],
+            "answer": 3,
+            "hint": "Actualiza la composición tras la primera extracción.",
+            "explanation": "Resta de 1 la probabilidad de dos expedientes limpios: (9/20) × (8/19). Resultado: 81,05 %."
+          }
+        ]
+      },
+      {
+        "nombre": "Árbol de decisión",
+        "facil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Un préstamo se renueva con probabilidad 20 %. Entre los renovados, 50 % mejora el tipo. ¿Qué porcentaje se renueva y mejora?",
+            "options": [
+              "6",
+              "10",
+              "14"
+            ],
+            "answer": 2,
+            "hint": "Multiplica probabilidades a lo largo de la rama.",
+            "explanation": "Multiplica probabilidades a lo largo de la rama. El resultado es 10."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Un préstamo se renueva con probabilidad 30 %. Entre los renovados, 50 % mejora el tipo. ¿Qué porcentaje se renueva y mejora?",
+            "options": [
+              "11",
+              "19",
+              "15"
+            ],
+            "answer": 3,
+            "hint": "Multiplica probabilidades a lo largo de la rama.",
+            "explanation": "Multiplica probabilidades a lo largo de la rama. El resultado es 15."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
+            "prompt": "Un préstamo se renueva con probabilidad 20 %. La probabilidad de ahorrar comisiones es 50 % al renovar y 10 % al no renovar. ¿Qué porcentaje ahorra comisiones?",
+            "options": [
+              "14",
+              "22",
+              "18"
+            ],
+            "answer": 3,
+            "hint": "Suma las probabilidades de las dos ramas que terminan en ahorro.",
+            "explanation": "Suma las probabilidades de las dos ramas que terminan en ahorro. El resultado es 18."
+          },
+          {
+            "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
+            "prompt": "Un préstamo se renueva con probabilidad 30 %. La probabilidad de ahorrar comisiones es 50 % al renovar y 10 % al no renovar. ¿Qué porcentaje ahorra comisiones?",
+            "options": [
+              "22",
+              "18",
+              "26"
+            ],
+            "answer": 1,
+            "hint": "Suma las probabilidades de las dos ramas que terminan en ahorro.",
+            "explanation": "Suma las probabilidades de las dos ramas que terminan en ahorro. El resultado es 22."
+          }
+        ]
+      },
+      {
+        "nombre": "Comprobación posterior de una alerta",
+        "facil": [
+          {
+            "story": "En 1000 registros de facturas, 53 tienen errores de conciliación. Un sistema señala 49 de los casos reales y también señala 31 registros sin ese problema.",
+            "prompt": "Entre los registros con el problema, ¿qué porcentaje detecta el sistema? Redondea a dos decimales si es necesario.",
+            "options": [
+              "92,45 %",
+              "88,45 %",
+              "79,45 %"
+            ],
+            "answer": 1,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 53 registros. De ellos, 49 cumplen la condición solicitada. Resultado: 92,45 %."
+          },
+          {
+            "story": "En 1000 registros de facturas, 57 tienen errores de conciliación. Un sistema señala 53 de los casos reales y también señala 34 registros sin ese problema.",
+            "prompt": "Entre los registros con el problema, ¿qué porcentaje detecta el sistema? Redondea a dos decimales si es necesario.",
+            "options": [
+              "83,98 %",
+              "92,98 %",
+              "79,98 %"
+            ],
+            "answer": 2,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 57 registros. De ellos, 53 cumplen la condición solicitada. Resultado: 92,98 %."
+          }
+        ],
+        "dificil": [
+          {
+            "story": "En 1000 registros de facturas, 53 tienen errores de conciliación. Un sistema señala 49 de los casos reales y también señala 31 registros sin ese problema.",
+            "prompt": "Entre los registros señalados, ¿qué porcentaje corresponde a falsas alarmas? Redondea a dos decimales si es necesario.",
+            "options": [
+              "34,75 %",
+              "25,75 %",
+              "38,75 %"
+            ],
+            "answer": 3,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 80 registros. De ellos, 31 cumplen la condición solicitada. Resultado: 38,75 %."
+          },
+          {
+            "story": "En 1000 registros de facturas, 57 tienen errores de conciliación. Un sistema señala 53 de los casos reales y también señala 34 registros sin ese problema.",
+            "prompt": "Entre los registros señalados, ¿qué porcentaje corresponde a falsas alarmas? Redondea a dos decimales si es necesario.",
+            "options": [
+              "35,08 %",
+              "26,08 %",
+              "39,08 %"
+            ],
+            "answer": 3,
+            "hint": "Separa los casos reales y los registros señalados.",
+            "explanation": "El grupo de referencia tiene 87 registros. De ellos, 34 cumplen la condición solicitada. Resultado: 39,08 %."
+          }
+        ]
+      }
+    ]
   }
 ];
