@@ -1,6 +1,5 @@
 'use strict';
 (async () => {
-  await Estudio.entrada();
   const el = id => document.getElementById(id);
   let sexoCompartido;
   if (Estudio.clase) el('autorizar').closest('fieldset').remove();
@@ -107,7 +106,7 @@
     input.readOnly=true;input.value=code;label.append(input);
     const copy=node('button','Copiar código'),status=node('p','');status.setAttribute('role','status');
     copy.onclick=async()=>{input.focus();input.select();try{await navigator.clipboard.writeText(code);status.textContent='Código copiado.';}catch{status.textContent='Usa la opción Copiar de tu dispositivo.';}};
-    content.replaceChildren(heading,node('p','Aciertos al primer intento: '+correct+' de '+questions.length+'. Nota: '+grade+' sobre 10.'),label,node('p','Envía el código completo a tu profesor.'),copy,status);
+    content.replaceChildren(heading,node('p','Aciertos al primer intento: '+correct+' de '+questions.length+'. Nota: '+grade+' sobre 10.'),label,node('p',Estudio.clase?'Puedes guardar este código de la práctica.':'Envía el código completo a tu profesor.'),copy,status);
     Estudio.comprobante(content);
     heading.focus();
   }

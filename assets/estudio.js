@@ -12,99 +12,58 @@ window.Estudio = (() => {
   const enabled = cfg?.activar === true && cfg.revisionConfirmada === true &&
     ['responsable','contacto','conservacion','referenciaRevision','version','derechos','contactoDPD','hojaAprobada','baseJuridica'].every(k => typeof cfg[k] === 'string' && cfg[k].trim()) &&
     institutional(cfg.hojaAprobada) && /^[^\s@]+@(?:[a-z0-9-]+\.)*us\.es$/i.test(cfg.contactoDPD) && !cfg.version.startsWith('ensayo') && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cfg.contacto);
-  let enrollment, exposure;
-  const mode = enabled ? 'ESTUDIO' : 'ENSAYO';
-  const condition = location.pathname.endsWith('control.html') ? 'CO' : 'TR';
-  function practiceUrl() {
-    const url = new URL(location.href);
-    url.searchParams.delete('estudio');
-    url.searchParams.set('practica','clase');
-    return url.href;
-  }
-  async function entrada() {
-    if (!requested) return;
-    const panel = document.createElement('main');
-    panel.className = 'puerta-estudio';
-    panel.innerHTML = `<h1 tabindex="-1">Una app para practicar estadística</h1>
-      <p>Te regalamos esta app para ayudarte a preparar el segundo parcial. Queremos saber con qué formato se aprende más: una aventura o un cuestionario.</p>
-      <p>¿Nos permites usar tus datos de práctica y relacionarlos con las notas de tus dos primeros parciales? Tú eliges. Tendrás la misma actividad y la misma nota decidas lo que decidas.</p>
-      <p id="ensayo-aviso"></p>
-      <details><summary>Qué datos se usan y cómo retirarme</summary>
-      <p>El comprobante registra tu código de participante y clase, formato, asignatura, bloque, dificultad, aceptación, tiempo, respuestas, aciertos, ayudas y reintentos. Lo entregas tú por el canal institucional. Para retirarlo antes de la anonimización, comunica tu código al responsable. El alojamiento puede recibir datos técnicos de conexión.</p>
-      <p id="estudio-info"></p></details>
-      <p><button id="participar" type="button" aria-expanded="false">Sí, autorizo el uso de mis datos</button></p>
-      <form id="estudio-form" hidden><label>Mi código de participante<input required autocomplete="off" pattern="P[0-9]{6}" name="id" placeholder="P000001"></label>
-      <label>Mi código de clase<input required autocomplete="off" pattern="C[0-9]{3}" name="clase" placeholder="C001"></label>
-      <button>Empezar la práctica</button></form>
-      <p><a id="sin-estudio">Practicar sin compartir mis datos</a></p>`;
-    const heading = panel.querySelector('h1');
-    panel.querySelector('#ensayo-aviso').textContent = enabled ? '' : 'Demostración con datos ficticios.';
-    panel.querySelector('#estudio-info').textContent = enabled ?
-      ['Responsable: '+cfg.responsable, 'Contacto: '+cfg.contacto, 'Conservación: '+cfg.conservacion, 'Revisión: '+cfg.referenciaRevision].join('. ') :
-      'Simulación técnica. Utiliza P000001 y C001 u otros códigos inventados. No entregues datos reales. La captación está cerrada.';
-    if (enabled) {
-      const details = document.createElement('p');
-      details.textContent = 'Base jurídica: '+cfg.baseJuridica+'. Derechos y ejercicio: '+cfg.derechos+'. Contacto de protección de datos: '+cfg.contactoDPD+'. ';
-      const link = document.createElement('a');
-      link.href=cfg.hojaAprobada;link.textContent='Consultar la hoja de información aprobada';link.target='_blank';link.rel='noopener noreferrer';
-      details.append(link);panel.querySelector('#estudio-info').after(details);
-    }
-    panel.querySelector('#sin-estudio').href = practiceUrl();
-    document.body.prepend(panel);
-    heading.focus();
-    await new Promise(resolve => {
-      const form = panel.querySelector('form');
-      const consent = panel.querySelector('#participar');
-      consent.onclick = () => {
-        form.hidden = false;
-        consent.setAttribute('aria-expanded','true');
-        if (!enabled) {
-          form.elements.id.value='P000001';
-          form.elements.clase.value='C001';
-          form.requestSubmit();
-        } else form.elements.id.focus();
-      };
-      form.onsubmit = event => {
-        event.preventDefault();
-        if (form.hidden || !form.reportValidity()) return;
-        const fields = new FormData(form);
-        enrollment = {modo:mode, id:fields.get('id'), clase:fields.get('clase'), condicion:condition,
-          version:enabled ? cfg.version : 'ensayo-2', aceptacion_utc:new Date().toISOString()};
-        panel.remove();document.documentElement.classList.remove('entrada-estudio');
-        const leave=document.createElement('a');leave.className='salir-estudio';leave.href=practiceUrl();
-        leave.textContent = 'Salir del estudio y comenzar la misma práctica sin participar';document.body.append(leave);
-        resolve();
-      };
-    });
-  }
+  let exposure;
   function iniciar(asignatura,bloque,dificultad) {
-    if (enrollment) exposure={asignatura,bloque,dificultad,inicio_utc:new Date().toISOString(),inicio:performance.now(),respuestas:0,aciertos:0,ayudas:0,reintentos:0};
+    if (requested && !academicOnly) exposure={asignatura,bloque,dificultad,inicio:performance.now(),respuestas:0,aciertos:0,reintentos:0};
   }
   function registrar(acierto) {
-    if (enrollment && exposure && !exposure.fin_utc) {
-      exposure.respuestas++;
-      if (acierto) exposure.aciertos++;
-      else exposure.reintentos++;
-    }
+    if (!exposure || exposure.id) return;
+    exposure.respuestas++;
+    if (acierto) exposure.aciertos++;
+    else exposure.reintentos++;
   }
   function comprobante(container) {
-    if (!enrollment || !exposure) return;
-    if (!exposure.fin_utc) {
-      exposure.fin_utc=new Date().toISOString();
+    if (!exposure) return;
+    if (!exposure.id) {
+      exposure.id=crypto.randomUUID();
       exposure.segundos=Math.floor((performance.now()-exposure.inicio)/1000);
     }
-    const {inicio, ...observed}=exposure;
-    const record={...enrollment,...observed,estado:'completada',apartados:18};
-    const section=document.createElement('section'), heading=document.createElement('h2'), area=document.createElement('textarea'), copy=document.createElement('button'), download=document.createElement('button'), note=document.createElement('p');
-    heading.textContent=enabled?'Comprobante de participación':'Comprobante de ensayo';
-    area.readOnly=true;area.setAttribute('aria-label','Contenido del comprobante');area.value=JSON.stringify(record,null,2);
-    copy.textContent='Copiar comprobante';download.textContent='Descargar comprobante';note.setAttribute('role','status');
-    copy.onclick=async()=>{area.select();try{await navigator.clipboard.writeText(area.value);note.textContent='Comprobante copiado.';}catch{note.textContent='El texto está seleccionado. Utiliza la opción Copiar de tu dispositivo.';}};
-    download.onclick=()=>{const url=URL.createObjectURL(new Blob([area.value],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=mode+'_'+record.id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
-    section.append(heading,area,copy,download,note);container.append(section);
+    const section=document.createElement('section');
+    section.className='consentimiento-final';
+    section.innerHTML=`<h2>Consentimiento informado</h2>
+      <p>Estudiamos cómo aprenden estadística los estudiantes. Al enviar el correo, autorizas el uso de tus datos de práctica y de las notas de tus dos primeros parciales con un ID seudónimo. Participar es voluntario y tu decisión no afecta a tu nota.</p>
+      <details><summary>Datos y privacidad</summary><p>El equipo que recibe el correo verá tu dirección para vincular tus notas. El archivo de análisis usará tu ID. Para solicitar la retirada antes de la anonimización, indica ese ID al responsable.</p><p class="contacto"></p></details>
+      <p class="estado"></p><button type="button" class="preparar"></button>
+      <button type="button" class="omitir">Terminar sin enviar</button>`;
+    const consent='Autorizo voluntariamente el uso seudonimizado de mis datos de práctica y de las notas de mis dos primeros parciales para estudiar cómo aprenden estadística los estudiantes.';
+    const {inicio,...usage}=exposure;
+    const clase=new URLSearchParams(location.search).get('clase');
+    const registro={...usage,clase:/^C[0-9]{3}$/.test(clase || '')?clase:null,condicion:location.pathname.endsWith('control.html')?'CO':'TR',apartados:18,ayudas:0,version:enabled?cfg.version:'ensayo-final-1'};
+    const body=consent+'\n\n'+JSON.stringify(registro,null,2);
+    const info=section.querySelector('.contacto');
+    const button=section.querySelector('.preparar');
+    if (enabled) {
+      info.textContent=[cfg.responsable,cfg.contacto,cfg.baseJuridica,cfg.conservacion,cfg.derechos,cfg.contactoDPD].join(' · ')+'. ';
+      const link=document.createElement('a');
+      link.href=cfg.hojaAprobada;link.textContent='Hoja informativa del estudio';info.append(link);
+      button.textContent='Preparar correo de consentimiento';
+      button.onclick=()=>{location.href='mailto:'+encodeURIComponent(cfg.contacto)+'?subject='+encodeURIComponent('Consentimiento · '+exposure.id)+'&body='+encodeURIComponent(body);};
+      section.querySelector('.estado').textContent='Revisa el borrador y pulsa Enviar en tu correo si deseas participar.';
+    } else {
+      info.textContent='Los datos de esta demostración permanecen en la pestaña.';
+      section.querySelector('.estado').textContent='Demostración. Puedes ver el correo de ejemplo.';
+      button.textContent='Ver correo de ejemplo';
+      button.onclick=()=>{
+        let preview=section.querySelector('pre');
+        if (!preview) { preview=document.createElement('pre');preview.style.whiteSpace='pre-wrap';preview.style.overflowWrap='anywhere';section.append(preview); }
+        preview.textContent=body;
+      };
+    }
+    section.querySelector('.omitir').onclick=()=>{section.replaceChildren(document.createTextNode('Práctica finalizada sin enviar datos.'));};
+    container.append(section);
   }
   function aplicarPrescripcion(boton) {
-    if (!academicOnly && !enrollment) return;
+    if (!academicOnly && !requested) return;
     const params = new URLSearchParams(location.search);
     let invalid = false;
     for (const key of ['asignatura','bloque','dificultad']) {
@@ -123,5 +82,5 @@ window.Estudio = (() => {
       ['asignatura','bloque','dificultad'].some(k=>params.has(k))?'Las selecciones fijadas por tu docente corresponden a tu clase.':'';
     boton.disabled=invalid;
   }
-  return {entrada,iniciar,registrar,comprobante,aplicarPrescripcion,get clase(){return academicOnly || Boolean(enrollment);},get activo(){return Boolean(enrollment);}};
+  return {iniciar,registrar,comprobante,aplicarPrescripcion,get clase(){return academicOnly || requested;}};
 })();
