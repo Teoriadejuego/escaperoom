@@ -35,10 +35,14 @@ El archivo **PROMPT_PROYECTO.md** contiene el encargo reutilizable para coordina
 
 ## Comprobar un código de finalización
 
-Abre el [validador docente](https://teoriadejuego.github.io/escaperoom/validar.html) y pega el código. Tras la sexta cerradura el juego genera un código por partida que también aparece en el cuaderno final. Tras @ van el número aleatorio de cuatro cifras, su cociente entero entre siete con cuatro posiciones, la dificultad (0 fácil, 1 difícil), los minutos completos con dos posiciones y dos letras mayúsculas. El tiempo empieza al abrir la aventura e incluye los reintentos. 99 representa 99 minutos o más. El control es local y comprueba coherencia. La aleatoriedad reduce las coincidencias, pero no garantiza unicidad global ni autoría.
+Abre el [validador docente](https://teoriadejuego.github.io/escaperoom/validar.html) y pega el código. Tras la sexta cerradura el juego genera un código por partida que también aparece en el cuaderno final. Tras @ van el número aleatorio de cuatro cifras, su cociente entero entre siete con cuatro posiciones, la dificultad (0 fácil, 1 difícil), los minutos completos con dos posiciones y una serie aleatoria hexadecimal seguida del grupo TR o CO. El tiempo empieza al abrir la aventura e incluye los reintentos. 99 representa 99 minutos o más. El control es local y comprueba coherencia. La aleatoriedad reduce las coincidencias, pero no garantiza unicidad global ni autoría.
 
 ## Catálogo de asignaturas del departamento
 
 El juego y el editor leen el mismo catálogo, **data/asignaturas.js**. Cada entrada identifica la asignatura, la titulación, su fuente y el banco que utiliza. El catálogo reúne docencia de grado de estadística, econometría y técnicas cuantitativas aplicadas, incluidas las variantes de plan e idioma. Se contrastó el [directorio de Economía Aplicada I](https://departamento.us.es/deconapli1/asignaturas/) con el documento Horarios 2026-27.pdf de la Facultad de Ciencias Económicas y Empresariales. El campo paginaHorario indica la página del PDF cuando se localizó el código. La inclusión de una optativa en el catálogo no certifica la apertura de un grupo ese curso.
 
 Cuando provisional es verdadero se utiliza el banco común de Estadística I de Finanzas y Contabilidad. El estudiante ve la asignatura elegida en la partida y en su cuaderno. Para independizar un banco, añade su archivo a index.html y editar.html y actualiza global, archivo y provisional en la entrada del catálogo.
+
+## Escenarios experimentales
+
+[TR · Aventura](https://teoriadejuego.github.io/escaperoom/) y [CO · Cuestionario](https://teoriadejuego.github.io/escaperoom/control.html) ofrecen 18 preguntas por partida. El control admite una respuesta por ítem, con el resultado al final (10 × aciertos / 18). Ambas URL admiten el parámetro asignatura. Los códigos previos se validan sin atribución de grupo. El profesor distribuye los enlaces según su lista de asignación. [Prompt de diseño y prerregistro](PROMPT_ESTUDIO_CONTROL.md).

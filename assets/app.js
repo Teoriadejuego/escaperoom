@@ -5,21 +5,6 @@
   let chapters = original.paradas;
   let story = original;
   const subjects = window.ASIGNATURAS;
-  const pendingBanks = new Map();
-  function loadBank(course) {
-    if (window[course.global]) return Promise.resolve(window[course.global]);
-    if (!pendingBanks.has(course.global)) {
-      const request = new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'data/' + course.archivo;
-        script.onload = () => window[course.global] ? resolve(window[course.global]) : reject();
-        script.onerror = reject;
-        document.head.append(script);
-      }).finally(() => pendingBanks.delete(course.global));
-      pendingBanks.set(course.global, request);
-    }
-    return pendingBanks.get(course.global);
-  }
   const requestedSubject = new URLSearchParams(window.location.search).get('asignatura');
   let subject = subjects.find(item => item.id === requestedSubject) || subjects[0];
   let bank;
@@ -181,7 +166,7 @@
     hint(){if(!active||active.stage!==state.current)return;const q=chapters[state.current].questions[active.j];if(!active.hinted){state.hints++;log('pista',q.title);active.hinted=true;}dialog.querySelector('.hint-box').textContent=q.hint;},
     submit(){if(!active||active.stage!==state.current||state.phase!=='play')return;const chosen=dialog.querySelector('input[name="answer"]:checked');if(!chosen){dialog.querySelector('.input-error').textContent='Elige una respuesta antes de guardar.';return;}const q=chapters[state.current].questions[active.j];if(Number(chosen.value)!==q.answer){retryStage('La pista que debes revisar: '+q.hint);return;}state.solved[state.current][active.j]=true;log('acierto',q.title);const ready=state.solved[state.current].every(Boolean);close();notice={type:'success',title:ready?'Has encontrado el código':'Un hallazgo para tu cuaderno',text:q.explanation+' '+(ready?'El código ya está en tu cuaderno. Pulsa la cerradura e introdúcelo.':'Investiga los otros objetos para completar el código.')};render();screen.focus({preventScroll:true});},
     lock(){if(state.phase!=='play')return;const ready=state.solved[state.current].every(Boolean);modal('La cerradura del cuaderno',`<p class="eyebrow">${esc(chapters[state.current].place)}</p><p>${ready?'Consulta los tres dígitos de tu cuaderno e introdúcelos para abrir el siguiente camino.':'Aún faltan hallazgos. Investiga los tres objetos de este escenario para recuperar el código.'}</p>${ready?'<label class="field-label" for="lock_code">Código de tres dígitos</label><input id="lock_code" inputmode="numeric" maxlength="3" autocomplete="off" placeholder="···"><p class="input-error" role="alert"></p>':''}<p class="modal-note">Una combinación incorrecta reinicia las tres pistas de este hito.</p>`,btn('close','Volver')+(ready?btn('unlock','Abrir cerradura','primary-button'):''));},
-    unlock(){if(state.phase!=='play'||!state.solved[state.current].every(Boolean))return;const code=dialog.querySelector('#lock_code')?.value.trim();if(!code){dialog.querySelector('.input-error').textContent='Introduce los tres dígitos del cuaderno.';return;}if(code!==state.codes[state.current]){retryStage('La combinación no coincide con el código recuperado.');return;}log('cerradura abierta');const old=state.current;close();if(old===chapters.length-1){state.codigo=CodigosDePartida.crear(difficulty, performance.now()-state.inicio);state.phase='end';notice=null;}else{state.current++;notice={type:'success',title:'Un nuevo camino',text:chapters[old].next_text};}render(true);},
+    unlock(){if(state.phase!=='play'||!state.solved[state.current].every(Boolean))return;const code=dialog.querySelector('#lock_code')?.value.trim();if(!code){dialog.querySelector('.input-error').textContent='Introduce los tres dígitos del cuaderno.';return;}if(code!==state.codes[state.current]){retryStage('La combinación no coincide con el código recuperado.');return;}log('cerradura abierta');const old=state.current;close();if(old===chapters.length-1){state.codigo=CodigosDePartida.crear(difficulty, performance.now()-state.inicio, 'TR');state.phase='end';notice=null;}else{state.current++;notice={type:'success',title:'Un nuevo camino',text:chapters[old].next_text};}render(true);},
     report,
     restart(){modal('¿Comenzar otra expedición?','<p>Se borrará el progreso de esta sesión y cambiarán los códigos. Puedes descargar tu cuaderno antes.</p>',btn('close','Seguir aquí')+btn('confirm-restart','Empezar de nuevo','primary-button'));},
     'confirm-restart'(){close();state=fresh();notice=null;render(true);}
