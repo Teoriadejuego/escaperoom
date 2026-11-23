@@ -10,7 +10,7 @@ window.HISTORIAS_EXTRA = [
         "subtitle": "Ruta de la capitana",
         "image": "relatos/salt.webp",
         "time": "11:10",
-        "intro": "Un barco de visitantes zarpa esta tarde. El manifiesto que necesita la capitana se ha repartido entre seis oficinas del puerto. Reúne las tres primeras anotaciones para seguir el rastro de la mensajera.",
+        "intro": "La capitana espera un manifiesto antes de zarpar. La mensajera lo repartió entre seis oficinas del puerto. En el muelle quedan su manifiesto, una amarra y un sello. Reúne las tres anotaciones para abrir el primer cierre.",
         "next_text": "Una marca de hierro en el margen señala el puente de Triana.",
         "objetos": [
           "El manifiesto",
@@ -171,7 +171,7 @@ window.HISTORIAS_EXTRA = [
         "image": "relatos/dome.webp",
         "time": "20:40",
         "intro": "Ya se oyen pasos en el vestíbulo. La regidora tiene las páginas, pero le falta el orden de las entradas. Resuelve los tres expedientes y entrega el libreto a la compañía.",
-        "next_text": "Las hojas vuelven al atril y la función puede comenzar.",
+        "next_text": "La regidora ordena las seis hojas en el atril. Se apagan las luces del vestíbulo y comienza la función.",
         "objetos": [
           "La batuta",
           "La bambalina",

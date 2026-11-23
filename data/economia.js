@@ -47,7 +47,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Una encuesta investiga a los comercios del barrio.",
-            "prompt": "El censo incluye 300 comercios. Se selecciona el 20 % y cinco no responden. ¿Qué porcentaje de los seleccionados sí respondió?",
+            "prompt": "El censo incluye 300 comercios. Se selecciona el 20 % y cinco no responden. ¿Qué porcentaje de los seleccionados sí respondió? Redondea el resultado a 4 decimales.",
             "options": [
               "18,3333",
               "91,6667",
@@ -157,7 +157,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Se registran incidencias de facturación.",
-            "prompt": "De 80 facturas, 24 requieren corrección y cinco de las corregidas también requieren abono. Entre las corregidas, ¿qué porcentaje no requiere abono?",
+            "prompt": "De 80 facturas, 24 requieren corrección y cinco de las corregidas también requieren abono. Entre las corregidas, ¿qué porcentaje no requiere abono? Redondea el resultado a 4 decimales.",
             "options": [
               "20,8333",
               "23,75",
@@ -212,7 +212,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Una cooperativa registra días de demora.",
-            "prompt": "Hay 15 cobros al día, 7 con un día de retraso y 8 con dos días. ¿Qué porcentaje llega con más de un día de retraso?",
+            "prompt": "Hay 15 cobros al día, 7 con un día de retraso y 8 con dos días. ¿Qué porcentaje llega con más de un día de retraso? Redondea el resultado a 4 decimales.",
             "options": [
               "36,3636",
               "26,6667",
@@ -255,7 +255,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Los importes se agrupan en intervalos de distinta amplitud.",
-            "prompt": "Las clases [0,10) y [10,30) € contienen 20 y 30 facturas. ¿Qué cociente de alturas tiene la primera barra respecto a la segunda?",
+            "prompt": "Las clases [0,10) y [10,30) € contienen 20 y 30 facturas. ¿Qué cociente de alturas tiene la primera barra respecto a la segunda? Redondea el resultado a 4 decimales.",
             "options": [
               "0,6667",
               "1,3333",
@@ -915,7 +915,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Una política pública modifica todos los ingresos.",
-            "prompt": "La renta media es 1000 € y el Gini inicial 0,4. Cada hogar recibe 100 € adicionales. ¿Cuál es el nuevo Gini poblacional?",
+            "prompt": "La renta media es 1000 € y el Gini inicial 0,4. Cada hogar recibe 100 € adicionales. ¿Cuál es el nuevo Gini poblacional? Redondea el resultado a 4 decimales.",
             "options": [
               "0,4",
               "0,3636",
@@ -927,7 +927,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Una política pública modifica todos los ingresos.",
-            "prompt": "La renta media es 1000 € y el Gini inicial 0,5. Cada hogar recibe 100 € adicionales. ¿Cuál es el nuevo Gini poblacional?",
+            "prompt": "La renta media es 1000 € y el Gini inicial 0,5. Cada hogar recibe 100 € adicionales. ¿Cuál es el nuevo Gini poblacional? Redondea el resultado a 4 decimales.",
             "options": [
               "0,4545",
               "0,5",
@@ -1098,7 +1098,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Se cruzan sector y tamaño de las empresas.",
-            "prompt": "Hay 15 pymes industriales, 18 pymes de servicios y 22 empresas grandes. ¿Qué porcentaje de empresas son pymes industriales?",
+            "prompt": "Hay 15 pymes industriales, 18 pymes de servicios y 22 empresas grandes. ¿Qué porcentaje de empresas son pymes industriales? Redondea el resultado a 4 decimales.",
             "options": [
               "27,2727",
               "45,4545",
@@ -1196,7 +1196,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Una tabla separa comercios digitales y físicos.",
-            "prompt": "Hay 100 empresas, de las que 60 exportan. Entre las digitales, 20 exportan y 10 venden solo dentro del país. Entre las empresas físicas, ¿qué porcentaje exporta?",
+            "prompt": "Hay 100 empresas, de las que 60 exportan. Entre las digitales, 20 exportan y 10 venden solo dentro del país. Entre las empresas físicas, ¿qué porcentaje exporta? Redondea el resultado a 4 decimales.",
             "options": [
               "40",
               "66,6667",
@@ -1208,7 +1208,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Una tabla separa comercios digitales y físicos.",
-            "prompt": "Hay 100 empresas, de las que 60 exportan. Entre las digitales, 20 exportan y 15 venden solo dentro del país. Entre las empresas físicas, ¿qué porcentaje exporta?",
+            "prompt": "Hay 100 empresas, de las que 60 exportan. Entre las digitales, 20 exportan y 15 venden solo dentro del país. Entre las empresas físicas, ¿qué porcentaje exporta? Redondea el resultado a 4 decimales.",
             "options": [
               "40",
               "61,5385",
@@ -1280,7 +1280,7 @@ window.ECONOMIA = [
         "facil": [
           {
             "story": "Dos sectores declaran sus salarios medios.",
-            "prompt": "El sector A tiene 10 empleados con media 1200 €. El sector B tiene 20 con media 1800 €. ¿Qué peso porcentual tiene el sector B en el empleo conjunto?",
+            "prompt": "El sector A tiene 10 empleados con media 1200 €. El sector B tiene 20 con media 1800 €. ¿Qué peso porcentual tiene el sector B en el empleo conjunto? Redondea el resultado a 4 decimales.",
             "options": [
               "33,3333",
               "66,6667",
@@ -2302,7 +2302,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Una empresa cambia su mezcla de compras.",
-            "prompt": "La cesta actual contiene 2 tornillos especiales y 2 placas. Sus precios base eran 10 y 20 €. Los actuales son 11 y 24 €. ¿Cuál es el índice de precios de Paasche?",
+            "prompt": "La cesta actual contiene 2 tornillos especiales y 2 placas. Sus precios base eran 10 y 20 €. Los actuales son 11 y 24 €. ¿Cuál es el índice de precios de Paasche? Redondea el resultado a 4 decimales.",
             "options": [
               "116,6667",
               "81,0811",
@@ -2369,7 +2369,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Un mayorista registra compras de dos bienes.",
-            "prompt": "Antes compraba 2 y 4 unidades. Ahora compra 5 y 5. Los precios base son 5 y 10 €, y los actuales son 10 y 10 €. ¿Cuál es el índice de cantidades de Paasche?",
+            "prompt": "Antes compraba 2 y 4 unidades. Ahora compra 5 y 5. Los precios base son 5 y 10 €, y los actuales son 10 y 10 €. ¿Cuál es el índice de cantidades de Paasche? Redondea el resultado a 4 decimales.",
             "options": [
               "150",
               "166,6667",
@@ -2467,7 +2467,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Una cuenta empresarial distingue euros corrientes y constantes.",
-            "prompt": "Los ingresos actuales son 4800 € y el índice de precios es 120 (base 100). El ingreso del año base fue 3000 €. ¿Cuál es el crecimiento real porcentual respecto al año base?",
+            "prompt": "Los ingresos actuales son 4800 € y el índice de precios es 120 (base 100). El ingreso del año base fue 3000 €. ¿Cuál es el crecimiento real porcentual respecto al año base? Redondea el resultado a 4 decimales.",
             "options": [
               "33,3333",
               "60",
@@ -2797,7 +2797,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Se audita un lote cerrado de facturas.",
-            "prompt": "Hay 20 facturas y 4 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas?",
+            "prompt": "Hay 20 facturas y 4 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas? Redondea el resultado a 4 decimales.",
             "options": [
               "0,0316",
               "0,04",
@@ -2809,7 +2809,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Se audita un lote cerrado de facturas.",
-            "prompt": "Hay 20 facturas y 5 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas?",
+            "prompt": "Hay 20 facturas y 5 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas? Redondea el resultado a 4 decimales.",
             "options": [
               "0,0625",
               "0,2105",
@@ -2907,7 +2907,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Un filtro automático revisa solicitudes de crédito.",
-            "prompt": "El 10 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad?",
+            "prompt": "El 10 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad? Redondea el resultado a 4 decimales.",
             "options": [
               "0,8",
               "0,4706",
@@ -2919,7 +2919,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Un filtro automático revisa solicitudes de crédito.",
-            "prompt": "El 15 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad?",
+            "prompt": "El 15 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad? Redondea el resultado a 4 decimales.",
             "options": [
               "0,5854",
               "0,8",
@@ -2962,7 +2962,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Un banco usa una prueba para detectar billetes falsos.",
-            "prompt": "De 1000 billetes hay 20 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. Dado que el billete ha activado la prueba, ¿qué probabilidad hay de que sea auténtico?",
+            "prompt": "De 1000 billetes hay 20 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. Dado que el billete ha activado la prueba, ¿qué probabilidad hay de que sea auténtico? Redondea el resultado a 4 decimales.",
             "options": [
               "0,3333",
               "0,01",
@@ -3573,7 +3573,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Se audita un lote cerrado de facturas.",
-            "prompt": "Hay 20 facturas y 4 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas?",
+            "prompt": "Hay 20 facturas y 4 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas? Redondea el resultado a 4 decimales.",
             "options": [
               "0,0316",
               "0,04",
@@ -3585,7 +3585,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Se audita un lote cerrado de facturas.",
-            "prompt": "Hay 20 facturas y 5 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas?",
+            "prompt": "Hay 20 facturas y 5 son incorrectas. Se extraen dos al azar sin reposición. ¿Cuál es la probabilidad de que las dos facturas sean incorrectas? Redondea el resultado a 4 decimales.",
             "options": [
               "0,0625",
               "0,2105",
@@ -3793,7 +3793,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Un filtro automático revisa solicitudes de crédito.",
-            "prompt": "El 10 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad?",
+            "prompt": "El 10 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad? Redondea el resultado a 4 decimales.",
             "options": [
               "0,8",
               "0,4706",
@@ -3805,7 +3805,7 @@ window.ECONOMIA = [
           },
           {
             "story": "Un filtro automático revisa solicitudes de crédito.",
-            "prompt": "El 15 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad?",
+            "prompt": "El 15 % de las solicitudes es irregular. El filtro alerta en el 80 % de las irregulares y en el 10 % de las regulares. Si hay alerta, ¿cuál es la probabilidad de irregularidad? Redondea el resultado a 4 decimales.",
             "options": [
               "0,5854",
               "0,8",
@@ -3903,7 +3903,7 @@ window.ECONOMIA = [
         "dificil": [
           {
             "story": "Un banco usa una prueba para detectar billetes falsos.",
-            "prompt": "De 1000 billetes hay 20 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. Dado que el billete ha activado la prueba, ¿qué probabilidad hay de que sea auténtico?",
+            "prompt": "De 1000 billetes hay 20 falsos. La prueba identifica todos los falsos y marca también 10 billetes auténticos. Dado que el billete ha activado la prueba, ¿qué probabilidad hay de que sea auténtico? Redondea el resultado a 4 decimales.",
             "options": [
               "0,3333",
               "0,01",

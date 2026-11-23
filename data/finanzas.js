@@ -12,8 +12,8 @@ window.FINANZAS = [
             "prompt": "Se revisan 4 lotes de 20 facturas. ¿Cuántas facturas se observan?",
             "options": [
               "80",
-              "84",
-              "88"
+              "20",
+              "24"
             ],
             "answer": 1,
             "hint": "Multiplica lotes por facturas de cada lote.",
@@ -23,9 +23,9 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "Se revisan 4 lotes de 30 facturas. ¿Cuántas facturas se observan?",
             "options": [
-              "124",
+              "30",
               "120",
-              "128"
+              "34"
             ],
             "answer": 2,
             "hint": "Multiplica lotes por facturas de cada lote.",
@@ -37,9 +37,9 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "Una auditora revisa cuatro carteras distintas. En cada cartera, una muestra de 20 facturas representa el 25 % de sus facturas. ¿Cuántas facturas reúnen las cuatro carteras?",
             "options": [
-              "324",
+              "80",
               "320",
-              "328"
+              "20"
             ],
             "answer": 2,
             "hint": "Cada lote representa cuatro veces su tamaño.",
@@ -49,8 +49,8 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "Una auditora revisa cuatro carteras distintas. En cada cartera, una muestra de 30 facturas representa el 25 % de sus facturas. ¿Cuántas facturas reúnen las cuatro carteras?",
             "options": [
-              "484",
-              "488",
+              "120",
+              "30",
               "480"
             ],
             "answer": 3,
@@ -66,9 +66,9 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "De 100 cuentas elegibles se revisan 20. ¿Qué porcentaje se revisa?",
             "options": [
-              "16",
+              "80",
               "20",
-              "12"
+              "0,2"
             ],
             "answer": 2,
             "hint": "Divide el número revisado entre el total.",
@@ -78,8 +78,8 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "De 100 cuentas elegibles se revisan 30. ¿Qué porcentaje se revisa?",
             "options": [
-              "26",
-              "22",
+              "70",
+              "0,3",
               "30"
             ],
             "answer": 3,
@@ -92,8 +92,8 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "De las 100 cuentas se revisaron 20. Si se detectan 5 duplicados entre las revisadas y el universo correcto es 95, ¿qué porcentaje se revisó realmente? Redondea a tres decimales.",
             "options": [
-              "11,789",
-              "7,789",
+              "15",
+              "21,053",
               "15,789"
             ],
             "answer": 3,
@@ -105,8 +105,8 @@ window.FINANZAS = [
             "prompt": "De las 100 cuentas se revisaron 30. Si se detectan 5 duplicados entre las revisadas y el universo correcto es 95, ¿qué porcentaje se revisó realmente? Redondea a tres decimales.",
             "options": [
               "26,316",
-              "22,316",
-              "18,316"
+              "25",
+              "31,579"
             ],
             "answer": 1,
             "hint": "Resta los duplicados tanto del numerador como del denominador.",
@@ -121,8 +121,8 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "En una caja hay 20 pagos digitales y 12 en efectivo. ¿Cuántos pagos hay?",
             "options": [
-              "28",
-              "36",
+              "20",
+              "12",
               "32"
             ],
             "answer": 3,
@@ -134,8 +134,8 @@ window.FINANZAS = [
             "prompt": "En una caja hay 30 pagos digitales y 12 en efectivo. ¿Cuántos pagos hay?",
             "options": [
               "42",
-              "38",
-              "46"
+              "30",
+              "12"
             ],
             "answer": 1,
             "hint": "Suma frecuencias de categorías excluyentes.",
@@ -148,8 +148,8 @@ window.FINANZAS = [
             "prompt": "De 20 pagos digitales y 12 en efectivo, dos digitales se reclasifican como efectivo. ¿Qué porcentaje sigue siendo digital?",
             "options": [
               "56,25",
-              "52,25",
-              "60,25"
+              "62,5",
+              "60"
             ],
             "answer": 1,
             "hint": "La reclasificación preserva el total.",
@@ -159,9 +159,9 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "De 30 pagos digitales y 12 en efectivo, dos digitales se reclasifican como efectivo. ¿Qué porcentaje sigue siendo digital? Redondea a tres decimales.",
             "options": [
-              "62,667",
+              "71,429",
               "66,667",
-              "70,667"
+              "70"
             ],
             "answer": 2,
             "hint": "La reclasificación preserva el total.",
@@ -1007,9 +1007,9 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "Hay 20 facturas digitales pagadas y 10 digitales pendientes. ¿Cuántas facturas digitales hay?",
             "options": [
-              "34",
+              "20",
               "30",
-              "38"
+              "10"
             ],
             "answer": 2,
             "hint": "Suma ambas celdas de la fila digital.",
@@ -1019,8 +1019,8 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "Hay 30 facturas digitales pagadas y 10 digitales pendientes. ¿Cuántas facturas digitales hay?",
             "options": [
-              "44",
-              "48",
+              "30",
+              "10",
               "40"
             ],
             "answer": 3,
@@ -1033,8 +1033,8 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "Hay 20 facturas digitales pagadas y 10 digitales pendientes. Se pagan 4 pendientes. ¿Qué porcentaje de las digitales está ahora pagado?",
             "options": [
-              "84",
-              "88",
+              "66,667",
+              "20",
               "80"
             ],
             "answer": 3,
@@ -1046,8 +1046,8 @@ window.FINANZAS = [
             "prompt": "Hay 30 facturas digitales pagadas y 10 digitales pendientes. Se pagan 4 pendientes. ¿Qué porcentaje de las digitales está ahora pagado?",
             "options": [
               "85",
-              "89",
-              "93"
+              "75",
+              "15"
             ],
             "answer": 1,
             "hint": "Cambian las celdas de pago pero se mantiene el total de la fila.",
@@ -1062,8 +1062,8 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "En dos oficinas se registran 20 y 15 transferencias inmediatas. ¿Cuántas inmediatas se registran en total?",
             "options": [
-              "31",
-              "27",
+              "15",
+              "20",
               "35"
             ],
             "answer": 3,
@@ -1075,8 +1075,8 @@ window.FINANZAS = [
             "prompt": "En dos oficinas se registran 30 y 15 transferencias inmediatas. ¿Cuántas inmediatas se registran en total?",
             "options": [
               "45",
-              "41",
-              "37"
+              "15",
+              "30"
             ],
             "answer": 1,
             "hint": "Suma la columna de ambas oficinas.",
@@ -1089,8 +1089,8 @@ window.FINANZAS = [
             "prompt": "De 20 y 15 transferencias inmediatas en dos oficinas, 3 de la primera se reasignan a la segunda. ¿Qué porcentaje de inmediatas corresponde ahora a la segunda? Redondea a tres decimales.",
             "options": [
               "51,429",
-              "47,429",
-              "43,429"
+              "42,857",
+              "48,571"
             ],
             "answer": 1,
             "hint": "La columna sigue teniendo el mismo total y la segunda aporta dieciocho.",
@@ -1100,9 +1100,9 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "De 30 y 15 transferencias inmediatas en dos oficinas, 3 de la primera se reasignan a la segunda. ¿Qué porcentaje de inmediatas corresponde ahora a la segunda?",
             "options": [
-              "36",
+              "33,333",
               "40",
-              "32"
+              "60"
             ],
             "answer": 2,
             "hint": "La columna sigue teniendo el mismo total y la segunda aporta dieciocho.",
@@ -1118,8 +1118,8 @@ window.FINANZAS = [
             "prompt": "De 100 préstamos, 20 son a tipo fijo y están al corriente. ¿Cuál es su frecuencia conjunta porcentual?",
             "options": [
               "20",
-              "16",
-              "24"
+              "80",
+              "0,2"
             ],
             "answer": 1,
             "hint": "Usa todo el conjunto como denominador.",
@@ -1129,9 +1129,9 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "De 100 préstamos, 30 son a tipo fijo y están al corriente. ¿Cuál es su frecuencia conjunta porcentual?",
             "options": [
-              "26",
+              "70",
               "30",
-              "34"
+              "0,3"
             ],
             "answer": 2,
             "hint": "Usa todo el conjunto como denominador.",
@@ -1143,9 +1143,9 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "Entre 200 préstamos, 40 son fijos al corriente y 20 son fijos morosos. ¿Qué porcentaje de los fijos está al corriente? Redondea a tres decimales.",
             "options": [
-              "62,667",
+              "20",
               "66,667",
-              "70,667"
+              "33,333"
             ],
             "answer": 2,
             "hint": "Condiciona en los préstamos fijos.",
@@ -1155,8 +1155,8 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "Entre 200 préstamos, 60 son fijos al corriente y 20 son fijos morosos. ¿Qué porcentaje de los fijos está al corriente?",
             "options": [
-              "71",
-              "79",
+              "30",
+              "25",
               "75"
             ],
             "answer": 3,
@@ -2003,8 +2003,8 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "Una comisión pasa de 100 a 120 €. ¿Cuál es el índice simple en base 100?",
             "options": [
-              "124",
-              "128",
+              "20",
+              "1,2",
               "120"
             ],
             "answer": 3,
@@ -2016,8 +2016,8 @@ window.FINANZAS = [
             "prompt": "Una comisión pasa de 100 a 130 €. ¿Cuál es el índice simple en base 100?",
             "options": [
               "130",
-              "134",
-              "138"
+              "30",
+              "1,3"
             ],
             "answer": 1,
             "hint": "Divide el precio actual entre el inicial y multiplica por cien.",
@@ -2030,8 +2030,8 @@ window.FINANZAS = [
             "prompt": "Un índice simple en base 100 alcanza 120 y el precio actual es 240 €. ¿Cuál era el precio base?",
             "options": [
               "200",
-              "204",
-              "208"
+              "240",
+              "288"
             ],
             "answer": 1,
             "hint": "Despeja el precio base de la fórmula.",
@@ -2041,9 +2041,9 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "Un índice simple en base 100 alcanza 130 y el precio actual es 260 €. ¿Cuál era el precio base?",
             "options": [
-              "204",
+              "260",
               "200",
-              "208"
+              "338"
             ],
             "answer": 2,
             "hint": "Despeja el precio base de la fórmula.",
@@ -2059,8 +2059,8 @@ window.FINANZAS = [
             "prompt": "El índice de gastos pasa de 100 a 120. ¿Cuánto aumentó en porcentaje?",
             "options": [
               "20",
-              "16",
-              "12"
+              "120",
+              "0,2"
             ],
             "answer": 1,
             "hint": "Compara el valor final con el inicial.",
@@ -2070,9 +2070,9 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "El índice de gastos pasa de 100 a 130. ¿Cuánto aumentó en porcentaje?",
             "options": [
-              "26",
+              "130",
               "30",
-              "22"
+              "0,3"
             ],
             "answer": 2,
             "hint": "Compara el valor final con el inicial.",
@@ -2084,9 +2084,9 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "El índice pasa de 120 a 100. ¿Qué porcentaje de descenso supone, expresado como magnitud positiva? Redondea a tres decimales.",
             "options": [
-              "12,667",
+              "20",
               "16,667",
-              "8,667"
+              "83,333"
             ],
             "answer": 2,
             "hint": "El denominador es ahora el índice más alto.",
@@ -2096,8 +2096,8 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "El índice pasa de 130 a 100. ¿Qué porcentaje de descenso supone, expresado como magnitud positiva? Redondea a tres decimales.",
             "options": [
-              "19,077",
-              "15,077",
+              "30",
+              "76,923",
               "23,077"
             ],
             "answer": 3,
@@ -2113,9 +2113,9 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "Un índice de precios vale 120 este año y 100 en el año elegido como nueva base. ¿Cuál es el índice rebasado?",
             "options": [
-              "116",
+              "20",
               "120",
-              "124"
+              "1,2"
             ],
             "answer": 2,
             "hint": "Divide el índice del año por el de la nueva base.",
@@ -2125,8 +2125,8 @@ window.FINANZAS = [
             "story": "El equipo de auditoría de una cooperativa revisa el expediente de septiembre. Datos ficticios.",
             "prompt": "Un índice de precios vale 130 este año y 100 en el año elegido como nueva base. ¿Cuál es el índice rebasado?",
             "options": [
-              "126",
-              "134",
+              "30",
+              "1,3",
               "130"
             ],
             "answer": 3,
@@ -2139,8 +2139,8 @@ window.FINANZAS = [
             "story": "El equipo de control de gestión de una empresa sevillana revisa el expediente de marzo. Datos ficticios.",
             "prompt": "En la antigua base, el índice vale 120 este año y 120 en la nueva base. ¿Cuál es el índice rebasado de este año?",
             "options": [
-              "96",
-              "104",
+              "120",
+              "83,333",
               "100"
             ],
             "answer": 3,
@@ -2152,8 +2152,8 @@ window.FINANZAS = [
             "prompt": "En la antigua base, el índice vale 120 este año y 130 en la nueva base. ¿Cuál es el índice rebasado de este año? Redondea a tres decimales.",
             "options": [
               "92,308",
-              "88,308",
-              "96,308"
+              "120",
+              "130"
             ],
             "answer": 1,
             "hint": "Divide ambos índices y multiplica por cien.",

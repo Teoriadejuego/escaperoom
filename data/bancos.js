@@ -12,8 +12,8 @@ window.BANCOS = [
             "prompt": "De 200 asistentes se entrevista a 20. ¿Cuántas unidades forman la población?",
             "options": [
               "200",
-              "205",
-              "195"
+              "20",
+              "180"
             ],
             "answer": 1,
             "hint": "Delimita a quién se refiere el estudio.",
@@ -23,8 +23,8 @@ window.BANCOS = [
             "story": "La oficina estudia las visitas guiadas de un mes.",
             "prompt": "De 300 asistentes se entrevista a 30. ¿Cuántas unidades forman la población?",
             "options": [
-              "305",
-              "295",
+              "30",
+              "270",
               "300"
             ],
             "answer": 3,
@@ -37,8 +37,8 @@ window.BANCOS = [
             "story": "La oficina estudia las visitas guiadas de un mes.",
             "prompt": "De 200 asistentes se entrevista a la cuarta parte. Diez cuestionarios resultan ilegibles. ¿Cuántas observaciones válidas quedan?",
             "options": [
-              "45",
-              "35",
+              "50",
+              "190",
               "40"
             ],
             "answer": 3,
@@ -49,9 +49,9 @@ window.BANCOS = [
             "story": "La oficina estudia las visitas guiadas de un mes.",
             "prompt": "De 300 asistentes se entrevista a la cuarta parte. Diez cuestionarios resultan ilegibles. ¿Cuántas observaciones válidas quedan?",
             "options": [
-              "60",
+              "75",
               "65",
-              "70"
+              "290"
             ],
             "answer": 2,
             "hint": "Distingue seleccionados y observados.",
@@ -66,8 +66,8 @@ window.BANCOS = [
             "story": "Recepción prepara una base de datos de viajeros.",
             "prompt": "Hay 20 parejas. Si se abre una ficha por persona, ¿cuántas fichas habrá?",
             "options": [
-              "45",
-              "35",
+              "20",
+              "80",
               "40"
             ],
             "answer": 3,
@@ -78,9 +78,9 @@ window.BANCOS = [
             "story": "Recepción prepara una base de datos de viajeros.",
             "prompt": "Hay 30 parejas. Si se abre una ficha por persona, ¿cuántas fichas habrá?",
             "options": [
-              "55",
+              "30",
               "60",
-              "65"
+              "120"
             ],
             "answer": 2,
             "hint": "Identifica qué representa una fila.",
@@ -92,9 +92,9 @@ window.BANCOS = [
             "story": "Recepción prepara una base de datos de viajeros.",
             "prompt": "Hay 20 parejas y 2 grupos de tres. Si la unidad es la persona, ¿cuántas filas más habrá que usando cada grupo o pareja como unidad?",
             "options": [
-              "19",
+              "22",
               "24",
-              "29"
+              "46"
             ],
             "answer": 2,
             "hint": "Compara ambos recuentos.",
@@ -105,8 +105,8 @@ window.BANCOS = [
             "prompt": "Hay 30 parejas y 3 grupos de tres. Si la unidad es la persona, ¿cuántas filas más habrá que usando cada grupo o pareja como unidad?",
             "options": [
               "36",
-              "41",
-              "31"
+              "33",
+              "69"
             ],
             "answer": 1,
             "hint": "Compara ambos recuentos.",
@@ -121,9 +121,9 @@ window.BANCOS = [
             "story": "Una oficina codifica las respuestas sobre transporte.",
             "prompt": "De 20 respuestas, 10 indican tren. ¿Cuántas corresponden a otro medio?",
             "options": [
-              "5",
+              "20",
               "10",
-              "15"
+              "30"
             ],
             "answer": 2,
             "hint": "Las categorías son excluyentes.",
@@ -134,8 +134,8 @@ window.BANCOS = [
             "prompt": "De 20 respuestas, 11 indican tren. ¿Cuántas corresponden a otro medio?",
             "options": [
               "9",
-              "10",
-              "8"
+              "20",
+              "31"
             ],
             "answer": 1,
             "hint": "Las categorías son excluyentes.",
@@ -145,11 +145,11 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "Una oficina codifica las respuestas sobre transporte.",
-            "prompt": "De 40 fichas, 5 no indican transporte y 10 dicen tren. Entre quienes respondieron, ¿qué porcentaje eligió tren?",
+            "prompt": "De 40 fichas, 5 no indican transporte y 10 dicen tren. Entre quienes respondieron, ¿qué porcentaje eligió tren? Redondea el resultado a 4 decimales.",
             "options": [
               "28,5714",
-              "33,5714",
-              "23,5714"
+              "25",
+              "71,4286"
             ],
             "answer": 1,
             "hint": "Excluye las fichas sin dato del denominador.",
@@ -157,10 +157,10 @@ window.BANCOS = [
           },
           {
             "story": "Una oficina codifica las respuestas sobre transporte.",
-            "prompt": "De 40 fichas, 5 no indican transporte y 11 dicen tren. Entre quienes respondieron, ¿qué porcentaje eligió tren?",
+            "prompt": "De 40 fichas, 5 no indican transporte y 11 dicen tren. Entre quienes respondieron, ¿qué porcentaje eligió tren? Redondea el resultado a 4 decimales.",
             "options": [
-              "36,4286",
-              "26,4286",
+              "27,5",
+              "68,5714",
               "31,4286"
             ],
             "answer": 3,
@@ -200,7 +200,7 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "Una guía cuenta visitas por idioma.",
-            "prompt": "Se anotaron 20 visitas en inglés sobre 80 visitas. Se descubren 4 duplicados, todos en inglés. ¿Qué porcentaje corregido corresponde a inglés?",
+            "prompt": "Se anotaron 20 visitas en inglés sobre 80 visitas. Se descubren 4 duplicados, todos en inglés. ¿Qué porcentaje corregido corresponde a inglés? Redondea el resultado a 4 decimales.",
             "options": [
               "26,0526",
               "16,0526",
@@ -212,7 +212,7 @@ window.BANCOS = [
           },
           {
             "story": "Una guía cuenta visitas por idioma.",
-            "prompt": "Se anotaron 30 visitas en inglés sobre 80 visitas. Se descubren 4 duplicados, todos en inglés. ¿Qué porcentaje corregido corresponde a inglés?",
+            "prompt": "Se anotaron 30 visitas en inglés sobre 80 visitas. Se descubren 4 duplicados, todos en inglés. ¿Qué porcentaje corregido corresponde a inglés? Redondea el resultado a 4 decimales.",
             "options": [
               "29,2105",
               "34,2105",
@@ -310,7 +310,7 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "Las fichas cuentan noches de estancia.",
-            "prompt": "De 60 viajeros, 37 pasan como máximo tres noches y 12 pasan como máximo una. ¿Qué porcentaje pasa dos o tres noches?",
+            "prompt": "De 60 viajeros, 37 pasan como máximo tres noches y 12 pasan como máximo una. ¿Qué porcentaje pasa dos o tres noches? Redondea el resultado a 4 decimales.",
             "options": [
               "41,6667",
               "46,6667",
@@ -322,7 +322,7 @@ window.BANCOS = [
           },
           {
             "story": "Las fichas cuentan noches de estancia.",
-            "prompt": "De 60 viajeros, 38 pasan como máximo tres noches y 12 pasan como máximo una. ¿Qué porcentaje pasa dos o tres noches?",
+            "prompt": "De 60 viajeros, 38 pasan como máximo tres noches y 12 pasan como máximo una. ¿Qué porcentaje pasa dos o tres noches? Redondea el resultado a 4 decimales.",
             "options": [
               "48,3333",
               "38,3333",
@@ -1008,8 +1008,8 @@ window.BANCOS = [
             "prompt": "De 100 visitas, 20 llegan en bus por la mañana y 12 en bus por la tarde. ¿Qué porcentaje del total llega en bus por la mañana?",
             "options": [
               "20",
-              "25",
-              "15"
+              "32",
+              "12"
             ],
             "answer": 1,
             "hint": "Usa como denominador las 100 visitas.",
@@ -1019,8 +1019,8 @@ window.BANCOS = [
             "story": "El museo cruza transporte y turno.",
             "prompt": "De 100 visitas, 30 llegan en bus por la mañana y 12 en bus por la tarde. ¿Qué porcentaje del total llega en bus por la mañana?",
             "options": [
-              "35",
-              "25",
+              "42",
+              "12",
               "30"
             ],
             "answer": 3,
@@ -1033,8 +1033,8 @@ window.BANCOS = [
             "story": "El museo cruza transporte y turno.",
             "prompt": "De 100 visitas, 20 llegan en bus por la mañana y 12 en bus por la tarde. Entre visitantes en bus, ¿qué porcentaje llega por la mañana?",
             "options": [
-              "67,5",
-              "57,5",
+              "20",
+              "37,5",
               "62,5"
             ],
             "answer": 3,
@@ -1043,11 +1043,11 @@ window.BANCOS = [
           },
           {
             "story": "El museo cruza transporte y turno.",
-            "prompt": "De 100 visitas, 30 llegan en bus por la mañana y 12 en bus por la tarde. Entre visitantes en bus, ¿qué porcentaje llega por la mañana?",
+            "prompt": "De 100 visitas, 30 llegan en bus por la mañana y 12 en bus por la tarde. Entre visitantes en bus, ¿qué porcentaje llega por la mañana? Redondea el resultado a 4 decimales.",
             "options": [
-              "66,4286",
+              "30",
               "71,4286",
-              "76,4286"
+              "28,5714"
             ],
             "answer": 2,
             "hint": "Divide la celda de mañana y bus entre el total de bus.",
@@ -1062,8 +1062,8 @@ window.BANCOS = [
             "story": "Una tabla distingue origen y alojamiento.",
             "prompt": "Se alojan en hotel 24 residentes y 20 no residentes. Hay otros 30 viajeros en apartamentos. ¿Cuántos se alojan en hotel?",
             "options": [
-              "49",
-              "39",
+              "24",
+              "74",
               "44"
             ],
             "answer": 3,
@@ -1074,9 +1074,9 @@ window.BANCOS = [
             "story": "Una tabla distingue origen y alojamiento.",
             "prompt": "Se alojan en hotel 36 residentes y 20 no residentes. Hay otros 30 viajeros en apartamentos. ¿Cuántos se alojan en hotel?",
             "options": [
-              "51",
+              "36",
               "56",
-              "61"
+              "86"
             ],
             "answer": 2,
             "hint": "Suma ambas celdas de hotel.",
@@ -1086,11 +1086,11 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "Una tabla distingue origen y alojamiento.",
-            "prompt": "Se alojan en hotel 24 residentes y 20 no residentes. Hay otros 30 viajeros en apartamentos. ¿Qué porcentaje de todos los viajeros se aloja en hotel?",
+            "prompt": "Se alojan en hotel 24 residentes y 20 no residentes. Hay otros 30 viajeros en apartamentos. ¿Qué porcentaje de todos los viajeros se aloja en hotel? Redondea el resultado a 4 decimales.",
             "options": [
-              "54,4595",
+              "32,4324",
               "59,4595",
-              "64,4595"
+              "40,5405"
             ],
             "answer": 2,
             "hint": "Divide el marginal hotelero por la suma de hotel y apartamentos.",
@@ -1098,11 +1098,11 @@ window.BANCOS = [
           },
           {
             "story": "Una tabla distingue origen y alojamiento.",
-            "prompt": "Se alojan en hotel 36 residentes y 20 no residentes. Hay otros 30 viajeros en apartamentos. ¿Qué porcentaje de todos los viajeros se aloja en hotel?",
+            "prompt": "Se alojan en hotel 36 residentes y 20 no residentes. Hay otros 30 viajeros en apartamentos. ¿Qué porcentaje de todos los viajeros se aloja en hotel? Redondea el resultado a 4 decimales.",
             "options": [
               "65,1163",
-              "70,1163",
-              "60,1163"
+              "41,8605",
+              "34,8837"
             ],
             "answer": 1,
             "hint": "Divide el marginal hotelero por la suma de hotel y apartamentos.",
@@ -1117,9 +1117,9 @@ window.BANCOS = [
             "story": "Se clasifican reservas por canal y trimestre.",
             "prompt": "En verano se hicieron 40 reservas directas y 15 por agencia. En invierno se hicieron 25 en total. ¿Cuántas reservas son de verano?",
             "options": [
-              "50",
+              "40",
               "55",
-              "60"
+              "80"
             ],
             "answer": 2,
             "hint": "Suma los dos canales de verano.",
@@ -1130,8 +1130,8 @@ window.BANCOS = [
             "prompt": "En verano se hicieron 60 reservas directas y 15 por agencia. En invierno se hicieron 25 en total. ¿Cuántas reservas son de verano?",
             "options": [
               "75",
-              "80",
-              "70"
+              "60",
+              "100"
             ],
             "answer": 1,
             "hint": "Suma los dos canales de verano.",
@@ -1144,8 +1144,8 @@ window.BANCOS = [
             "prompt": "En verano se hicieron 40 reservas directas y 15 por agencia. En invierno se hicieron 25 en total. ¿Qué porcentaje del total son reservas directas de verano?",
             "options": [
               "50",
-              "55",
-              "45"
+              "72,7273",
+              "18,75"
             ],
             "answer": 1,
             "hint": "Usa la celda conjunta sobre el total de las dos temporadas.",
@@ -1155,8 +1155,8 @@ window.BANCOS = [
             "story": "Se clasifican reservas por canal y trimestre.",
             "prompt": "En verano se hicieron 60 reservas directas y 15 por agencia. En invierno se hicieron 25 en total. ¿Qué porcentaje del total son reservas directas de verano?",
             "options": [
-              "65",
-              "55",
+              "80",
+              "15",
               "60"
             ],
             "answer": 3,
@@ -1196,7 +1196,7 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "Se examinan hábitos de alojamiento.",
-            "prompt": "Entre 50 clientes nacionales, 16 eligieron pensión completa. Entre 20 internacionales la eligieron 10. Entre todos los que eligieron pensión completa, ¿qué porcentaje es nacional?",
+            "prompt": "Entre 50 clientes nacionales, 16 eligieron pensión completa. Entre 20 internacionales la eligieron 10. Entre todos los que eligieron pensión completa, ¿qué porcentaje es nacional? Redondea el resultado a 4 decimales.",
             "options": [
               "66,5385",
               "56,5385",
@@ -1208,7 +1208,7 @@ window.BANCOS = [
           },
           {
             "story": "Se examinan hábitos de alojamiento.",
-            "prompt": "Entre 50 clientes nacionales, 24 eligieron pensión completa. Entre 20 internacionales la eligieron 10. Entre todos los que eligieron pensión completa, ¿qué porcentaje es nacional?",
+            "prompt": "Entre 50 clientes nacionales, 24 eligieron pensión completa. Entre 20 internacionales la eligieron 10. Entre todos los que eligieron pensión completa, ¿qué porcentaje es nacional? Redondea el resultado a 4 decimales.",
             "options": [
               "65,5882",
               "70,5882",
@@ -1251,7 +1251,7 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "La agencia reconstruye un informe.",
-            "prompt": "Hay 100 viajeros, 60 en hotel y 40 en hostal. Hay 20 nacionales en hotel y 12 nacionales en hostal. ¿Qué porcentaje de los internacionales está en hotel?",
+            "prompt": "Hay 100 viajeros, 60 en hotel y 40 en hostal. Hay 20 nacionales en hotel y 12 nacionales en hostal. ¿Qué porcentaje de los internacionales está en hotel? Redondea el resultado a 4 decimales.",
             "options": [
               "53,8235",
               "58,8235",
@@ -1263,7 +1263,7 @@ window.BANCOS = [
           },
           {
             "story": "La agencia reconstruye un informe.",
-            "prompt": "Hay 100 viajeros, 60 en hotel y 40 en hostal. Hay 30 nacionales en hotel y 12 nacionales en hostal. ¿Qué porcentaje de los internacionales está en hotel?",
+            "prompt": "Hay 100 viajeros, 60 en hotel y 40 en hostal. Hay 30 nacionales en hotel y 12 nacionales en hostal. ¿Qué porcentaje de los internacionales está en hotel? Redondea el resultado a 4 decimales.",
             "options": [
               "51,7241",
               "56,7241",
@@ -2004,8 +2004,8 @@ window.BANCOS = [
             "prompt": "Se pasa de 200 a 220 visitas. ¿Qué índice base 100 resulta?",
             "options": [
               "110",
-              "115",
-              "105"
+              "10",
+              "220"
             ],
             "answer": 1,
             "hint": "Divide el nivel actual entre el inicial y multiplica por cien.",
@@ -2015,8 +2015,8 @@ window.BANCOS = [
             "story": "La taquilla compara afluencia con un año base.",
             "prompt": "Se pasa de 200 a 230 visitas. ¿Qué índice base 100 resulta?",
             "options": [
-              "120",
-              "110",
+              "15",
+              "230",
               "115"
             ],
             "answer": 3,
@@ -2027,10 +2027,10 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "La taquilla compara afluencia con un año base.",
-            "prompt": "Se pasa de 200 a 220 visitas. Si el periodo siguiente gana otras 20 visitas, ¿qué índice tiene respecto al periodo intermedio?",
+            "prompt": "Se pasa de 200 a 220 visitas. Si el periodo siguiente gana otras 20 visitas, ¿qué índice tiene respecto al periodo intermedio? Redondea el resultado a 4 decimales.",
             "options": [
-              "114,0909",
-              "104,0909",
+              "120",
+              "9,0909",
               "109,0909"
             ],
             "answer": 3,
@@ -2039,11 +2039,11 @@ window.BANCOS = [
           },
           {
             "story": "La taquilla compara afluencia con un año base.",
-            "prompt": "Se pasa de 200 a 230 visitas. Si el periodo siguiente gana otras 20 visitas, ¿qué índice tiene respecto al periodo intermedio?",
+            "prompt": "Se pasa de 200 a 230 visitas. Si el periodo siguiente gana otras 20 visitas, ¿qué índice tiene respecto al periodo intermedio? Redondea el resultado a 4 decimales.",
             "options": [
-              "103,6957",
+              "125",
               "108,6957",
-              "113,6957"
+              "8,6957"
             ],
             "answer": 2,
             "hint": "Usa el nivel intermedio como nueva base y el último como numerador.",
@@ -2058,8 +2058,8 @@ window.BANCOS = [
             "story": "El observatorio indexa las pernoctaciones.",
             "prompt": "El índice es 120 con base 100 y hubo 500 estancias en la base. ¿Cuál es el crecimiento porcentual desde la base?",
             "options": [
-              "25",
-              "15",
+              "120",
+              "1,2",
               "20"
             ],
             "answer": 3,
@@ -2070,9 +2070,9 @@ window.BANCOS = [
             "story": "El observatorio indexa las pernoctaciones.",
             "prompt": "El índice es 130 con base 100 y hubo 500 estancias en la base. ¿Cuál es el crecimiento porcentual desde la base?",
             "options": [
-              "25",
+              "130",
               "30",
-              "35"
+              "1,3"
             ],
             "answer": 2,
             "hint": "Compara el índice con cien.",
@@ -2084,9 +2084,9 @@ window.BANCOS = [
             "story": "El observatorio indexa las pernoctaciones.",
             "prompt": "El índice es 120 con base 100 y hubo 500 estancias en la base. ¿Cuántas estancias adicionales hubo frente a la base?",
             "options": [
-              "95",
+              "600",
               "100",
-              "105"
+              "20"
             ],
             "answer": 2,
             "hint": "Aplica la tasa de crecimiento al nivel inicial de 500.",
@@ -2097,8 +2097,8 @@ window.BANCOS = [
             "prompt": "El índice es 130 con base 100 y hubo 500 estancias en la base. ¿Cuántas estancias adicionales hubo frente a la base?",
             "options": [
               "150",
-              "155",
-              "145"
+              "650",
+              "30"
             ],
             "answer": 1,
             "hint": "Aplica la tasa de crecimiento al nivel inicial de 500.",
@@ -2113,9 +2113,9 @@ window.BANCOS = [
             "story": "Se revisan entradas vendidas.",
             "prompt": "El índice actual es 125 y ahora se venden 250 entradas. ¿Qué factor multiplica al nivel inicial?",
             "options": [
-              "1,18",
+              "0,25",
               "1,25",
-              "1,32"
+              "125"
             ],
             "answer": 2,
             "hint": "Divide el índice por cien.",
@@ -2126,8 +2126,8 @@ window.BANCOS = [
             "prompt": "El índice actual es 125 y ahora se venden 375 entradas. ¿Qué factor multiplica al nivel inicial?",
             "options": [
               "1,25",
-              "1,32",
-              "1,18"
+              "0,25",
+              "125"
             ],
             "answer": 1,
             "hint": "Divide el índice por cien.",
@@ -2140,8 +2140,8 @@ window.BANCOS = [
             "prompt": "El índice actual es 125 y ahora se venden 250 entradas. ¿Cuántas entradas adicionales se venden respecto a la base?",
             "options": [
               "50",
-              "55",
-              "45"
+              "200",
+              "250"
             ],
             "answer": 1,
             "hint": "Divide las ventas actuales por 1,25 y resta el nivel base a las actuales.",
@@ -2151,8 +2151,8 @@ window.BANCOS = [
             "story": "Se revisan entradas vendidas.",
             "prompt": "El índice actual es 125 y ahora se venden 375 entradas. ¿Cuántas entradas adicionales se venden respecto a la base?",
             "options": [
-              "80",
-              "70",
+              "300",
+              "375",
               "75"
             ],
             "answer": 3,
@@ -2192,7 +2192,7 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "La oficina conserva series de precios.",
-            "prompt": "La tarifa fue 50 € en A, 60 € en B y 70 € en C. ¿Qué índice tiene A con base C?",
+            "prompt": "La tarifa fue 50 € en A, 60 € en B y 70 € en C. ¿Qué índice tiene A con base C? Redondea el resultado a 4 decimales.",
             "options": [
               "76,4286",
               "66,4286",
@@ -2204,7 +2204,7 @@ window.BANCOS = [
           },
           {
             "story": "La oficina conserva series de precios.",
-            "prompt": "La tarifa fue 50 € en A, 60 € en B y 75 € en C. ¿Qué índice tiene A con base C?",
+            "prompt": "La tarifa fue 50 € en A, 60 € en B y 75 € en C. ¿Qué índice tiene A con base C? Redondea el resultado a 4 decimales.",
             "options": [
               "61,6667",
               "66,6667",
@@ -2687,7 +2687,7 @@ window.BANCOS = [
         "dificil": [
           {
             "story": "La cesta actual de excursiones difiere de la inicial.",
-            "prompt": "Ahora se compran 3 rutas y 2 talleres. Los precios iniciales eran 10 y 20 €. Los actuales son 12 y 22 €. ¿Cuál es el índice de precios de Paasche?",
+            "prompt": "Ahora se compran 3 rutas y 2 talleres. Los precios iniciales eran 10 y 20 €. Los actuales son 12 y 22 €. ¿Cuál es el índice de precios de Paasche? Redondea el resultado a 4 decimales.",
             "options": [
               "119,2857",
               "109,2857",
@@ -2699,7 +2699,7 @@ window.BANCOS = [
           },
           {
             "story": "La cesta actual de excursiones difiere de la inicial.",
-            "prompt": "Ahora se compran 3 rutas y 3 talleres. Los precios iniciales eran 10 y 20 €. Los actuales son 12 y 22 €. ¿Cuál es el índice de precios de Paasche?",
+            "prompt": "Ahora se compran 3 rutas y 3 talleres. Los precios iniciales eran 10 y 20 €. Los actuales son 12 y 22 €. ¿Cuál es el índice de precios de Paasche? Redondea el resultado a 4 decimales.",
             "options": [
               "108,3333",
               "113,3333",

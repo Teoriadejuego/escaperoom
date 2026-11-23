@@ -8,7 +8,7 @@ window.HISTORIA_ORIGINAL = {
       "subtitle": "El sello de Brújula Sur",
       "image": "01_salvador.webp",
       "time": "09:10",
-      "intro": "Inés, guía de Brújula Sur, te espera en la plaza del Salvador. El itinerario del grupo ha desaparecido. En el sobre que dejaron en la cafetería hay tres objetos y una nota: cada encargo resuelto descubre un dígito del cierre.",
+      "intro": "Inés, guía de Brújula Sur, te espera en la plaza del Salvador. El itinerario del grupo ha desaparecido. Alguien dejó una carta, una grabadora y un recorte en la cafetería. Resuelve sus tres encargos para recuperar el código del sobre.",
       "next_text": "Dentro del sobre aparece el sello del Ayuntamiento. Camináis hacia la plaza de San Francisco.",
       "objetos": [
         "La carta",

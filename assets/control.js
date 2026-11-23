@@ -1,7 +1,9 @@
 'use strict';
-(() => {
+(async () => {
+  await Estudio.entrada();
   const el = id => document.getElementById(id);
   let sexoCompartido;
+  if (Estudio.clase) el('autorizar').closest('fieldset').remove();
   const courses = window.ASIGNATURAS;
   const selector = el('asignatura');
   const content = el('contenido');
@@ -24,6 +26,7 @@
       blocks = result;
       el('bloque').replaceChildren(...blocks.map(b => new Option(b.nombre,b.id)));
       el('iniciar').disabled = el('bloque').disabled = false;
+      Estudio.aplicarPrescripcion(el('iniciar'));
       el('estado').textContent = '';
     } catch {
       if (course !== selected) return;
@@ -39,15 +42,16 @@
   }
   el('setup').onsubmit = event => {
     event.preventDefault();
-    if (!blocks || questions) return;
+    if (!blocks || questions || el('iniciar').disabled) return;
     const block = blocks.find(b => b.id === el('bloque').value);
     difficulty = el('dificultad').value;
     questions = block.apartados.map(section => {
       const pool = section[difficulty];
       return pool[Math.floor(Math.random()*pool.length)];
     });
-    sexoCompartido = el("autorizar").checked ? new FormData(el("setup")).get("sexo") : null;
+    sexoCompartido = el("autorizar")?.checked ? new FormData(el("setup")).get("sexo") : null;
     el("setup").querySelectorAll('[name="sexo"], #autorizar').forEach(input => { input.checked = false; });
+    Estudio.iniciar(course.id, block.id, difficulty);
     start = performance.now(); position = correct = 0;
     el('setup').hidden = true;
     el('sesion').hidden = false;
@@ -76,6 +80,7 @@
       if(!form.isConnected) return;
       const answer = new FormData(form).get('respuesta');
       if(!answer) return;
+      Estudio.registrar(Number(answer)===q.answer);
       if(Number(answer)===q.answer) correct++;
       position++;
       if(position===questions.length) finish(); else showQuestion();
@@ -92,6 +97,7 @@
     const copy=node('button','Copiar código'),status=node('p','');status.setAttribute('role','status');
     copy.onclick=async()=>{input.focus();input.select();try{await navigator.clipboard.writeText(code);status.textContent='Código copiado.';}catch{status.textContent='Usa la opción Copiar de tu dispositivo.';}};
     content.replaceChildren(heading,node('p','Aciertos: '+correct+' de '+questions.length+'. Nota: '+grade+' sobre 10.'),label,node('p','Envía el código completo a tu profesor.'),copy,status);
+    Estudio.comprobante(content);
     heading.focus();
   }
   refresh();
