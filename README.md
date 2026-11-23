@@ -46,3 +46,5 @@ Cuando provisional es verdadero se utiliza el banco común de Estadística I de 
 ## Escenarios experimentales
 
 [TR · Aventura](https://teoriadejuego.github.io/escaperoom/) y [CO · Cuestionario](https://teoriadejuego.github.io/escaperoom/control.html) ofrecen 18 preguntas por partida. El control admite una respuesta por ítem, con el resultado al final (10 × aciertos / 18). Ambas URL admiten el parámetro asignatura. Los códigos previos se validan sin atribución de grupo. El profesor distribuye los enlaces según su lista de asignación. [Prompt de diseño y prerregistro](PROMPT_ESTUDIO_CONTROL.md).
+
+El código incorpora los contadores de la pantalla final antes de CO o TR. Por ejemplo, R2A1 indica dos reinicios del hito y una ayuda consultada. En CO se registra R0A0 por diseño. En códigos anteriores el validador indica que esos datos no se registraron.

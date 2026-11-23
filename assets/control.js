@@ -81,7 +81,7 @@
     heading.focus();
   }
   function finish() {
-    const code=CodigosDePartida.crear(difficulty,performance.now()-start,'CO');
+    const code=CodigosDePartida.crear(difficulty,performance.now()-start,'CO',0,0);
     const grade=(10*correct/questions.length).toLocaleString('es-ES',{maximumFractionDigits:2});
     const heading=node('h2','Cuestionario finalizado'); heading.tabIndex=-1;
     const label=node('label','Código de finalización'), input=document.createElement('input');
