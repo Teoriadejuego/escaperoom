@@ -2990,7 +2990,7 @@ window.FINANZAS = [
   },
   {
     "id": "fin-prob",
-    "nombre": "Probabilidad · Tema 10",
+    "nombre": "Bloque 4. Probabilidad",
     "apartados": [
       {
         "nombre": "Probabilidad simple",

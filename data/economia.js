@@ -2990,7 +2990,7 @@ window.ECONOMIA = [
   },
   {
     "id": "eco-prob",
-    "nombre": "Probabilidad · Tema 10",
+    "nombre": "Bloque 4. Probabilidad",
     "apartados": [
       {
         "nombre": "Sucesos y unión",
