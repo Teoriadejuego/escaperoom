@@ -35,7 +35,7 @@ El archivo **PROMPT_PROYECTO.md** contiene el encargo reutilizable para coordina
 
 ## Comprobar un código de finalización
 
-Abre el [validador docente](https://teoriadejuego.github.io/escaperoom/validar.html) y pega el código. Tras la sexta cerradura el juego genera un código por partida que también aparece en el cuaderno final. Tras @ van el número aleatorio de cuatro cifras, su cociente entero entre siete con cuatro posiciones, la dificultad (0 fácil, 1 difícil), los minutos completos con dos posiciones y una serie aleatoria hexadecimal seguida del grupo TR o CO. El tiempo empieza al abrir la aventura e incluye los reintentos. 99 representa 99 minutos o más. El control es local y comprueba coherencia. La aleatoriedad reduce las coincidencias, pero no garantiza unicidad global ni autoría.
+Abre el [validador docente](https://teoriadejuego.github.io/escaperoom/validar.html) y pega el código. Tras la sexta cerradura el juego genera un código por partida que también aparece en el cuaderno final. Tras @ van el número aleatorio de cuatro cifras, su cociente entero entre siete con cuatro posiciones, la dificultad (0 fácil, 1 difícil), los minutos completos con dos posiciones y los campos de personaje o dato opcional, reintentos, ayudas y grupo TR o CO. El tiempo empieza al abrir la aventura e incluye los reintentos. 99 representa 99 minutos o más. El control es local y comprueba coherencia. La aleatoriedad reduce las coincidencias, pero no garantiza unicidad global ni autoría.
 
 ## Catálogo de asignaturas del departamento
 

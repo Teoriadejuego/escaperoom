@@ -25,18 +25,20 @@ window.Estudio = (() => {
     if (!requested) return;
     const panel = document.createElement('main');
     panel.className = 'puerta-estudio';
-    panel.innerHTML = `<h1 tabindex="-1"></h1><p><strong>¿Mejora el segundo parcial cuando la clase practica con la aventura en vez del cuestionario tradicional, comparando estudiantes con rendimiento inicial similar?</strong></p>
-      <p>El primer parcial sirve como referencia. Tu clase tiene asignada una modalidad de práctica antes del segundo parcial. Participar permite al equipo docente relacionar los dos parciales con la actividad mediante un identificador asignado por el docente.</p>
-      <p>La participación es voluntaria. Puedes practicar en la misma modalidad y con las mismas condiciones académicas aunque declines. Puedes salir en cualquier momento. Para retirar una entrega, comunica tu identificador al responsable antes de que se anonimice el registro.</p>
-      <p id="estudio-info"></p><p>El comprobante incluye identificador seudónimo, clase, condición, asignatura, bloque, dificultad, fecha y versión de la aceptación, duración, número de respuestas, aciertos, ayudas, reintentos y finalización. Tú decides si lo entregas por el canal institucional. Esta página procesa las respuestas en tu pestaña. El servicio de alojamiento puede recibir datos técnicos de conexión.</p>
-      <form id="estudio-form"><label>Identificador seudónimo entregado por el docente (P seguido de seis cifras)<input required autocomplete="off" pattern="P[0-9]{6}" name="id" placeholder="P000001"></label>
-      <label>Código de clase (C seguida de tres cifras)<input required autocomplete="off" pattern="C[0-9]{3}" name="clase" placeholder="C001"></label>
-      <label>Si decides no participar en la investigación, ¿qué sucede?<select required name="comprension"><option value="">Elige una respuesta</option><option value="nota">Pierdo la oportunidad de practicar</option><option value="igual">Puedo practicar con las mismas condiciones académicas</option></select></label>
-      <label><input type="checkbox" required name="aceptar"> He leído la información y acepto el tratamiento de los datos descritos para esta investigación.</label>
-      <button>Continuar</button><p role="status"></p></form>
-      <p><a id="sin-estudio">Continuar con la misma práctica de clase sin participar en el estudio</a></p>`;
+    panel.innerHTML = `<h1 tabindex="-1">Una app para practicar estadística</h1>
+      <p>Te regalamos esta app para ayudarte a preparar el segundo parcial. Queremos saber con qué formato se aprende más: una aventura o un cuestionario.</p>
+      <p>¿Nos permites usar tus datos de práctica y relacionarlos con las notas de tus dos primeros parciales? Tú eliges. Tendrás la misma actividad y la misma nota decidas lo que decidas.</p>
+      <p id="ensayo-aviso"></p>
+      <details><summary>Qué datos se usan y cómo retirarme</summary>
+      <p>El comprobante registra tu código de participante y clase, formato, asignatura, bloque, dificultad, aceptación, tiempo, respuestas, aciertos, ayudas y reintentos. Lo entregas tú por el canal institucional. Para retirarlo antes de la anonimización, comunica tu código al responsable. El alojamiento puede recibir datos técnicos de conexión.</p>
+      <p id="estudio-info"></p></details>
+      <p><button id="participar" type="button" aria-expanded="false">Sí, autorizo el uso de mis datos</button></p>
+      <form id="estudio-form" hidden><label>Mi código de participante<input required autocomplete="off" pattern="P[0-9]{6}" name="id" placeholder="P000001"></label>
+      <label>Mi código de clase<input required autocomplete="off" pattern="C[0-9]{3}" name="clase" placeholder="C001"></label>
+      <button>Empezar la práctica</button></form>
+      <p><a id="sin-estudio">Practicar sin compartir mis datos</a></p>`;
     const heading = panel.querySelector('h1');
-    heading.textContent = enabled ? 'Información y participación en el estudio' : 'Ensayo del estudio con datos ficticios';
+    panel.querySelector('#ensayo-aviso').textContent = enabled ? '' : 'Demostración con datos ficticios.';
     panel.querySelector('#estudio-info').textContent = enabled ?
       ['Responsable: '+cfg.responsable, 'Contacto: '+cfg.contacto, 'Conservación: '+cfg.conservacion, 'Revisión: '+cfg.referenciaRevision].join('. ') :
       'Simulación técnica. Utiliza P000001 y C001 u otros códigos inventados. No entregues datos reales. La captación está cerrada.';
@@ -52,17 +54,22 @@ window.Estudio = (() => {
     heading.focus();
     await new Promise(resolve => {
       const form = panel.querySelector('form');
+      const consent = panel.querySelector('#participar');
+      consent.onclick = () => {
+        form.hidden = false;
+        consent.setAttribute('aria-expanded','true');
+        if (!enabled) {
+          form.elements.id.value='P000001';
+          form.elements.clase.value='C001';
+          form.requestSubmit();
+        } else form.elements.id.focus();
+      };
       form.onsubmit = event => {
         event.preventDefault();
+        if (form.hidden || !form.reportValidity()) return;
         const fields = new FormData(form);
-        if (!form.reportValidity() || !fields.has('aceptar')) return;
-        if (fields.get('comprension') !== 'igual') {
-          form.querySelector('[role=status]').textContent = 'Lee de nuevo las condiciones de participación y vuelve a responder.';
-          form.elements.comprension.focus();
-          return;
-        }
         enrollment = {modo:mode, id:fields.get('id'), clase:fields.get('clase'), condicion:condition,
-          version:enabled ? cfg.version : 'ensayo-1', aceptacion_utc:new Date().toISOString()};
+          version:enabled ? cfg.version : 'ensayo-2', aceptacion_utc:new Date().toISOString()};
         panel.remove();document.documentElement.classList.remove('entrada-estudio');
         const leave=document.createElement('a');leave.className='salir-estudio';leave.href=practiceUrl();
         leave.textContent = 'Salir del estudio y comenzar la misma práctica sin participar';document.body.append(leave);
@@ -77,6 +84,7 @@ window.Estudio = (() => {
     if (enrollment && exposure && !exposure.fin_utc) {
       exposure.respuestas++;
       if (acierto) exposure.aciertos++;
+      else exposure.reintentos++;
     }
   }
   function comprobante(container) {
