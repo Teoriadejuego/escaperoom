@@ -33,7 +33,7 @@
         <div class="cover-content"><h1>Sevilla<br><em>en clave.</em></h1>
         <p class="cover-description">Elige qué quieres practicar. Una historia al azar te llevará por seis escenarios de Sevilla.</p>
         <form id="setup"><label>Asignatura<select id="asignatura">${subjects.map(s => `<option value="${s.id}">${esc(s.nombre)}</option>`).join('')}</select></label>
-        <small id="origen-banco" hidden>Banco provisional de Estadística I de Finanzas y Contabilidad.</small><label>Bloque<select id="bloque"></select></label>
+        <small id="origen-banco"></small><label>Bloque<select id="bloque"></select></label>
         <label>Dificultad<select id="dificultad"><option value="facil">Fácil</option><option value="dificil">Difícil</option></select></label>
         <fieldset class="personajes"><legend>Elige tu personaje</legend></fieldset><button class="primary-button start-button" type="submit" disabled>Abrir la aventura ↗</button>
         <div id="bank-error" hidden role="status">No se han podido cargar las preguntas. <button type="button">Reintentar</button></div></form>
@@ -47,7 +47,9 @@
       async function refreshBlocks() {
         const selected = subjects.find(item => item.id === subjectSelect.value);
         subject = selected;
-        screen.querySelector("#origen-banco").hidden = !selected.provisional;
+        screen.querySelector("#origen-banco").replaceChildren();
+      const guia=document.createElement('a'); guia.href=selected.fuente; guia.target='_blank'; guia.rel='noopener'; guia.textContent='Programa oficial US · 2026–27';
+      screen.querySelector("#origen-banco").append(guia,selected.notaPrograma?' · '+selected.notaPrograma:'');
         startButton.disabled = blockSelect.disabled = true;
         error.hidden = true;
         blockSelect.replaceChildren(new Option('Cargando preguntas…', ''));

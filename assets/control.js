@@ -15,7 +15,9 @@
     const selected = courses.find(c => c.id === selector.value);
     course = selected;
     blocks = null;
-    el('origen').hidden = !selected.provisional;
+    el('origen').replaceChildren();
+      const guia=document.createElement('a'); guia.href=selected.fuente; guia.target='_blank'; guia.rel='noopener'; guia.textContent='Programa oficial US · 2026–27';
+      el('origen').append(guia,selected.notaPrograma?' · '+selected.notaPrograma:'');
     el('iniciar').disabled = el('bloque').disabled = true;
     el('retry').hidden = true;
     el('estado').textContent = 'Cargando preguntas…';

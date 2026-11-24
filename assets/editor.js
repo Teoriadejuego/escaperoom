@@ -27,10 +27,15 @@ function mostrar(){
   menus.replaceChildren(); estado.textContent='';
   document.querySelector('#duplicar').hidden=tipo.value!=='b';
   if(tipo.value==='b'){
-    selector('Asignatura', subjects.map(s => s.nombre), si => {
+    selector('Asignatura', subjects.map(s => s.nombre), async si => {
       subject = subjects[si];
       if (subject.provisional) estado.textContent = 'Banco compartido de FICO. Los cambios que publiques en finanzas.js afectan a todas las asignaturas que lo usan.';
-      const banks = window[subject.global];
+      const elegido = subject;
+      active=null; campos.replaceChildren(); pool=null;
+      let banks;
+      try { banks=await loadBank(elegido); }
+      catch { if(subject===elegido) estado.textContent='No se pudo cargar el banco. Vuelve a elegir la asignatura.'; return; }
+      if(subject!==elegido || tipo.value!=='b') return;
       selector('Bloque',banks.map(b=>b.nombre),bi=>{
       const parts=banks[bi].apartados;
       selector('Apartado',parts.map((p,i)=>(i+1)+'. '+p.nombre),pi=>{
@@ -61,13 +66,15 @@ campos.onsubmit=e=>{
   Object.assign(active,update);estado.textContent='Cambios guardados en esta sesión. Descarga el archivo para conservarlos.';
 };
 document.querySelector('#duplicar').onclick=()=>{
+  if(!active || !pool)return;
   const copy=JSON.parse(JSON.stringify(active));copy.prompt='Nueva variante de '+copy.prompt;pool.push(copy);
   const select=menus.lastElementChild.querySelector('select');select.add(new Option(copy.prompt,pool.length-1));select.value=pool.length-1;select.onchange();
   estado.textContent='Variante añadida. Edita su contenido y guarda los cambios.';
 };
 document.querySelector('#descarga').onclick=()=>{
   const questions=tipo.value==='b',name=questions?subject.global:tipo.value==='o'?'HISTORIA_ORIGINAL':'HISTORIAS_EXTRA', content=window[name];
+  if(!content)return;
   const url=URL.createObjectURL(new Blob(['window.'+name+' = '+JSON.stringify(content,null,2)+';\n'],{type:'text/javascript;charset=utf-8'}));
-  const a=document.createElement('a');a.href=url;a.download=questions?subject.archivo:tipo.value==='o'?'original.js':'historias.js';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  const a=document.createElement('a');a.href=url;a.download=questions?subject.archivo.split('/').pop():tipo.value==='o'?'original.js':'historias.js';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 tipo.onchange=mostrar;mostrar();

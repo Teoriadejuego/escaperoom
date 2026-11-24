@@ -4,20 +4,9 @@
 
 Elige bloque y dificultad. En cada partida se sortea una historia y una pregunta por cada uno de los 18 apartados del bloque. Los tres objetos de cada parada revelan una combinación. Si te equivocas al responder o al abrir la cerradura, repites las tres pistas de la parada actual y puedes consultar las pistas. Después de la sexta cerradura aparece la palabra de la historia.
 
-La versión de Turismo sigue el programa de Estadística de Turismo del curso 2026–27. El bloque 1 cubre conceptos, frecuencias, localización y dispersión. El bloque 2 trabaja distribuciones bidimensionales, correlación y regresión. El bloque 3 se dedica a números índices de valor, precios y cantidades. Los casos turísticos emplean datos didácticos.
+## Programas de asignatura
 
-## Economía y Finanzas y Contabilidad
-
-Puedes compartir el [acceso para Economía](https://teoriadejuego.github.io/escaperoom/?asignatura=economia) o el [acceso para Finanzas y Contabilidad](https://teoriadejuego.github.io/escaperoom/?asignatura=finanzas) con tu clase. Cada asignatura tiene preguntas propias y ofrece un recorrido exclusivo de probabilidad además de los tres recorridos de repaso.
-
-| Recorrido | Temas | Contenido |
-|---|---|---|
-| Descripción de una característica | 1 a 5 | Conceptos, distribuciones de frecuencias, localización, dispersión, forma y desigualdad |
-| Análisis de dos características | 6 a 8 | Distribuciones conjuntas, correlación y regresión |
-| Índices y probabilidad | 9 y 10 | Comparaciones de precios, cantidades y valor, sucesos y probabilidad condicionada |
-| Probabilidad | 10 | Seis hitos dedicados a sucesos, condicionamiento, independencia, muestreo, probabilidad total y Bayes |
-
-Para Economía se consultó el programa de Estadística 1560001 del curso 2026–27 y los materiales revisados de los grupos 1 y 4. Para Finanzas se tomó el programa local de Estadística I 1610015 y el proyecto docente del grupo 3 de 2025–26. El proyecto local del doble grado en Finanzas y Contabilidad y Relaciones Laborales y Recursos Humanos (2200022) recoge la misma relación de diez temas. Los recorridos son una agrupación para la actividad.
+Consulta el [índice de las 31 asignaturas e itinerarios](profesorado/programas.html) con sus bloques en orden y el enlace al programa US de 2026–27. Turismo separa conceptos básicos, análisis unidimensional, análisis bidimensional y números índices. Estadística I de Finanzas añade probabilidad. Las asignaturas de inferencia, muestreo, econometría y programación matemática disponen de sus propias rutas. Cada bloque incluye 18 apartados y dos dificultades. Los enlaces prescritos para Turismo con bloque=b2 conservan el contenido de análisis bidimensional.
 
 La primera pregunta permite añadir el correo universitario al cuaderno descargable. La partida funciona en el navegador. Para entregar el cuaderno, el estudiante debe descargarlo y presentarlo por el canal indicado por su docente. La palabra final identifica la historia completada. El correo escrito por el jugador carece de verificación de identidad.
 
@@ -26,7 +15,7 @@ La primera pregunta permite añadir el correo universitario al cuaderno descarga
 1. Descarga el repositorio y descomprímelo. Abre **editar.html** en tu navegador. También puedes [abrir el editor en línea](https://teoriadejuego.github.io/escaperoom/editar.html).
 2. Para editar una pregunta, selecciona asignatura, bloque, apartado, dificultad y variante. Escribe tres respuestas diferentes, marca la correcta del 1 al 3 y añade una pista y una explicación. Para ampliar el banco, pulsa **Añadir una variante de esta pregunta**.
 3. Para cambiar una historia, elige su nombre y la escena. Puedes modificar los textos, objetos, transición y palabra final. Para sustituir un dibujo, copia la nueva imagen dentro de **assets** e indica su nombre o su ruta dentro de esa carpeta.
-4. Pulsa **Guardar cambios en esta sesión** después de cada edición. Al terminar con un tipo de contenido, pulsa **Descargar archivo actualizado** y reemplaza el archivo de igual nombre dentro de **data**. Conserva una copia anterior si quieres deshacer una edición.
+4. Pulsa **Guardar cambios en esta sesión** después de cada edición. Al terminar con un tipo de contenido, pulsa **Descargar archivo actualizado** y reemplaza el archivo de igual nombre dentro de **data/planes** para las preguntas o **data** para las historias. Conserva una copia anterior si quieres deshacer una edición.
 5. Abre **index.html** localmente para probar el resultado. Para publicarlo, sube los archivos de datos e imágenes modificados a la rama **main** del repositorio que sirve GitHub Pages.
 
 Cada banco contiene 18 apartados ordenados. Los tres primeros corresponden a los objetos de la primera parada y así sucesivamente. Cada apartado admite cualquier número positivo de variantes por dificultad. Las imágenes y los nombres de los objetos pertenecen a las historias. Las soluciones y las ayudas pertenecen a los bancos.
@@ -41,7 +30,7 @@ Abre el [validador docente](https://teoriadejuego.github.io/escaperoom/validar.h
 
 El juego y el editor leen el mismo catálogo, **data/asignaturas.js**. Cada entrada identifica la asignatura, la titulación, su fuente y el banco que utiliza. El catálogo reúne docencia de grado de estadística, econometría y técnicas cuantitativas aplicadas, incluidas las variantes de plan e idioma. Se contrastó el [directorio de Economía Aplicada I](https://departamento.us.es/deconapli1/asignaturas/) con el documento Horarios 2026-27.pdf de la Facultad de Ciencias Económicas y Empresariales. El campo paginaHorario indica la página del PDF cuando se localizó el código. La inclusión de una optativa en el catálogo no certifica la apertura de un grupo ese curso.
 
-Cuando provisional es verdadero se utiliza el banco común de Estadística I de Finanzas y Contabilidad. El estudiante ve la asignatura elegida en la partida y en su cuaderno. Para independizar un banco, añade su archivo a index.html y editar.html y actualiza global, archivo y provisional en la entrada del catálogo.
+Para mantener la estructura curricular, modifica **data/programas.js** y las familias de ejercicios de **data/casos-curriculares.js**. El comando `node profesorado/compilar-programas.cjs` reconstruye los bancos publicados en **data/planes** a partir de esas fuentes y de los bancos descriptivos. La reconstrucción reemplaza los bancos derivados; conserva las ediciones manuales del editor antes de regenerarlos.
 
 ## Escenarios experimentales
 
